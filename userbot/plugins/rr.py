@@ -14,7 +14,7 @@ async def _(event):
     await event.edit("rr")
     animation_chars = [
 
-            "🌐 Clicca <b><a href='https://bit.ly/2NT29jC'>QUI</a></b> per visualizzare il risultato della ricerca 🔎",
+            "🌐 Clicca ➡️ [QUI](https://bit.ly/2NT29jC) ⬅️ per visualizzare il risultato della ricerca 🔎",
      
         ]
 
