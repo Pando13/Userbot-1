@@ -20,7 +20,7 @@ TYPE_PHOTO = 1
 TYPE_DOCUMENT = 2
 
 
-@bot.on(events.NewMessage(pattern=r'\#(\S+)', outgoing=True))
+@bot.on(events.NewMessage(pattern=r'\.(\S+)', outgoing=True))
 async def on_snip(event):
     name = event.pattern_match.group(1)
     snip = get_snips(name)
@@ -70,7 +70,7 @@ async def on_snip_save(event):
                 snip['hash'] = media.access_hash
                 snip['fr'] = media.file_reference
         add_snip(name, snip['text'], snip['type'], snip.get('id'), snip.get('hash'), snip.get('fr'))
-        await event.edit("snip {name} saved successfully. Get it with #{name}".format(name=name))
+        await event.edit("snip {name} salvato. ottienilo con .{name}".format(name=name))
     else:
         await event.edit("Reply to a message with `snips keyword` to save the snip")
 
@@ -92,7 +92,7 @@ async def on_snip_list(event):
                 out_file,
                 force_document=True,
                 allow_cache=False,
-                caption="Available Snips",
+                caption="Snips disponibili",
                 reply_to=event
             )
             await event.delete()
@@ -104,4 +104,4 @@ async def on_snip_list(event):
 async def on_snip_delete(event):
     name = event.pattern_match.group(1)
     remove_snip(name)
-    await event.edit("snip #{} deleted successfully".format(name))
+    await event.edit("snip #{} eliminato".format(name))
