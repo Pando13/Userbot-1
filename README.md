@@ -1,6 +1,5 @@
 # Userbot-Leoatomic
 
-***
 
 [![Made in Python](https://img.shields.io/badge/Made%20in-python-red.svg)](https://www.python.org/)
 
