@@ -100,7 +100,7 @@
       "description": "Crea un bot con http://t.me/BotFather e inserisci l'username in http.",
       "value": ""
     },
-    "DOWNLOAD_PFP_URL_CLOCK": {
+    "DEFAULT_PIC": {
       "description": "Requisito per autopic.py Url preview link della tua Pic Profilo.",
       "value": "",
       "required": false
