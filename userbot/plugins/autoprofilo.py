@@ -31,7 +31,7 @@ FONT_FILE_TO_USE = "/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf"
 async def autopic(event):
     await event.edit(f"Autopic avviato.") 
     downloaded_file_name = "userbot/original_pic.png"
-    downloader = SmartDL(Var.DOWNLOAD_PFP_URL_CLOCK, downloaded_file_name, progress_bar=False)
+    downloader = SmartDL(Var.DEFAULT_PIC, downloaded_file_name, progress_bar=False)
     downloader.start(blocking=False)
     photo = "userbot/photo_pfp.png"
     while not downloader.isFinished():
