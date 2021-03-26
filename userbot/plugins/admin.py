@@ -1,13 +1,3 @@
-# Copyright © 2020 di 100101110 Github, <https://github.com/100101110>.
-#
-# Questo file fa parte del progetto <https://github.com/100101110/userbot-100101110>,
-# e viene rilasciato in base alla "Licenza GNU Affero General Public v3.0".
-# Si prega di consultare <https://github.com/100101110/userbot-100101110/blob/master/LICENSE>
-#
-# Tutti i diritti riservati.
-# 
-# Crediti: @100101110
-#
 """Userbot module to help you manage a group"""
 
 import asyncio
@@ -102,7 +92,7 @@ async def _(event):
     except (Exception) as exc:
         await event.edit(str(exc))
     else:
-        await event.edit(f'**{input_cmd} ESEGUITO!😎**')
+        await event.edit(f'**{input_cmd} eseguito ✅**')
 
 
 async def get_user_from_event(event):
@@ -174,7 +164,7 @@ async def kick(usr):
         await usr.edit("`Couldn't fetch user.`")
         return
 
-    await usr.edit('**KICK...😎**')
+    await usr.edit('**Utente kickato ✅**')
 
     try:
         await usr.client.kick_participant(usr.chat_id, user.id)
@@ -185,11 +175,11 @@ async def kick(usr):
 
     if reason:
         await usr.edit(
-            f'**KICK 😎** [{user.first_name}](tg://user?id={user.id})`!`\nMOTIVO: {reason}'
+            f'**Utente kickato:** [{user.first_name}](tg://user?id={user.id})`!`\nMOTIVO: {reason}'
         )
     else:
         await usr.edit(
-            f'**KICK 😎** [{user.first_name}](tg://user?id={user.id})`!`')
+            f'**Utente kickato:** [{user.first_name}](tg://user?id={user.id})`!`')
 
     if BOTLOG:
         await usr.client.send_message(
