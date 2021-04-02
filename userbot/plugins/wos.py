@@ -15,22 +15,22 @@ BOTLOG = True
 BOTLOG_CHATID = Var.PRIVATE_GROUP_ID
 # ============================================
 
-@register(outgoing=True, pattern=r"^.log(?: |$)([\s\S]*)")
+@register(outgoing=True, pattern=r"^.wos(?: |$)([\s\S]*)")
 @errors_handler
 async def log(log_text):
-    """ For .log command, forwards a message or the command argument to the bot logs group """
+    """ Col comando .wof, posta un messaggio sul wall of shame """
     if BOTLOG:
         if log_text.reply_to_msg_id:
             reply_msg = await log_text.get_reply_message()
-            await reply_msg.forward_to(BOTLOG_CHATID)
+            await reply_msg.forward_to(-1001151039362)
         elif log_text.pattern_match.group(1):
             user = f"#LOG / Chat ID: {log_text.chat_id}\n\n"
             textx = user + log_text.pattern_match.group(1)
-            await bot.send_message(BOTLOG_CHATID, textx)
+            await bot.send_message(-1001151039362, textx)
         else:
-            await log_text.edit(f"`{DEFAULTUSER}:`**Inserisci oggetto del log**")
+            await log_text.edit(f"`{DEFAULTUSER}:`**Inserisci messaggio per il Wall of Shame**")
             return
-        await log_text.edit(f"`{DEFAULTUSER}:`**log eseguito**")
+        await log_text.edit(f"`{DEFAULTUSER}:`**Messaggio inoltrato**")
     else:
         await log_text.edit(f"`{DEFAULTUSER}:`**Serve il log attivo per funzionare!**")
     await sleep(2)
