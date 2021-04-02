@@ -49,7 +49,7 @@ async def _(event):
             afk_time = datetime.datetime.now()  # pylint:disable=E0602
         USER_AFK = f"yes: {reason}"  # pylint:disable=E0602
         if reason:
-            await bot.send_message(event.chat_id, f"**Sono AFK ⛔️** __MOTIVO ~ {reason}__")
+            await bot.send_message(event.chat_id, f"**Sono AFK ⛔️** Motivo: __{reason}__")
         else:
             await bot.send_message(event.chat_id, f"**Sono AFK ⛔️**")
         await asyncio.sleep(5)
