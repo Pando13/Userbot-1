@@ -132,7 +132,7 @@ async def on_afk(event):
             time %= 60
             seconds = time
             if days == 1:
-                afk_since = "**Yesterday**"
+                afk_since = "**Ieri**"
             elif days > 1:
                 if days > 6:
                     date = now + \
@@ -143,11 +143,11 @@ async def on_afk(event):
                     wday = now + datetime.timedelta(days=-days)
                     afk_since = wday.strftime('%A')
             elif hours > 1:
-                afk_since = f"`{int(hours)}h{int(minutes)}m` **ago**"
+                afk_since = f"`{int(hours)}h{int(minutes)}m` **fa**"
             elif minutes > 0:
-                afk_since = f"`{int(minutes)}m{int(seconds)}s` **ago**"
+                afk_since = f"`{int(minutes)}m{int(seconds)}s` **fa**"
             else:
-                afk_since = f"`{int(seconds)}s` **ago**"
+                afk_since = f"`{int(seconds)}s` **fa**"
         msg = None
         message_to_reply = f"**⛔️ Sono offline ⛔️ da: ** `{total_afk_time}`\n**Non spammare.**" + \
             f"\n\n**Quando torno online rispondo.**\n**MOTIVO**: {reason}" \
