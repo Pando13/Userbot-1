@@ -20,7 +20,7 @@ Vai sul [sito di telegram](my.telegram.org/), esegui il login e clicca su `API D
 ```bash
 > String Session
 ```
-Vai su [questo sito](repl.it/@Ilas69/generatestringsession) e clicca su `RUN` in alto. Dopo aver atteso e compilato i campi richiesti dalla console (attenzione, il numero deve essere inserito con il prefisso, es: +393117290283) ti arriverà la stringa nei messaggi salvati di Telegram.
+Vai su [questo sito](repl.it/@Ilas69/generatestringsession) e clicca su `RUN` in alto. Dopo aver atteso e compilato i campi richiesti dalla console (attenzione, il numero deve essere inserito con il prefisso, es: +393456789010) ti arriverà la stringa nei messaggi salvati di Telegram.
 
 ***
 
