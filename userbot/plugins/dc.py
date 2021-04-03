@@ -30,10 +30,6 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "100101110"
 # ============================================
 
 
-    await event.edit(f"**Paese:** {result.country}\n"
-                     f"**DC vicino:** {result.nearest_dc}\n"
-                     f"**DC:** {result.this_dc}")
-
   
 
 
