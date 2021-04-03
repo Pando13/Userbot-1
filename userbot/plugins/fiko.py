@@ -18,7 +18,7 @@ async def _(event):
     await event.edit("fika")
     animation_chars = [
 
-            "[𝙇𝙚𝙤⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣](tg://user?id=845549379) è **veramente molto fiko** 🦾 perché ha l'**Userbot**! 🪐",
+            "[𝙇𝙚𝙤⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣](tg://user?id=845549379) è veramente molto fiko 🦾 perché ha l'**Userbot**! 🪐",
      
         ]
 
