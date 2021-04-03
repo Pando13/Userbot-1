@@ -55,7 +55,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             # https://t.me/TelethonChat/115200
             await event.edit(buttons=buttons)
         else:
-            reply_pop_up_alert = "Usa il tuo Userbot,non il mio!"
+            reply_pop_up_alert = "Questo è l'userbot di @Leoatomic, non il tuo!"
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
     @tgbot.on(events.callbackquery.CallbackQuery(  # pylint:disable=E0602
         data=re.compile(b"us_plugin_(.*)")
@@ -73,8 +73,8 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             reply_pop_up_alert = "{} is useless".format(plugin_name)
         else:
             reply_pop_up_alert = help_string
-        reply_pop_up_alert += "\n Usa .unload {} per rimuovere il plugin\n\
-            © Userbot".format(plugin_name)
+        reply_pop_up_alert += "\nUsa .unload {} per rimuovere il plugin\n\
+            ".format(plugin_name)
         try:
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
         except: 
