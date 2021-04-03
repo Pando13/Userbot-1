@@ -3,9 +3,9 @@ Syntax:
 .dc
 """
 
-ifrom telethon import events
+from telethon import events
 
-@borg.on(slitu.admin_cmd(pattern="dc"))  # pylint:disable=E0602
+@bot.on(dev_cmd(pattern="dc"))  # pylint:disable=E0602
 async def _(event):
     if event.fwd_from:
         return
