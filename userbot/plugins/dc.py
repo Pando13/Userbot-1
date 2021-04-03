@@ -29,11 +29,7 @@ from userbot.system import dev_cmd, register, errors_handler
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "100101110"
 # ============================================
 
-@bot.on(dev_cmd(pattern="dc"))  # pylint:disable=E0602
-async def _(event):
-    if event.fwd_from:
-        return
-    result = await borg(functions.help.GetNearestDcRequest())  # pylint:disable=E0602
+
     await event.edit(f"**Paese:** {result.country}\n"
                      f"**DC vicino:** {result.nearest_dc}\n"
                      f"**DC:** {result.this_dc}")
@@ -55,15 +51,8 @@ async def _(event):
     except Exception as e:
         dc_id = "Need a Profile Picture to check **this**"
         location = str(e)
-    caption = """
+    await event.edit(f"**🌐 DC:** { dc_id} "
 
-🌐 DC: {}
-
-""".format(
-       
-        dc_id,
-     
-    )
     message_id_to_reply = event.message.reply_to_msg_id
     if not message_id_to_reply:
         message_id_to_reply = event.message.id
@@ -72,7 +61,7 @@ async def _(event):
         caption,
         reply_to=message_id_to_reply,
         parse_mode="HTML",
-        file=replied_user.profile_photo,
+       
         force_document=False,
         silent=True
     )
