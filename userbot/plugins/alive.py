@@ -12,7 +12,7 @@ from userbot.system import command
 @bot.on(dev_cmd(pattern=f"on", outgoing=True))
 async def amireallyalive(on):
     """ For .alive command, check if the bot is running. """
-    await on.edit("**Sono online** [Capo](tg://user?id=845549379) ✔️")
+    await on.edit("**Online** [✔️](tg://user?id=845549379)")
 
 @command(pattern="^.test")
 async def _(event):
