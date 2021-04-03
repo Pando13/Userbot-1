@@ -32,7 +32,7 @@ from userbot.system import dev_cmd, register, errors_handler
 
 
 
-@bot.on(dev_cmd("info ?(.*)"))
+@bot.on(dev_cmd("dc"))
 async def _(event):
     if event.fwd_from:
         return
