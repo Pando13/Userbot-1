@@ -27,11 +27,6 @@ from userbot import CMD_HELP, bot, ALIVE_NAME
 from userbot.system import dev_cmd, register, errors_handler
 
 
-    
- 
-
-
-
 @bot.on(dev_cmd("dc"))
 async def _(event):
     if event.fwd_from:
@@ -40,8 +35,6 @@ async def _(event):
     if replied_user is None:
         await event.edit(str(error_i_a))
         return False
-    
-    
     
     try:
         dc_id, location = get_input_location(replied_user.profile_photo)
@@ -64,7 +57,6 @@ async def _(event):
         caption,
         reply_to=message_id_to_reply,
         
-        file=replied_user.profile_photo,
         force_document=False,
         silent=True
     )
