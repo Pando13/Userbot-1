@@ -56,7 +56,7 @@ async def _(event):
         event.chat_id,
         caption,
         reply_to=message_id_to_reply,
-        
+        parse_mode="HTML",
         force_document=False,
         silent=True
     )
