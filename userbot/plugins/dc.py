@@ -42,7 +42,7 @@ async def _(event):
         dc_id = "Mi serve una foto profilo per controllare il **DC**"
         location = str(e)
     caption = """
-🌍 **DC:** {}
+🌍 <b>DC:</b> {}
 
 """.format(
         
