@@ -1,4 +1,4 @@
-"""Get Telegram Profile and other information
+"""Trova DC
 Syntax:
 .dc
 
