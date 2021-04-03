@@ -39,7 +39,7 @@ async def _(event):
         await event.edit(str(error_i_a))
         return False
       
-    ))
+   
     
         dc_id, location = get_input_location(replied_user.profile_photo)
     except Exception as e:
