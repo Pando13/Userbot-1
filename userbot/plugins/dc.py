@@ -40,12 +40,7 @@ async def _(event):
     if replied_user is None:
         await event.edit(str(error_i_a))
         return False
-    replied_user_profile_photos = await bot(GetUserPhotosRequest(
-        user_id=replied_user.user.id,
-        offset=30,
-        max_id=0,
-        limit=70
-    ))
+    
     
     
     try:
@@ -54,7 +49,7 @@ async def _(event):
         dc_id = "Mi serve una foto profilo per controllare il **DC**"
         location = str(e)
     caption = """
-🌍 **DC**: {}
+🌍 **DC:** {}
 
 """.format(
         
