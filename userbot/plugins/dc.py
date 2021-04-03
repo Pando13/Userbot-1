@@ -1,9 +1,7 @@
 """Get Telegram Profile and other information
 Syntax:
 .dc
-.chatinfo
-.info @username
-.stats
+
 """
 
 import asyncio
