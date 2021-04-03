@@ -45,9 +45,7 @@ async def _(event):
     except Exception as e:
         dc_id = "Need a Profile Picture to check **this**"
         location = str(e)
-    await event.send_message(f"**🌍 DC**: {dc_id}")
-
-    
+    await event.edit(f"**🌍 DC**: {dc_id}")
     await event.delete()
 
 
