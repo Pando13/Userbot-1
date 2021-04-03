@@ -46,11 +46,7 @@ async def _(event):
         max_id=0,
         limit=70
     ))
-    replied_user_profile_photos_count = "NaN"
-    try:
-        replied_user_profile_photos_count = replied_user_profile_photos.count
-    except AttributeError as e:
-        pass
+    
     
     try:
         dc_id, location = get_input_location(replied_user.profile_photo)
@@ -58,7 +54,7 @@ async def _(event):
         dc_id = "Mi serve una foto profilo per controllare il **DC**"
         location = str(e)
     caption = """
-🌍 **DC**:: {}
+🌍 **DC**: {}
 
 """.format(
         
