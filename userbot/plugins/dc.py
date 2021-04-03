@@ -48,14 +48,8 @@ async def _(event):
     except Exception as e:
         dc_id = "Need a Profile Picture to check **this**"
         location = str(e)
-    await event.send_message(f"**🌍 DC**: {}")
-    
+    await event.send_message(f"**🌍 DC**: {dc_id}")
 
-🌐 DC: {}
-.format(
-      
-        dc_id
-    )
     message_id_to_reply = event.message.reply_to_msg_id
     if not message_id_to_reply:
         message_id_to_reply = event.message.id
