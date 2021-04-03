@@ -48,4 +48,3 @@ async def _(event):
     await event.edit(f"**🌍 DC**: {dc_id}")
     await event.delete()
 
-
