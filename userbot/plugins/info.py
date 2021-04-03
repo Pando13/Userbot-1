@@ -32,14 +32,7 @@ from userbot.system import dev_cmd, register, errors_handler
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "100101110"
 # ============================================
 
-@bot.on(dev_cmd(pattern="dc"))  # pylint:disable=E0602
-async def _(event):
-    if event.fwd_from:
-        return
-    result = await bot(functions.help.GetNearestDcRequest())  # pylint:disable=E0602
-    await event.edit(f"**Paese:** {result.country}\n"
-                     f"**DC vicino:** {result.nearest_dc}\n"
-                     f"**DC:** {result.this_dc}")
+
 
 
 @register(pattern=".chatinfo(?: |$)(.*)", outgoing=True)
