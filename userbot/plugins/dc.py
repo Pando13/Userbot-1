@@ -26,9 +26,6 @@ from telethon.tl.custom import Dialog
 from userbot import CMD_HELP, bot, ALIVE_NAME
 from userbot.system import dev_cmd, register, errors_handler
 
-# ================= CONSTANT =================
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "100101110"
-# ============================================
 
 
 
@@ -41,8 +38,8 @@ async def _(event):
     try:
         dc_id, location = get_input_location(replied_user.profile_photo)
     except Exception as e:
-        dc_id = "Need a Profile Picture to check **this**"
+        dc_id = "Mi serve una foto profilo per controllare il **DC**"
         location = str(e)
     await event.edit(f"**🌍 DC**: {dc_id}")
-    await event.delete()
+    
 
