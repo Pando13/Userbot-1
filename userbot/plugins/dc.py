@@ -39,10 +39,7 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "100101110"
 async def _(event):
     if event.fwd_from:
         return
-    replied_user, error_i_a = await get_full_user(event)
-    if replied_user is None:
-        await event.edit(str(error_i_a))
-        return False
+    
     try:
         dc_id, location = get_input_location(replied_user.profile_photo)
     except Exception as e:
@@ -50,17 +47,6 @@ async def _(event):
         location = str(e)
     await event.send_message(f"**🌍 DC**: {dc_id}")
 
-    message_id_to_reply = event.message.reply_to_msg_id
-    if not message_id_to_reply:
-        message_id_to_reply = event.message.id
-    await bot.send_message(
-        event.chat_id,
-        caption,
-        reply_to=message_id_to_reply,
- 
-        file=replied_user.profile_photo,
-        force_document=False,
-        silent=True
     )
     await event.delete()
 
