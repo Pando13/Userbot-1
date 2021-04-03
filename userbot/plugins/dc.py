@@ -47,7 +47,7 @@ async def _(event):
         location = str(e)
     await event.send_message(f"**🌍 DC**: {dc_id}")
 
-    )
+    
     await event.delete()
 
 
