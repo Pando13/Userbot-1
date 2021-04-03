@@ -36,7 +36,7 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "100101110"
 async def _(event):
     if event.fwd_from:
         return
-    result = await borg(functions.help.GetNearestDcRequest())  # pylint:disable=E0602
+    result = await bot(functions.help.GetNearestDcRequest())  # pylint:disable=E0602
     await event.edit(f"**Paese:** {result.country}\n"
                      f"**DC vicino:** {result.nearest_dc}\n"
                      f"**DC:** {result.this_dc}")
