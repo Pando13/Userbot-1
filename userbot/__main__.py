@@ -12,6 +12,24 @@ import asyncio
 import telethon.utils
 import heroku3
 
+import time
+import random, re
+import os
+import shutil
+
+from datetime import datetime
+from PIL import Image, ImageDraw, ImageFont
+from pySmartDL import SmartDL
+from telethon import events
+from telethon.tl import functions
+from telethon.errors import FloodWaitError
+from userbot import bot, AUTONAME, DEFAULT_BIO, CMD_HELP
+from userbot.system import dev_cmd, command
+
+# ================= CONSTANT =================
+DEFAULTUSERBIO = str(DEFAULT_BIO) if DEFAULT_BIO else "ᗯᗩᏆᎢᏆᑎᏀ ᏞᏆᏦᗴ ᎢᏆᗰᗴ"
+DEL_TIME_OUT = 60
+
 
 async def add_bot(bot_token):
     await bot.start(bot_token)
@@ -62,7 +80,25 @@ import userbot._core
 
 print("USERBOT-@Leoatomic in esecuzione, test con .on")
 
+
+async def btime():
+    while True:
+        DMY = time.strftime("%d/%m/%Y")
+        HM = time.strftime("%H:%M")
+        bio = f"✨ {DMY} | {DEFAULTUSERBIO} | {HM} 🪐"
+        logger.info(bio)
+        try:
+            await bot(functions.account.UpdateProfileRequest(  # pylint:disable=E0602
+                about=bio
+            ))
+        except FloodWaitError as ex:
+            logger.warning(str(e))
+            await asyncio.sleep(ex.seconds)
+
+        await asyncio.sleep(DEL_TIME_OUT)
+
 if len(argv) not in (1, 3, 4):
     bot.disconnect()
 else:
+    asyncio.create_task(btime())
     bot.run_until_disconnected()
