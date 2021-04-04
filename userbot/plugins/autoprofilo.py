@@ -81,8 +81,8 @@ async def _(event):
 async def _(event):
     await event.edit(f"Auto bio avviata.") 
     while True:
-        DMY = time.strftime("%d.%m.%Y")
-        HM = time.strftime("%H:%M:%S")
+        DMY = time.strftime("%d/%m/%Y")
+        HM = time.strftime("%H:%M")
         bio = f"✨ {DMY} | {DEFAULTUSERBIO} | {HM} 🪐"
         logger.info(bio)
         try:
