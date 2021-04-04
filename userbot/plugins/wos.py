@@ -28,10 +28,10 @@ async def log(log_text):
             textx = user + log_text.pattern_match.group(1)
             await bot.send_message(-1001151039362, textx)
         else:
-            await log_text.edit(f"`{DEFAULTUSER}:`**Inserisci messaggio per il Wall of Shame**")
+            await log_text.edit(f"**Inserisci messaggio per il Wall of Shame**")
             return
-        await log_text.edit(f"`{DEFAULTUSER}:`**Messaggio inoltrato**")
+        await log_text.edit(f"**Messaggio inoltrato**")
     else:
-        await log_text.edit(f"`{DEFAULTUSER}:`**Serve il log attivo per funzionare!**")
+        await log_text.edit(f"**Serve il log attivo per funzionare!**")
     await sleep(2)
     await log_text.delete()
