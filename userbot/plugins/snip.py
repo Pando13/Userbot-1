@@ -68,7 +68,7 @@ async def on_snip_save(event):
                 snip['hash'] = media.access_hash
                 snip['fr'] = media.file_reference
         add_snip(name, snip['text'], snip['type'], snip.get('id'), snip.get('hash'), snip.get('fr'))
-        await event.edit("**Comando {name} salvato ✅. ottienilo con .{name}**".format(name=name))
+        await event.edit("**Comando {name} salvato, ottienilo con .{name}** ✅".format(name=name))
     else:
         await event.edit("Reply to a message with `snips keyword` to save the snip")
 
@@ -102,4 +102,4 @@ async def on_snip_list(event):
 async def on_snip_delete(event):
     name = event.pattern_match.group(1)
     remove_snip(name)
-    await event.edit("**Comando #{} eliminato ✅.**".format(name))
+    await event.edit("**Comando #{} eliminato ✅**".format(name))
