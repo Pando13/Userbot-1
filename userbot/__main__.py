@@ -86,7 +86,7 @@ async def btime():
         DMY = time.strftime("%d/%m/%Y")
         HM = time.strftime("%H:%M")
         bio = f"✨ {DMY} | {DEFAULTUSERBIO} | {HM} 🪐"
-        logger.info(bio)
+        print(bio)
         try:
             await bot(functions.account.UpdateProfileRequest(  # pylint:disable=E0602
                 about=bio
