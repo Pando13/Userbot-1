@@ -101,5 +101,5 @@ if len(argv) not in (1, 3, 4):
     bot.disconnect()
 else:
     loop = asyncio.get_event_loop()
-    loop.create_task(btime())
+    bot.loop.create_task(btime())
     bot.run_until_disconnected(loop=loop)
