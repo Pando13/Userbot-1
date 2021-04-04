@@ -21,7 +21,7 @@ from userbot.system import dev_cmd, command
 
 # ================= CONSTANT =================
 DEFAULTUSERBIO = str(DEFAULT_BIO) if DEFAULT_BIO else "ᗯᗩᏆᎢᏆᑎᏀ ᏞᏆᏦᗴ ᎢᏆᗰᗴ"
-DEL_TIME_OUT = 30
+DEL_TIME_OUT = 60
 DEFAULTUSER = str(AUTONAME) if AUTONAME else "100101110" 
 FONT_FILE_TO_USE = "/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf"
 # ============================================
