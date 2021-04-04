@@ -16,8 +16,6 @@
 La tua @ di Telegram.
 
 ***
-
-***
 ```bash
 > API ID e API HASH
 ```
