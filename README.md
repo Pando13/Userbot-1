@@ -11,6 +11,14 @@
 
 ***
 ```bash
+> ALIVE NAME
+```
+La tua @ di Telegram.
+
+***
+
+***
+```bash
 > API ID e API HASH
 ```
 Vai sul [sito di telegram](my.telegram.org/), esegui il login e clicca su `API DEVELOPMENT TOOLS`. Dopodiché compila i campi richiesti e salva le due stringhe `API_ID` e `API_HASH`.
