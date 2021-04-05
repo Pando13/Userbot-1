@@ -65,8 +65,8 @@ Dopo aver compilato i campi precedenti devi cliccare `Deploy app` in basso e asp
 
 [![Telegram](https://img.shields.io/badge/TG-%20@Leoatomic-black.svg)](https://t.me/Leoatomic)
 
+***
 
 #### CREDITI:
 
-Catuserbot
-100101110
+Catuserbot, 100101110.
