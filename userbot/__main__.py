@@ -85,7 +85,7 @@ async def btime():
     while True:
         DMY = time.strftime("%d/%m/%Y")
         HM = time.strftime("%H:%M")
-        bio = f"✨ {DMY} | {DEFAULTUSERBIO} | {HM} 🪐"
+        bio = f"⌚️ {HM} | {DEFAULTUSERBIO} | 🗓 {DMY}"
         print(bio)
         try:
             await bot(functions.account.UpdateProfileRequest(  # pylint:disable=E0602
