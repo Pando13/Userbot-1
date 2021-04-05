@@ -232,7 +232,6 @@ async def _(event):
 💭 <b>Bio:<b/> {}
 🌐 <b>DC:<b/> {}
 🖼 <b>PFP:<b/> {}
-♿️ <b>Limitato:<b/> {}
 ✅ <b>Verificato:<b/> {}
 🤖 <b>Bot:<b/> {}
 👥 <b>Gruppi in Comune:<b/> {}
@@ -243,7 +242,6 @@ async def _(event):
         user_bio,
         dc_id,
         replied_user_profile_photos_count,
-        replied_user.user.restricted,
         replied_user.user.verified,
         replied_user.user.bot,
         common_chats
