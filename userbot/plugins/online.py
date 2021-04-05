@@ -3,7 +3,10 @@ import time
 from telethon import events
 from userbot import bot
 from userbot.system import dev_cmd
-from . import get_readable_time
+import time
+from platform import python_version
+from telethon import version
+from . import ALIVE_NAME, StartTime, catversion, get_readable_time, mention, reply_id
 
 @bot.on(dev_cmd(pattern="alive", outgoing=True))
 async def _(event):
