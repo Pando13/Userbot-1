@@ -5,6 +5,8 @@ from userbot import bot
 from userbot.system import dev_cmd
 from . import StartTime, get_readable_time
 
+StartTime = time.time()
+
 @bot.on(dev_cmd(pattern="alive", outgoing=True))
 async def _(event):
     if event.fwd_from:
