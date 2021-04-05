@@ -4,7 +4,7 @@ import asyncio
 from telethon import events
 from userbot import bot
 from userbot.system import dev_cmd
-from . import StartTime, get_readable_time
+import StartTime, get_readable_time
 
 
 @bot.on(dev_cmd(pattern="alive", outgoing=True))
