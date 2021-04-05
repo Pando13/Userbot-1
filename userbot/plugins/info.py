@@ -228,14 +228,14 @@ async def _(event):
     caption = """⚙️ Informazioni:
     
 🆔 <code>{}</code>
-🔗 Menzione: <a href='tg://user?id={}'>{}</a>
-💭 Bio: {}
-🌐 DC: {}
-🖼 PFP: {}
-♿️ Limitato: {}
-✅ Verificato: {}
-🤖 Bot: {}
-👥 Gruppi in Comune: {}
+🔗 <b>Menzione:<b/> <a href='tg://user?id={}'>{}</a>
+💭 <b>Bio:<b/> {}
+🌐 <b>DC:<b/> {}
+🖼 <b>PFP:<b/> {}
+♿️ <b>Limitato:<b/> {}
+✅ <b>Verificato:<b/> {}
+🤖 <b>Bot:<b/> {}
+👥 <b>Gruppi in Comune:<b/> {}
 """.format(
         user_id,
         user_id,
