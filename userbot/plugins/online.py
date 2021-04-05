@@ -1,3 +1,4 @@
+import re
 import time
 import asyncio
 from telethon import events
@@ -5,7 +6,6 @@ from userbot import bot
 from userbot.system import dev_cmd
 from . import StartTime, get_readable_time
 
-StartTime = time.time()
 
 @bot.on(dev_cmd(pattern="alive", outgoing=True))
 async def _(event):
