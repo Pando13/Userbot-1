@@ -34,7 +34,7 @@ from userbot.uniborgConfig import Config
 from userbot.system import progress, humanbytes, time_formatter, dev_cmd
 
 # ================= CONSTANT =================
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "100101110"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "leoatomic"
 # ============================================
 thumb_image_path = Config.TMP_DOWNLOAD_DIRECTORY + "/thumb_image.jpg"
 
@@ -119,7 +119,7 @@ async def _(event):
                 caption="Userbot",
                 )
             await event.delete()
-            sax = await bot.send_message(event.chat_id, "**☠️☠️10 Punti a Griffindor!🔥🔥**")
+            sax = await bot.send_message(event.chat_id, "**☠️☠️10 Punti a Grifondoro!🔥🔥**")
             await asyncio.sleep(4)
             sax.delete()
           elif not is_message_image(reply_message):
