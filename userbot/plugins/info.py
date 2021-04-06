@@ -38,14 +38,14 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Leoatomic"
 @register(pattern=".chatinfo(?: |$)(.*)", outgoing=True)
 @errors_handler
 async def info(event):
-    await event.edit(f"`{DEFAULTUSER}:`**Ricerca nel database...**")
+    await event.edit(f"**Ricerca nel database...**")
     chat = await get_chatinfo(event)
     caption = await fetch_info(chat, event)
     try:
         await event.edit(caption, parse_mode="html")
     except Exception as e:
         print("Exception:", e)
-        await event.edit(f"`{DEFAULTUSER}:`**errore inaspettato**")
+        await event.edit(f"**errore inaspettato**")
     return
 
 
@@ -319,7 +319,7 @@ async def get_full_user(event):
 @bot.on(dev_cmd(pattern='stat'))
 async def stats(event: NewMessage.Event) -> None:  # pylint: disable = R0912, R0914, R0915
     """Command to get stats about the account"""
-    waiting_message = await event.edit(f"`{DEFAULTUSER}:`**Ricerca nel database...**")
+    waiting_message = await event.edit(f"**Ricerca nel database...**")
     start_time = time.time()
     private_chats = 0
     bots = 0
