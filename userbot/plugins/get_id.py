@@ -15,8 +15,8 @@ async def _(event):
         r_msg = await event.get_reply_message()
         if r_msg.media:
             bot_api_file_id = pack_bot_file_id(r_msg.media)
-            await event.edit("**Chat ID:** `{}` \n **User ID:** `{}` \n **Bot API File ID:** `{}`".format(str(event.chat_id), str(r_msg.from_id.user_id), bot_api_file_id))
+            await event.edit("**Chat ID:** `{}` \n**User ID:** `{}` \n**Bot API File ID:** `{}`".format(str(event.chat_id), str(r_msg.from_id.user_id), bot_api_file_id))
         else:
-            await event.edit("**Chat ID:** `{}` \n **User ID:** `{}`".format(str(event.chat_id), str(r_msg.from_id.user_id)))
+            await event.edit("**Chat ID:** `{}` \n**User ID:** `{}`".format(str(event.chat_id), str(r_msg.from_id.user_id)))
     else:
         await event.edit("**Chat ID:** `{}` ".format(str(event.chat_id)))
