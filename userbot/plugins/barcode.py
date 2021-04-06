@@ -12,15 +12,12 @@ from datetime import datetime
 from userbot import ALIVE_NAME, bot
 from userbot.system import dev_cmd
 
-# ================= CONSTANT =================
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "100101110"
-# ============================================
 
 @bot.on(dev_cmd(pattern="barcode (.*)"))
 async def _(event):
     if event.fwd_from:
         return
-    await event.edit(f"`{DEFAULTUSER}:`**Creo Stickers...**")
+    await event.edit(f"**Creo Stickers...**")
     start = datetime.now()
     input_str = event.pattern_match.group(1)
     message = "SYNTAX: .barcode <testo>"
