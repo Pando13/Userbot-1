@@ -1,15 +1,6 @@
 from telethon import events
 from userbot import bot
 from userbot.system import dev_cmd
-from telethon.tl.types import MessageEntityMentionName
-
-async def reply_id(event):
-    reply_to_id = None
-    if event.sender_id in Config.SUDO_USERS:
-        reply_to_id = event.id
-    if event.reply_to_msg_id:
-        reply_to_id = event.reply_to_msg_id
-    return reply_to_id
 
 @bot.on(dev_cmd("menziona (.*)"))
 async def _(event):
