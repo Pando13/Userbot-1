@@ -308,16 +308,16 @@ def register(**args):
 
                     ftext += result
 
-                    file = open("userbot-100101110_error.log", "w+")
+                    file = open("userbot_error.log", "w+")
                     file.write(ftext)
                     file.close()
 
                
                     
                     await check.client.send_file(send_to,
-                                                 "userbot-100101110_error.log",
+                                                 "userbot_error.log",
                                                  caption=text)
-                    remove("userbot-100101110_error.log")
+                    remove("userbot_error.log")
             else:
                 pass
                 
