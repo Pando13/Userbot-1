@@ -16,7 +16,7 @@ from userbot import CMD_HELP, ALIVE_NAME, bot
 from userbot.system import dev_cmd
 
 # ================= CONSTANT =================
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "100101110"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Leoatomic"
 # ============================================
 
 
