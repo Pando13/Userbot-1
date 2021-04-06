@@ -41,7 +41,7 @@ async def _(event):
     await event.edit(f"ㅤ  [✅](tg://user?id=845549379) **Userbot Online** \n\n **《 🗃 Database:** `Working` \n **《 🪐 AtomicUserbot Version:** `1.0` \n **《 🐍 Python Version:** `3.9.2`\n **《 📚 Telethon Version:** `1.21.1` \n **《 📶 Ping:** `Calcolo...` \n **《 ⏳ Attivo da:** `{uptime}`")
     end = datetime.now()
     ms = (end - start).microseconds / 1000
-    await event.edit(f"ㅤ  [✅](tg://user?id=845549379) **Userbot Online** \n\n **《 🗃 Database:** `Working` \n **《 🪐 AtomicUserbot Version:** `1.0` \n **《 🐍 Python Version:** `3.9.2`\n **《 📚 Telethon Version:** `1.21.1` \n **《 📶 Ping:** `{ms}` \n **《 ⏳ ⏳ Attivo da:** `{uptime}`")
+    await event.edit(f"ㅤ  [✅](tg://user?id=845549379) **Userbot Online** \n\n **《 🗃 Database:** `Working` \n **《 🪐 AtomicUserbot Version:** `1.0` \n **《 🐍 Python Version:** `3.9.2`\n **《 📚 Telethon Version:** `1.21.1` \n **《 📶 Ping:** `{ms}` \n **《 ⏳ Attivo da:** `{uptime}`")
 
 @bot.on(dev_cmd(pattern=f"on", outgoing=True))
 async def amireallyalive(on):
