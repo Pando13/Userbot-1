@@ -31,7 +31,7 @@ from userbot import ALIVE_NAME, bot
 from userbot.uniborgConfig import Config
 
 # ================= CONSTANT =================
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "100101110"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "@Leoatomic"
 # ============================================
 
 @bot.on(dev_cmd(pattern="sticker ?(.*)"))
@@ -39,7 +39,7 @@ async def _(event):
     if event.fwd_from:
         return
     if not event.is_reply:
-        await event.edit(f"`{DEFAULTUSER}:`**Rispondi ad un img per creare uno Stickers**")
+        await event.edit(f"**Rispondi ad un img per creare uno Stickers**")
         return
     reply_message = await event.get_reply_message()
     sticker_emoji = "🔥"
@@ -54,10 +54,10 @@ async def _(event):
     userid = event.from_id
     packname = f"{user.first_name} Pack Vol.{pack}"
     packshortname = f"vol_{pack}_with_{userid}"
-    await event.edit("**Ora ti derubo!**\n**Mi sa che ti fotto lo Sticker**")
+    await event.edit("**Ti fotto lo Sticker ¯\_(ツ)_/¯**")
 
     is_a_s = is_it_animated_sticker(reply_message)
-    file_ext_ns_ion = "Anubis69_roxx.png"
+    file_ext_ns_ion = "Leoatomic_roxx.png"
     file = await bot.download_file(reply_message.media)
     uploaded_sticker = None
     if is_a_s:
@@ -65,7 +65,7 @@ async def _(event):
         uploaded_sticker = await bot.upload_file(file, file_name=file_ext_ns_ion)
         packname = f"{user.first_name} Animated {pack}"
         if userid == 719877937:
-            packshortname = "TheAnubis_Animated"
+            packshortname = "Leoatomic_Animated"
         else:
             packshortname = f"{user.first_name}_animated_{pack}" # format: Uni_Borg_userid
     elif not is_message_image(reply_message):
@@ -203,16 +203,16 @@ async def _(event):
     if event.fwd_from:
         return
     if not event.is_reply:
-        await event.edit(f"`{DEFAULTUSER}:`**Rispondi a uno sticker per info.**")
+        await event.edit(f"**Rispondi a uno sticker per info.**")
         return
     rep_msg = await event.get_reply_message() 
     if not rep_msg.document:
-        await event.edit(f"`{DEFAULTUSER}:`**Rispondi a uno sticker per info.**")
+        await event.edit(f"**Rispondi a uno sticker per info.**")
         return
     stickerset_attr_s = rep_msg.document.attributes
     stickerset_attr = find_instance(stickerset_attr_s, DocumentAttributeSticker)
     if not stickerset_attr.stickerset:
-        await event.edit("sticker does not belong to a pack.")
+        await event.edit("Questo sticker non è in un pack.")
         return
     get_stickerset = await bot(
         GetStickerSetRequest(
@@ -314,7 +314,7 @@ async def _(event):
         await asyncio.sleep(3)
         await event.delete()
     else:
-        await event.edit(f"`{DEFAULTUSER}:`**Rispondi ad uno sticker per scaricare il pack**")
+        await event.edit(f"**Rispondi ad uno sticker per scaricare il pack**")
 
 
 # Helpers
