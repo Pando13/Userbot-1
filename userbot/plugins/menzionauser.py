@@ -1,7 +1,7 @@
 from telethon import events
 from userbot import bot
 from userbot.system import dev_cmd
-
+from telethon.tl.types import MessageEntityMentionName
 
 @bot.on(dev_cmd("menziona (.*)"))
 async def _(event):
