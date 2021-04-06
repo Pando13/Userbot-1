@@ -31,7 +31,7 @@ from userbot import ALIVE_NAME, bot
 from userbot.uniborgConfig import Config
 
 # ================= CONSTANT =================
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "@Leoatomic"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Leoatomic"
 # ============================================
 
 @bot.on(dev_cmd(pattern="sticker ?(.*)"))
