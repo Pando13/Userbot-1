@@ -44,7 +44,7 @@ async def sticklet(event):
     draw.multiline_text(((512-width)/2,(512-height)/2), sticktext, font=font, fill=(R, G, B))
 
     image_stream = io.BytesIO()
-    image_stream.name = "userbot-100101110.webp"
+    image_stream.name = "userbot-@Leoatomic.webp"
     image.save(image_stream, "WebP")
     image_stream.seek(0)
 
