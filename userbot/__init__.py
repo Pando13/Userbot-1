@@ -7,7 +7,6 @@ import sys
 from telethon.sessions import StringSession
 from telethon import TelegramClient
 
-from .Config import Config
 
 from var import Var
 
