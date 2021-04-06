@@ -10,7 +10,6 @@ from userbot import CMD_HELP, BOTLOG, BOTLOG_CHATID, bot, ALIVE_NAME
 from userbot.system import register, errors_handler
 
 # ================= CONSTANT =================
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "100101110"
 BOTLOG = True
 BOTLOG_CHATID = Var.PRIVATE_GROUP_ID
 # ============================================
