@@ -15,7 +15,7 @@ from userbot.plugins.sql_helper.filter_sql import get_filter, add_filter, remove
 from userbot import CMD_HELP, ALIVE_NAME, bot
 from userbot.system import command
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "100101110"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "leoatomic"
 
 DELETE_TIMEOUT = 0
 TYPE_TEXT = 0
@@ -90,7 +90,7 @@ async def on_snip_save(event):
         add_filter(event.chat_id, name, snip['text'], snip['type'], snip.get('id'), snip.get('hash'), snip.get('fr'))
         await event.edit(f"**Filtro {name} salvato. Ottieni con {name} **")
     else:
-        await event.edit(f"`{DEFAULTUSER}:`**Rispondi ad un messaggio `.savefilter` e il testo per salvare il filtro**")
+        await event.edit(f"**Rispondi ad un messaggio `.savefilter` e il testo per salvare il filtro**")
 
 
 @command(pattern="^.listfilters$")
