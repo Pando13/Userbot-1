@@ -16,6 +16,6 @@ async def _(event):
 	else:
 		await event.edit("rispondi ad un messaggio")
 	user_id = replied_user
-	caption = """<a href='tg://user?id={}'>{}</a>""".format(user_id)
+	caption = """<a href='tg://user?id={}'>{}</a>""".format(user_id, input_str)
 	await event.edit(caption, parse_mode="HTML")
 
