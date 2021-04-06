@@ -9,11 +9,6 @@ from re import findall
 from userbot import ALIVE_NAME, bot
 from userbot.system import dev_cmd
 
-# ================= CONSTANT =================
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "100101110"
-# ============================================
-
-
 @bot.on(dev_cmd(pattern="img ?(.*)"))
 async def img_sampler(event):
     await event.edit("**Processing...**")
@@ -23,7 +18,7 @@ async def img_sampler(event):
     elif reply:
         query = reply.message
     else:
-    	await event.edit(f"`{DEFAULTUSER}:`**Inserisci un testo da ricercare come img.**")
+    	await event.edit(f"**Inserisci un testo da ricercare come img.**")
     	return
         
     lim = findall(r"lim=\d+", query)
