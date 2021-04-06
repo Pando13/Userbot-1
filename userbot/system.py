@@ -275,8 +275,8 @@ def register(**args):
                 if not disable_errors:
                     date = strftime("%Y-%m-%d %H:%M:%S", gmtime())
 
-                    text = "**USERBOT-100101110 ERROR REPORT**\n"
-                    text += "Mostra il file a @100101110 se non sai risolvere\n"
+                    text = "**USERBOT-Leoatomic ERROR REPORT**\n"
+                    text += "Mostra il file a @Leoatomic se non sai risolvere\n"
 
                     ftext = "========== DISCLAIMER =========="
                     ftext += "\nFile uploaded in logchat,"                
