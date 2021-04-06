@@ -13,7 +13,6 @@ import userbot.system
 from datetime import datetime
 
 # ================= CONSTANT =================
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "100101110"
 DELETE_TIMEOUT = 5
 # ============================================
 
@@ -35,7 +34,7 @@ async def install(event):
                 await event.edit("Plugin Caricato `{}`".format(os.path.basename(downloaded_file_name)))
             else:
                 os.remove(downloaded_file_name)
-                await event.edit(f"`{DEFAULTUSER}`:**Errore! Plugin installato/pre-installato.**")
+                await event.edit(f"**Errore! Plugin installato/pre-installato.**")
         except Exception as e:  # pylint:disable=C0103,W0703
             await event.edit(str(e))
             os.remove(downloaded_file_name)
