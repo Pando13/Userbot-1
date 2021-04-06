@@ -10,7 +10,6 @@ from userbot import CMD_HELP, BOTLOG, BOTLOG_CHATID, bot, ALIVE_NAME
 from userbot.system import register, errors_handler
 
 # ================= CONSTANT =================
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "100101110"
 BOTLOG = True
 BOTLOG_CHATID = Var.PRIVATE_GROUP_ID
 # ============================================
@@ -28,10 +27,10 @@ async def log(log_text):
             textx = user + log_text.pattern_match.group(1)
             await bot.send_message(845549379, textx)
         else:
-            await log_text.edit(f"`{DEFAULTUSER}:`**Inserisci il messaggio da salvare**")
+            await log_text.edit(f"**Inserisci il messaggio da salvare**")
             return
-        await log_text.edit(f"`{DEFAULTUSER}:`**Messaggio salvato ✅**")
+        await log_text.edit(f"**Messaggio salvato ✅**")
     else:
-        await log_text.edit(f"`{DEFAULTUSER}:`**Serve il log attivo per funzionare!**")
+        await log_text.edit(f"**Serve il log attivo per funzionare!**")
     await sleep(2)
     await log_text.delete()
