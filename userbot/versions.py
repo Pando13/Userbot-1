@@ -14,9 +14,9 @@ __version__ = "{}.{}.{}".format(__version_mjaor__,
                                     if __version_beta__ else __version_micro__)
 
 __license__ = "[Licenza AGPL-3.0]" + \
-                "(https://github.com/100101110/userbot-100101110/blob/master/LICENSE)"
+                "(https://github.com/leoatomic/userbot/blob/master/LICENSE)"
 
-__copyright__ = "© 2020 dev [100101110](https://github.com/100101110)"
+__copyright__ = "© 2020 dev [Leoatomic](https://github.com/leoatomic)"
 
 __python_version__ = "{}.{}.{}".format(sys.version_info[0],
                                        sys.version_info[1], 
