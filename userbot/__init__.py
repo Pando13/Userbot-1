@@ -81,7 +81,7 @@ if bool(ENV):
     HEROKU_API_KEY = os.environ.get("HEROKU_API_KEY", None)
 
     # Custom (forked) repo URL and BRANCH for updater.
-    UPSTREAM_REPO_URL = os.environ.get("UPSTREAM_REPO_URL","https://github.com/100101110/userbot-100101110.git")
+    UPSTREAM_REPO_URL = os.environ.get("UPSTREAM_REPO_URL","https://github.com/Leoatomic/ubotpack.git")
 
     # Console verbose logging
     CONSOLE_LOGGER_VERBOSE = sb(os.environ.get("CONSOLE_LOGGER_VERBOSE", "False"))
