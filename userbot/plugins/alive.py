@@ -13,24 +13,15 @@ from userbot.system import command
 async def _(event):
     if event.fwd_from:
         return
-    await event.edit(f"✅ **Userbot Online** ✅\n\n • 🗃 **Database:** `Working` \n • 🪐 **AtomicUserbot Version:** `1.0` \n • 🐍 **Python Version:** `3.9.2`\n • 📚 **Telethon Version:** `1.21.1`")
-
+    start = datetime.now()
+    end = datetime.now()
+    ms = (end - start).microseconds / 1000
+    await event.edit(f"**》** [✅](tg://user?id=845549379) **Userbot Online** \n\n **《 🗃 Database:** `Working` \n **《 🪐 AtomicUserbot Version:** `1.0` \n **《 🐍 Python Version:** `3.9.2`\n **《 📚 Telethon Version:** `1.21.1` \n **《 📶 Ping:** `{}`".format(ms))
 
 @bot.on(dev_cmd(pattern=f"on", outgoing=True))
 async def amireallyalive(on):
     """ For .alive command, check if the bot is running. """
     await on.edit("**Online** [✔️](tg://user?id=845549379)")
-
-@command(pattern="^.test")
-async def _(event):
-    if event.fwd_from:
-        return
-    start = datetime.now()
-    await event.edit("**¯\_(ツ)_/¯**")
-    end = datetime.now()
-    ms = (end - start).microseconds / 1000
-    await event.edit("**¯\_(ツ)_/¯**\n{}".format(ms))   
-
 
 @command(pattern="^.ping")
 async def _(event):
