@@ -7,6 +7,7 @@ import sys
 from telethon.sessions import StringSession
 from telethon import TelegramClient
 
+import heroku3
 
 from var import Var
 
