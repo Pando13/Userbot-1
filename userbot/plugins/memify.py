@@ -44,21 +44,21 @@ async def _(event):
     if event.fwd_from:
         return 
     if not event.reply_to_msg_id:
-       await event.edit(f"`{DEFAULTUSER}:`**Rispondi ad un img/sticker/gif `.mms` e il testo, `.mms` testo ; e testo per metterlo pure sotto**")
+       await event.edit(f"**Rispondi ad un img/sticker/gif `.mms` e il testo, `.mms` testo ; e testo per metterlo pure sotto**")
        return
     reply_message = await event.get_reply_message() 
     if not reply_message.media:
-       await event.edit(f"`{DEFAULTUSER}:`**Rispondi ad un img/sticker/gif**")
+       await event.edit(f"**Rispondi ad un img/sticker/gif**")
        return
     chat = "@MemeAutobot"
     sender = reply_message.sender
     file_ext_ns_ion = "@memetime.png"
     uploaded_gif = None
     if reply_message.sender.bot:
-       await event.edit(f"`{DEFAULTUSER}:`**Rispondi a un user, no al bot.**")
+       await event.edit(f"**Rispondi a un user, no al bot.**")
        return
     else:
-       await event.edit(f"`{DEFAULTUSER}:`**Inizio la modifica dell'img**")
+       await event.edit(f"**Inizio la modifica dell'img**")
     file = await bot.download_file(reply_message.media)
     
     async with bot.conversation("@MemeAutobot") as bot_conv:
@@ -70,10 +70,10 @@ async def _(event):
             await bot.send_file(chat, reply_message.media)
             response = await bot_conv.get_response()
           except YouBlockedUserError: 
-              await event.reply("**Please sblocca `@MemeAutobot` **")
+              await event.reply("**Sblocca `@MemeAutobot` **")
               return
           if response.text.startswith("Forward"):
-              await event.edit(f"`{DEFAULTUSER}:`**privacy error**")
+              await event.edit(f"**privacy error**")
           if "Okay..." in response.text:
             await event.edit("**Inizio la modifica dell'img**")
             thumb = None
