@@ -1,3 +1,15 @@
+
+import os
+import re
+import time
+import urllib.request
+from datetime import datetime
+from random import choice
+
+
+import requests
+
+
 async def get_readable_time(seconds: int) -> str:
     count = 0
     up_time = ""
