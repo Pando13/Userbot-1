@@ -6,7 +6,6 @@ from platform import uname
 from userbot import ALIVE_NAME, bot, versions
 from userbot.system import dev_cmd
 import time
-import StartTime, get_readable_time
 
 from datetime import datetime
 
