@@ -8,8 +8,8 @@
 
 ## Contatti:
 
-[![Telegram](https://img.shields.io/badge/TG-%20@Leoatomic-black.svg)](https://t.me/Leoatomic)
+[![Telegram](https://img.shields.io/badge/Telegram-%20@Leoatomic-black.svg)](https://t.me/Leoatomic)
 
 ## Crediti:
 
-Catuserbot, 100101110.
+[![Catuserbot](https://img.shields.io/badge/Catuserbot-Orange.svg)]Catuserbot, 100101110.
