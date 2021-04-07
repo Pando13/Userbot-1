@@ -15,7 +15,7 @@ from userbot.system import dev_cmd
 async def _(event):
     if event.fwd_from:
         return
-    await event.edit("**Processing...**")
+    await event.edit("**Eseguo...**")
     cmd = event.text.split(" ", maxsplit=1)[1]
     reply_to_id = event.message.id
     if event.reply_to_msg_id:
@@ -45,9 +45,9 @@ async def _(event):
     elif stdout:
         evaluation = stdout
     else:
-        evaluation = "Success"
+        evaluation = "**✅ Successo**"
 
-    final_output = "**EVAL**: `{}` \n\n**OUTPUT**: \n`{}` \n".format(cmd, evaluation)
+    final_output = "**📚 Input:** `{}` \n\n**🆕 Output:** \n`{}` \n".format(cmd, evaluation)
 
     if len(final_output) > 4095:
         with io.BytesIO(str.encode(final_output)) as out_file:
