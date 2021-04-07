@@ -10,7 +10,5 @@
 
 [![Telegram](https://img.shields.io/badge/Telegram-%20@Leoatomic-black.svg)](https://t.me/Leoatomic)
 
-## Crediti:
-
-![Catuserbot](https://img.shields.io/badge/Crediti:-%20Catuserbot-cyan.svg)
+## ![Catuserbot](https://img.shields.io/badge/Crediti:-%20Catuserbot-cyan.svg)
 ![100101110](https://img.shields.io/badge/Crediti:-%20100101110-red.svg)
