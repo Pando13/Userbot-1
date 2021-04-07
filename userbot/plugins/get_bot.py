@@ -10,14 +10,14 @@ from userbot.system import dev_cmd
 async def _(event):
     if event.fwd_from:
         return
-    mentions = "**Bots in this Channel**: \n"
+    mentions = "**BOT del GRUPPO**: \n"
     input_str = event.pattern_match.group(1)
     to_write_chat = await event.get_input_chat()
     chat = None
     if not input_str:
         chat = to_write_chat
     else:
-        mentions = "**Bots in {} channel: **\n".format(input_str)
+        mentions = "**BOT del GRUPPO**: {} **\n".format(input_str)
         try:
             chat = await bot.get_entity(input_str)
         except Exception as e:
@@ -26,9 +26,9 @@ async def _(event):
     try:
         async for x in bot.iter_participants(chat, filter=ChannelParticipantsBots):
             if isinstance(x.participant, ChannelParticipantAdmin):
-                mentions += "\n ⚜️ [{}](tg://user?id={}) `{}`".format(x.first_name, x.id, x.id)
+                mentions += "\n • [{}](tg://user?id={}) [`{}`]".format(x.first_name, x.id, x.id)
             else:
-                mentions += "\n [{}](tg://user?id={}) `{}`".format(x.first_name, x.id, x.id)
+                mentions += "\n • [{}](tg://user?id={}) [`{}`]".format(x.first_name, x.id, x.id)
     except Exception as e:
         mentions += " " + str(e) + "\n"
     await event.edit(mentions)
