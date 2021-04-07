@@ -17,7 +17,7 @@ async def _(event):
     if not input_str:
         chat = to_write_chat
     else:
-        mentions = "**BOT del GRUPPO**: {} **\n".format(input_str)
+        mentions = "**BOT del GRUPPO**: {}\n".format(input_str)
         try:
             chat = await bot.get_entity(input_str)
         except Exception as e:
