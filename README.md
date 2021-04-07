@@ -12,4 +12,4 @@
 
 ## Crediti:
 
-[![Catuserbot](https://img.shields.io/badge/Catuserbot-black.svg)]
+[![Catuserbot](https://img.shields.io/badge/Catuserbot-green.svg)]
