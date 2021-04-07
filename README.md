@@ -1,6 +1,6 @@
 ## Userbot-Leoatomic
 
-[![Made in Python](https://img.shields.io/badge/Made%20in-python-red.svg)](https://www.python.org/)
+[![Python](https://img.shields.io/badge/Made%20in-python-red.svg)](https://www.python.org/)
 
 ## Installazione:
 
@@ -12,4 +12,5 @@
 
 ## Crediti:
 
-![Catuserbot 100101110](https://img.shields.io/badge/Catuserbot-100101110-red.svg)
+![Catuserbot](https://img.shields.io/badge/red.svg)
+100101110
