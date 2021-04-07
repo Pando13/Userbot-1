@@ -12,5 +12,5 @@
 
 ## Crediti:
 
-![Catuserbot](https://img.shields.io/badge/Catuserbot-red.svg)
+![Catuserbot](https://img.shields.io/badge/Crediti:-%20Catuserbot-red.svg)
 ![100101110](https://img.shields.io/badge/Thanks%20to%20100101110-red.svg)
