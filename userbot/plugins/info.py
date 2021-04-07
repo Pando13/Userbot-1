@@ -225,10 +225,10 @@ async def _(event):
     except Exception as e:
         dc_id = "Need a Profile Picture to check **this**"
         location = str(e)
-    caption = """⚙️ Informazioni:
+    caption = """⚙️ <b>Informazioni:<b/>
     
-🆔 <code>{}</code>
 🔗 <b>Menzione:<b/> <a href='tg://user?id={}'>{}</a>
+🆔 <code>{}</code>
 💭 <b>Bio:<b/> {}
 🌐 <b>DC:<b/> {}
 🖼 <b>PFP:<b/> {}
@@ -237,8 +237,8 @@ async def _(event):
 👥 <b>Gruppi in Comune:<b/> {}
 """.format(
         user_id,
-        user_id,
         first_name,
+        user_id,        
         user_bio,
         dc_id,
         replied_user_profile_photos_count,
