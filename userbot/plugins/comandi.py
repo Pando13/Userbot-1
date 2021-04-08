@@ -1,4 +1,3 @@
-
 """Snips
 Available Commands:
 .comando
