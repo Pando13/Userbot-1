@@ -1,9 +1,9 @@
 
 """Snips
 Available Commands:
-.snips
-.snipl
-.snipd"""
+.comando
+.lcomandi
+.dcomando"""
 
 import io
 from telethon import events, utils
@@ -49,7 +49,7 @@ async def on_snip(event):
         await event.delete()
 
 
-@bot.on(dev_cmd("snips (.*)"))
+@bot.on(dev_cmd("comando (.*)"))
 async def on_snip_save(event):
     name = event.pattern_match.group(1)
     msg = await event.get_reply_message()
@@ -73,15 +73,15 @@ async def on_snip_save(event):
         await event.edit("Reply to a message with `snips keyword` to save the snip")
 
 
-@bot.on(dev_cmd("snipl"))
+@bot.on(dev_cmd("lcomandi"))
 async def on_snip_list(event):
     all_snips = get_all_snips()
     OUT_STR = "Available Snips:\n"
     if len(all_snips) > 0:
         for a_snip in all_snips:
-            OUT_STR += f"👉 #{a_snip.snip} \n"
+            OUT_STR += f"- #{a_snip.snip} \n"
     else:
-        OUT_STR = "No Snips. Start Saving using `.snips`"
+        OUT_STR = "Non ci sono comandi. Salvane con `.comando`"
     if len(OUT_STR) > 4095:
         with io.BytesIO(str.encode(OUT_STR)) as out_file:
             out_file.name = "snips.text"
@@ -90,7 +90,7 @@ async def on_snip_list(event):
                 out_file,
                 force_document=True,
                 allow_cache=False,
-                caption="Comandi disponibili",
+                caption="Comandi disponibili:",
                 reply_to=event
             )
             await event.delete()
@@ -98,7 +98,7 @@ async def on_snip_list(event):
         await event.edit(OUT_STR)
 
 
-@bot.on(dev_cmd("snipd (\S+)"))
+@bot.on(dev_cmd("dcomando (\S+)"))
 async def on_snip_delete(event):
     name = event.pattern_match.group(1)
     remove_snip(name)
