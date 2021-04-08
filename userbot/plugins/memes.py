@@ -747,7 +747,7 @@ async def download_video(v_url):
         url = v_url.pattern_match.group(1)
         quality = v_url.pattern_match.group(2)
 
-        await v_url.edit("**Fetching...**")
+        await v_url.edit("**Raccolgo...**")
 
         video = YouTube(url)
 
@@ -792,7 +792,7 @@ async def download_video(v_url):
             )
             return
 
-        await v_url.edit("**Downloading...**")
+        await v_url.edit("**Scarico...**")
 
         video_stream.download(filename=video.title)
 
@@ -801,7 +801,7 @@ async def download_video(v_url):
         with open('thumbnail.jpg', 'wb') as file:
             file.write(resp.content)
 
-        await v_url.edit("**Uploading...**")
+        await v_url.edit("**Carico...**")
         await v_url.client.send_file(
             v_url.chat_id,
             f'{safe_filename(video.title)}.mp4',
