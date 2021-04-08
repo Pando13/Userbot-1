@@ -14,6 +14,6 @@ async def _(event):
     sample_url = "http://google.com/search?q={}".format(input_str.replace(" ","+"))
     if sample_url:
         link = sample_url.rstrip()
-        await event.edit("**📚 **Sto cercando su Google:**\n🔎 [{}]({})".format(input_str, link))
+        await event.edit("📚 **Sto cercando su Google:**\n🔎 __[{}]({})__".format(input_str, link))
     else:
         await event.edit("**Qualcosa è andato storto, riprova più tardi**")
