@@ -38,11 +38,11 @@ async def _(event):
             await event.edit(str(e))
             return
         else:
-            await event.edit("sending to ReMove.BG")
+            await event.edit("Invio a ReMove.BG")
             output_file_name = ReTrieveFile(downloaded_file_name)
             os.remove(downloaded_file_name)
     elif input_str:
-        await event.edit("sending to ReMove.BG")
+        await event.edit("Invio a ReMove.BG")
         output_file_name = ReTrieveURL(input_str)
     else:
         await event.edit(HELP_STR)
@@ -61,7 +61,7 @@ async def _(event):
             )
         end = datetime.now()
         ms = (end - start).seconds
-        await event.edit("Removed dat annoying Backgroup in {} sec".format(ms))
+        await event.edit("Ho rimosso lo sfondo in {} sec".format(ms))
     else:
         await event.edit("ReMove.BG API returned Errors. \n`{}".format(output_file_name.content.decode("UTF-8")))
 
