@@ -45,7 +45,7 @@ async def _(event):
     elif stdout:
         evaluation = stdout
     else:
-        evaluation = "✅ **Successo**"
+        evaluation = "✅ Successo"
 
     final_output = "**📚 Input:** `{}` \n\n**🆕 Output:** \n`{}` \n".format(cmd, evaluation)
 
