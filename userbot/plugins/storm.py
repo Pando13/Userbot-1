@@ -12,5 +12,5 @@ async def who(event):
     a = 0
     while a < 101: #puoi cambiarlo
         a+=1
-        await event.respond("Sei gay:" + str(a))
+        await event.respond("Sei bell*:" + str(a))
         time.sleep(0.2) #puoi cambiarlo
