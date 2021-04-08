@@ -22,7 +22,7 @@ dado = [
     "**È uscito:** 5 🎲",
     "**È uscito:** 6 🎲",
    
-@bot.on(outgoing=True, pattern="^.dado")
+@bot.on(dev_cmd(outgoing=True, pattern="^.dado")
 async def dado(e):
     """Tira un dado!"""
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
