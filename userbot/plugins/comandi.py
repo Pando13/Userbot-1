@@ -67,7 +67,7 @@ async def on_snip_save(event):
                 snip['hash'] = media.access_hash
                 snip['fr'] = media.file_reference
         add_snip(name, snip['text'], snip['type'], snip.get('id'), snip.get('hash'), snip.get('fr'))
-        await event.edit("**Comando `{name}` salvato ✅ \n Ottienilo con:** `.{name}`".format(name=name))
+        await event.edit("**Comando `{name}` salvato ✅ \nOttienilo con:** `.{name}`".format(name=name))
     else:
         await event.edit("Non ci sono comandi. Salvane con `.comando`")
 
