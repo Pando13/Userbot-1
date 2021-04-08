@@ -76,7 +76,7 @@ async def on_snip_save(event):
 @bot.on(dev_cmd("lcomandi"))
 async def on_snip_list(event):
     all_snips = get_all_snips()
-    OUT_STR = "Available Snips:\n"
+    OUT_STR = "**Comandi disponibili:**\n"
     if len(all_snips) > 0:
         for a_snip in all_snips:
             OUT_STR += f"- #{a_snip.snip} \n"
@@ -84,7 +84,7 @@ async def on_snip_list(event):
         OUT_STR = "Non ci sono comandi. Salvane con `.comando`"
     if len(OUT_STR) > 4095:
         with io.BytesIO(str.encode(OUT_STR)) as out_file:
-            out_file.name = "snips.text"
+            out_file.name = "comandi.text"
             await bot.send_file(
                 event.chat_id,
                 out_file,
