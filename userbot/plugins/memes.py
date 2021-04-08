@@ -66,6 +66,7 @@ DADO = [
     "**È uscito:** 4 🎲",
     "**È uscito:** 5 🎲",
     "**È uscito:** 6 🎲",
+]
 
 INSULT_STRINGS = [
      "Comando non trovato. Proprio come il tuo cervello.",
