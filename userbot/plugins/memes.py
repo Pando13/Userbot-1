@@ -59,6 +59,14 @@ EMOJIS = [
     "🚰",
 ]
 
+DADO = [
+    "**È uscito:** 1 🎲",
+    "**È uscito:** 2 🎲",
+    "**È uscito:** 3 🎲",
+    "**È uscito:** 4 🎲",
+    "**È uscito:** 5 🎲",
+    "**È uscito:** 6 🎲",
+
 INSULT_STRINGS = [
      "Comando non trovato. Proprio come il tuo cervello.",
     "La regola 420 del bot, sezione 69, mi impedisce di rispondere ai coglioni come te.",
@@ -546,6 +554,12 @@ async def cry(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         await e.edit(random.choice(CRI))
 
+@register(outgoing=True, pattern="^.dado$")
+async def dado(e):
+    """Tira un dado!"""
+    if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
+        await e.edit(random.choice(DADO))
+			  
 @register(outgoing=True, pattern="^.insult$")
 async def insult(e):
     """ I make you cry !! """
