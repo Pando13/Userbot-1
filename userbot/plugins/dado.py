@@ -22,6 +22,7 @@ dado = [
     "**È uscito:** 5 🎲",
     "**È uscito:** 6 🎲",
    
+    
 @register(outgoing=True, pattern="^.dado")
 async def dado(e):
     """Tira un dado!"""
