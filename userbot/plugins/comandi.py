@@ -7,6 +7,8 @@ Available Commands:
 #message_id = event.message.id
         #if event.reply_to_msg_id:
             #message_id = event.reply_to_msg_id
+                
+               #reply_to=message_id,
 
 import io
 from telethon import events, utils
@@ -43,7 +45,6 @@ async def on_snip(event):
         await bot.edit_message(
             event.chat_id,
             snip.reply,
-            reply_to=message_id,
             file=media
         )
         await event.delete()
