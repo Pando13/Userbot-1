@@ -17,7 +17,7 @@ TYPE_PHOTO = 1
 TYPE_DOCUMENT = 2
 
 
-@bot.on(events.CallbackQuery(pattern=r'\.(\S+)', outgoing=True))
+@bot.on(events.NewMessage(pattern=r'\.(\S+)', outgoing=True))
 async def on_snip(event):
     name = event.pattern_match.group(1)
     snip = get_snips(name)
