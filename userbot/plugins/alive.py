@@ -34,8 +34,7 @@ async def get_readable_time(seconds: int) -> str:
 
 @bot.on(dev_cmd(pattern="alive", outgoing=True))
 async def amireallyalive(alive):
-    if event.fwd_from:
-        return
+    """ For .alive command, check if the bot is running. """
     uptime = await get_readable_time((time.time() - StartTime))
     start = datetime.now()
     await alive.edit(f"⚙️ **Userbot Online** \n\n ** • 🗃 Database:** `Funzionante` \n ** • [🪐](https://github.com/Leoatomic/Userbot) AtomicUserbot Version:** `1.0` \n ** • 🐍 Python Version:** `3.9.2`\n ** • 📚 Telethon Version:** `1.21.1` \n ** • 📶 Latenza:** `Calcolo...` \n ** • ⏳ Ultimo Riavvio:** `{uptime}` \n ** • 🆘 Supporto:** @AtomiUserbotChat")
@@ -45,5 +44,4 @@ async def amireallyalive(alive):
 
 @bot.on(dev_cmd(pattern=f"on", outgoing=True))
 async def _(event):
-    """ For .alive command, check if the bot is running. """
     await event.edit("**Online** [✔️](t.me/leoatomic)")
