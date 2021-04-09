@@ -23,7 +23,7 @@ from telethon.tl.types import MessageEntityMentionName
 from userbot import CMD_HELP, ALIVE_NAME, bot
 from userbot.system import register, dev_cmd
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "leoatomic"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "@AtomicUserbot"
 PRINTABLE_ASCII = range(0x21, 0x7f)
 
 
