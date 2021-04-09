@@ -78,7 +78,7 @@ for name in files:
 
 import userbot._core
 
-print("USERBOT-@Leoatomic in esecuzione, test con .on")
+print("AtomicUserbot in esecuzione, test con .alive")
 
 
 async def btime():
