@@ -48,5 +48,5 @@ async def _(event):
     
 @bot.on(dev_cmd(pattern=f"sos", outgoing=True))
 async def _(event):
-    await event.edit("🆘 **Supporto:** @AtomicUserbotChat")
+    await event.edit("🆘 **Supporto:** @AtomicUserbotGroup")
   
