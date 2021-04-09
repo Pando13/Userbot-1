@@ -17,7 +17,7 @@ from userbot.system import dev_cmd
 from platform import uname
 
 # ================= CONSTANT =================
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "leoatomic"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "@AtomicUserbot"
 # ============================================
 
 
