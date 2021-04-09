@@ -4,6 +4,10 @@ Available Commands:
 .lcomandi
 .dcomando"""
 
+#message_id = event.message.id
+        #if event.reply_to_msg_id:
+            #message_id = event.reply_to_msg_id
+
 import io
 from telethon import events, utils
 from telethon.tl import types
@@ -35,10 +39,7 @@ async def on_snip(event):
                 snip.media_file_reference
             )
         else:
-            media = None
-        message_id = event.message.id
-        if event.reply_to_msg_id:
-            message_id = event.reply_to_msg_id
+            media = None        
         await bot.edit_message(
             event.chat_id,
             snip.reply,
