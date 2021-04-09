@@ -15,7 +15,7 @@ from userbot.plugins.sql_helper.filter_sql import get_filter, add_filter, remove
 from userbot import CMD_HELP, ALIVE_NAME, bot
 from userbot.system import command
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "leoatomic"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "@AtomicUserbot"
 
 DELETE_TIMEOUT = 0
 TYPE_TEXT = 0
