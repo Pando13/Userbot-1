@@ -5,7 +5,7 @@ from userbot.system import command
 from platform import uname
 
 # ================= CONSTANT =================
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "@Leoatomic"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "@AtomicUserbot"
 # ============================================
 
 @command(pattern="^.help ?(.*)")
