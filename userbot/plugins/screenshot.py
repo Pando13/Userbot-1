@@ -1,5 +1,5 @@
 """Take screenshot of any website
-Syntax: .screenlink <Website URL>"""
+Syntax: .screenshot <Website URL>"""
 
 import io
 import traceback
@@ -10,7 +10,7 @@ from userbot import bot
 from userbot.system import dev_cmd
 
 
-@bot.on(dev_cmd("screenlink (.*)"))
+@bot.on(dev_cmd("screenshot (.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -32,10 +32,10 @@ async def _(event):
         driver = webdriver.Chrome(chrome_options=chrome_options)
         input_str = event.pattern_match.group(1)
         driver.get(input_str)
-        await event.edit("Calculating Page Dimensions")
+        await event.edit("Calcolo le diimensioni della pagina")
         height = driver.execute_script("return Math.max(document.body.scrollHeight, document.body.offsetHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight);")
         width = driver.execute_script("return Math.max(document.body.scrollWidth, document.body.offsetWidth, document.documentElement.clientWidth, document.documentElement.scrollWidth, document.documentElement.offsetWidth);")
-        await event.edit("Painting web-page")
+        await event.edit("Disegno la pagina web")
         driver.set_window_size(width + 100, height + 100)
         # Add some pixels on top of the calculated dimensions 
         # for good measure to make the scroll bars disappear
