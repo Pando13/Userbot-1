@@ -39,7 +39,7 @@ async def amireallyalive(alive):
     start = datetime.now()
     await alive.edit(f"⚙️ **Userbot Online** \n\n ** • 🗃 Database:** `Funzionante` \n ** • [🪐](https://github.com/Leoatomic/Userbot) AtomicUserbot Version:** `1.0` \n ** • 🐍 Python Version:** `3.9.2`\n ** • 📚 Telethon Version:** `1.21.1` \n ** • 📶 Latenza:** `Calcolo...` \n ** • ⏳ Ultimo Riavvio:** `{uptime}`")
     end = datetime.now()
-    ms = (end - start).microseconds / 1000
+    ms = (end - start).microseconds / 10000
     await alive.edit(f"⚙️ **Userbot Online** \n\n ** • 🗃 Database:** `Funzionante` \n ** • [🪐](https://github.com/Leoatomic/Userbot) AtomicUserbot Version:** `1.0` \n ** • 🐍 Python Version:** `3.9.2`\n ** • 📚 Telethon Version:** `1.21.1` \n ** • 📶 Latenza:** `{ms}` \n ** • ⏳ Ultimo Riavvio:** `{uptime}`")
 
 @bot.on(dev_cmd(pattern=f"on", outgoing=True))
