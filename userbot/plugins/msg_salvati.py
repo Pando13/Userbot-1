@@ -14,10 +14,10 @@ BOTLOG = True
 BOTLOG_CHATID = Var.PRIVATE_GROUP_ID
 # ============================================
 
-@register(outgoing=True, pattern=r"^.save")
+@register(outgoing=True, pattern=r"^.salva")
 @errors_handler
 async def log(log_text):
-    """ Col comando .save, salva un messaggio """
+    """ Col comando .salva, salva un messaggio """
     if BOTLOG:
         if log_text.reply_to_msg_id:
             reply_msg = await log_text.get_reply_message()
