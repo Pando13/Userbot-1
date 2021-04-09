@@ -38,12 +38,12 @@ async def amireallyalive(alive):
         return
     uptime = await get_readable_time((time.time() - StartTime))
     start = datetime.now()
-    await alive.edit(f"[⚙️](tg://user?id=845549379) **Userbot Online** \n\n ** • 🗃 Database:** `Funzionante` \n ** • [🪐](https://github.com/Leoatomic/Userbot) AtomicUserbot Version:** `1.0` \n ** • 🐍 Python Version:** `3.9.2`\n ** • 📚 Telethon Version:** `1.21.1` \n ** • 📶 Latenza:** `Calcolo...` \n ** • ⏳ Ultimo Riavvio:** `{uptime}`")
+    await alive.edit(f"⚙️ **Userbot Online** \n\n ** • 🗃 Database:** `Funzionante` \n ** • [🪐](https://github.com/Leoatomic/Userbot) AtomicUserbot Version:** `1.0` \n ** • 🐍 Python Version:** `3.9.2`\n ** • 📚 Telethon Version:** `1.21.1` \n ** • 📶 Latenza:** `Calcolo...` \n ** • ⏳ Ultimo Riavvio:** `{uptime}` \n ** • 🆘 Supporto:** @AtomiUserbotChat")
     end = datetime.now()
-    ms = (end - start).microseconds / 10000
-    await alive.edit(f"[⚙️](tg://user?id=845549379) **Userbot Online** \n\n ** • 🗃 Database:** `Funzionante` \n ** • [🪐](https://github.com/Leoatomic/Userbot) AtomicUserbot Version:** `1.0` \n ** • 🐍 Python Version:** `3.9.2`\n ** • 📚 Telethon Version:** `1.21.1` \n ** • 📶 Latenza:** `{ms}` \n ** • ⏳ Ultimo Riavvio:** `{uptime}`")
+    ms = (end - start).microseconds / 1000
+    await alive.edit(f"⚙️ **Userbot Online** \n\n ** • 🗃 Database:** `Funzionante` \n ** • [🪐](https://github.com/Leoatomic/Userbot) AtomicUserbot Version:** `1.0` \n ** • 🐍 Python Version:** `3.9.2`\n ** • 📚 Telethon Version:** `1.21.1` \n ** • 📶 Latenza:** `{ms}` \n ** • ⏳ Ultimo Riavvio:** `{uptime}` \n ** • 🆘 Supporto:** @AtomiUserbotChat")
 
 @bot.on(dev_cmd(pattern=f"on", outgoing=True))
 async def _(event):
     """ For .alive command, check if the bot is running. """
-    await event.edit("**Online** [✔️](tg://user?id=845549379)")
+    await event.edit("**Online** [✔️](t.me/leoatomic)")
