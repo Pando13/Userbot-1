@@ -29,7 +29,7 @@ from userbot import CMD_HELP, bot, ALIVE_NAME
 from userbot.system import dev_cmd, register, errors_handler
 
 # ================= CONSTANT =================
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Leoatomic"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "@AtomicUserbot"
 # ============================================
 
 
