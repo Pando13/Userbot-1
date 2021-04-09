@@ -11,4 +11,4 @@ from userbot.system import dev_cmd
 async def _(event):
     if event.fwd_from:
         return
-    await event.edit("[𝙇𝙚𝙤⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣](tg://user?id=845549379) è veramente molto fiko 🦾 perché ha l'**Userbot**! 🪐")
+    await event.edit("[𝙇𝙚𝙤⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣](tg://user?id=845549379) è veramente molto fiko 🦾 perché ha **creato @AtomicUserbot**! 🪐")
