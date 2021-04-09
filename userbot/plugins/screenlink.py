@@ -17,7 +17,7 @@ async def _(event):
     if Config.GOOGLE_CHROME_BIN is None:
         await event.edit("need to install Google Chrome. Module Stopping.")
         return
-    await event.edit("**Processing...**")
+    await event.edit("**Elaboro...**")
     start = datetime.now()
     try:
         chrome_options = webdriver.ChromeOptions()
@@ -59,6 +59,6 @@ async def _(event):
             )
         end = datetime.now()
         ms = (end - start).seconds
-        await event.edit(f"Completed screencapture Process in {ms} seconds")
+        await event.edit(f"Screenshot eseguito in {ms} secondi")
     except Exception:
         await event.edit(traceback.format_exc())
