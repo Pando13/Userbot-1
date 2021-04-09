@@ -1,4 +1,4 @@
-#by @leoatomic
+#SOLO PER @leoatomic
 """Commands:
 .fika"""
 
