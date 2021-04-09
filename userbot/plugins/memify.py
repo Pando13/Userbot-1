@@ -34,7 +34,7 @@ from userbot.uniborgConfig import Config
 from userbot.system import progress, humanbytes, time_formatter, dev_cmd
 
 # ================= CONSTANT =================
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "leoatomic"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "@AtomicUserbot"
 # ============================================
 thumb_image_path = Config.TMP_DOWNLOAD_DIRECTORY + "/thumb_image.jpg"
 
