@@ -46,7 +46,7 @@ async def amireallyalive(alive):
 async def _(event):
     await event.edit("**Online** [✔️](t.me/leoatomic)")
     
-    @bot.on(dev_cmd(pattern=f"sos", outgoing=True))
+@bot.on(dev_cmd(pattern=f"sos", outgoing=True))
 async def _(event):
     await event.edit("🆘 **Supporto:** @AtomicUserbotChat")
   
