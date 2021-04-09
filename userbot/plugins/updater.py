@@ -1,4 +1,4 @@
-"""Update UserBot code (per userbot-100101110)
+"""Update UserBot code (per userbot-Leoatomic)
 Syntax: .update"""
 
 import requests
@@ -23,10 +23,10 @@ from userbot.system import dev_cmd
 from var import Var
 
 # -- Constants -- #
-UPSTREAM_REPO_URL = "https://github.com/100101110/userbot-100101110.git"
+UPSTREAM_REPO_URL = "https://github.com/leoatomic/userbot.git"
 HEROKU_GIT_REF_SPEC = "HEAD:refs/heads/master"
 DELETE_TIMEOUT = 4
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "100101110"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "@AtomicUserbot"
 # -- Constants End -- #
 
 
