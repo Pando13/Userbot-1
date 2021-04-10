@@ -170,7 +170,7 @@ def dev_cmd(pattern=None, **args):
 
 from telethon import events
 import asyncio
-from userbot import bot, BOTLOG_CHATID, TELEGRAM_ID
+from userbot import bot, BOTLOG_CHATID
 from traceback import format_exc
 from time import gmtime, strftime
 import math
@@ -245,8 +245,8 @@ def register(**args):
 
     def decorator(func):
         async def wrapper(check):
-            if TELEGRAM_ID:
-                send_to = TELEGRAM_ID
+            if BOTLOG_CHATID:
+                send_to = BOTLOG_CHATID
 
             if not trigger_on_fwd and check.fwd_from:
                 return
