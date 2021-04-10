@@ -82,6 +82,7 @@ if bool(ENV):
     HEROKU_API_KEY = os.environ.get("HEROKU_API_KEY", None)
     
     #telegram
+    TG_ID = os.environ.get("TG_ID", None)
     TELEGRAM_ID = os.environ.get("TELEGRAM_ID", None)
     try:
         TELEGRAM_ID = int(TELEGRAM_ID)
