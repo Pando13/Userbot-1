@@ -83,7 +83,6 @@ if bool(ENV):
     
     #telegram
     TG_ID = os.environ.get("TG_ID", None)
-    TG_NAME = os.environ.get("TG_NAME", None)
 
     # Custom (forked) repo URL and BRANCH for updater.
     UPSTREAM_REPO_URL = os.environ.get("UPSTREAM_REPO_URL","https://github.com/Leoatomic/ubotpack.git")
