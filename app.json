@@ -17,7 +17,7 @@
       "value": ""
     },
     "AUTONAME": {
-      "description": "Requisito per il modulo autoprofilo.py imposta un nome che apparirà come nome di telegram.",
+      "description": "Il tuo nome di telegram.",
       "value": "",
       "required": false
     },
@@ -74,11 +74,6 @@
     },
     "GIT_REPO_NAME": {
       "description": "Inserisci il nome del tuo repo solo se hai inserito GITHUB_ACCESS_TOKEN.",
-      "value": "",
-      "required": false
-    },
-    "LYDIA_API_KEY": {
-      "description": "Vai su https://telegra.ph/Lydia-09-05 e scopri come funziona.",
       "value": "",
       "required": false
     },
