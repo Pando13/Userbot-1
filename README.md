@@ -33,7 +33,7 @@ Vai su `@BotFather`, crea un bot con `/newbot`, dai un nome e nickname a piacere
 ```bash
 > Heroku
 ```
-Ora devi andare su heroku.com e creare un account. Successivamente devi andare al link [tinyurl.com/100101110](https://tinyurl.com/100101110). Compila i campi richiesti del modo seguente:
+Compila i campi richiesti del modo seguente:
 ```yaml
 ALIVE_NAME: Il tuo nickname di Telegram (con o senza @).
 API_HASH: L'omonima stringa ricavata nel primo step.
