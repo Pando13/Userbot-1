@@ -17,4 +17,4 @@ TELEGRAM_NAME = str(AUTONAME) if AUTONAME
 async def _(event):
     if event.fwd_from:
         return
-    await event.edit("[{TELEGRAM_NAME}⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣](tg://user?id={TELEGRAM_ID}) è veramente molto fiko 🦾 perché ha l'**Userbot**! [🪐](t.me/AtomicUserbot)")
+    await event.edit("{TELEGRAM_NAME}⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣ (tg://user?id={TELEGRAM_ID}) è veramente molto fiko 🦾 perché ha l'**Userbot**! [🪐](t.me/AtomicUserbot)")
