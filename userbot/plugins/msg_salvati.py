@@ -22,11 +22,11 @@ async def log(log_text):
     if BOTLOG:
         if log_text.reply_to_msg_id:
             reply_msg = await log_text.get_reply_message()
-            await reply_msg.forward_to(f{TELEGRAM_ID})
+            await reply_msg.forward_to(TELEGRAM_ID)
         elif log_text.pattern_match.group(1):
             user = f"#LOG / Chat ID: {log_text.chat_id}\n\n"
             textx = user + log_text.pattern_match.group(1)
-            await bot.send_message(f{TELEGRAM_ID}, textx)
+            await bot.send_message(TELEGRAM_ID, textx)
         else:
             await log_text.edit(f"**Inserisci il messaggio da salvare**")
             return
