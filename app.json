@@ -90,10 +90,6 @@
       "description": "Il tuo ID di telegram",
       "value": ""
     },
-    "TG_NAME": {
-      "description": "Il tuo nome su telegram",
-      "value": ""
-    },
     "CHROME_BIN": {
       "description": "Requisito carbon.py. Non toccare. ",
       "value": "/app/.apt/usr/bin/google-chrome",
