@@ -10,7 +10,7 @@ from userbot import bot, ALIVE_NAME, TG_ID
 from userbot.system import dev_cmd
 
 # ================= CONSTANT =================
-TELEGRAM_ID = str(TG_ID)
+TELEG_ID = str(TG_ID)
 DEFAULTUSER  = str(ALIVE_NAME)
 # ============================================
 
