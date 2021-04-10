@@ -6,12 +6,12 @@ from datetime import datetime
 from telethon import events
 from telethon.tl.types import MessageEntityMentionName
 from telethon.utils import get_input_location
-from userbot import CMD_HELP, BOTLOG, bot,TELEGRAM_ID, TG_ID
+from userbot import CMD_HELP, BOTLOG, bot, TELEGRAM_ID, TG_ID
 from userbot.system import register, errors_handler
 
 # ================= CONSTANT =================
 BOTLOG = True
-TELEGRAM_ID = Var.TG_ID
+
 # ============================================
 
 @register(outgoing=True, pattern=r"^.salva(?: |$)([\s\S]*)")
@@ -21,11 +21,11 @@ async def log(log_text):
     if BOTLOG:
         if log_text.reply_to_msg_id:
             reply_msg = await log_text.get_reply_message()
-            await reply_msg.forward_to(TELEGRAM_ID)
+            await reply_msg.forward_to(TG_ID)
         elif log_text.pattern_match.group(1):
             user = f"#LOG / Chat ID: {log_text.chat_id}\n\n"
             textx = user + log_text.pattern_match.group(1)
-            await bot.send_message(TELEGRAM_ID, textx)
+            await bot.send_message(TG_ID, textx)
         else:
             await log_text.edit(f"**Inserisci il messaggio da salvare**")
             return
