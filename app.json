@@ -86,6 +86,10 @@
       "description": "Crea un bot con http://t.me/BotFather e inserisci il token personale del tuo bot.",
       "value": ""
     },
+    "TG_ID": {
+      "description": "Il tuo ID di telegram",
+      "value": ""
+    },
     "CHROME_BIN": {
       "description": "Requisito carbon.py. Non toccare. ",
       "value": "/app/.apt/usr/bin/google-chrome",
