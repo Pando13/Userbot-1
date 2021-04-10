@@ -6,12 +6,11 @@ from datetime import datetime
 from telethon import events
 from telethon.tl.types import MessageEntityMentionName
 from telethon.utils import get_input_location
-from userbot import CMD_HELP, BOTLOG, BOTLOG_CHATID, bot, ALIVE_NAME, TELEGRAM_ID, TG_ID
+from userbot import CMD_HELP, BOTLOG, bot,TELEGRAM_ID, TG_ID
 from userbot.system import register, errors_handler
 
 # ================= CONSTANT =================
 BOTLOG = True
-BOTLOG_CHATID = Var.PRIVATE_GROUP_ID
 TELEGRAM_ID = Var.TG_ID
 # ============================================
 
