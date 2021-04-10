@@ -9,8 +9,8 @@ from userbot.system import dev_cmd
 
 
 # ================= CONSTANT =================
-TELEGRAM_ID = str(TG_ID) if TG_ID
-TELEGRAM_NAME = str(AUTONAME) if AUTONAME
+TELEGRAM_ID = str(TG_ID)
+TELEGRAM_NAME = str(AUTONAME)
 # ============================================
 
 @bot.on(dev_cmd(pattern="fika", outgoing=True))
