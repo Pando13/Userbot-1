@@ -6,12 +6,12 @@
 import time
 
 from telethon.tl.functions.channels import LeaveChannelRequest
-from userbot import bot, ALIVE_NAME
+from userbot import bot, ALIVE_NAME, TG_ID
 from userbot.system import dev_cmd
 
 # ================= CONSTANT =================
 TELEGRAM_ID = str(TG_ID)
-DEFAULTUSER  = str(AUTONAME)
+DEFAULTUSER  = str(ALIVE_NAME)
 # ============================================
 
 
