@@ -4,13 +4,13 @@
 
 import asyncio
 from telethon import events
-from userbot import TG_ID, TG_NAME, bot
+from userbot import TG_ID, AUTONAME, bot
 from userbot.system import dev_cmd
 
 
 # ================= CONSTANT =================
 TELEGRAM_ID = str(TG_ID)
-TELEGRAM_NAME = str(TG_NAME)
+TELEGRAM_NAME = str(AUTONAME)
 # ============================================
 
 @bot.on(dev_cmd(pattern="fika", outgoing=True))
