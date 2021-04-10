@@ -6,14 +6,19 @@
 import time
 
 from telethon.tl.functions.channels import LeaveChannelRequest
-from userbot import bot
+from userbot import bot, ALIVE_NAME
 from userbot.system import dev_cmd
+
+# ================= CONSTANT =================
+TELEGRAM_ID = str(TG_ID)
+DEFAULTUSER  = str(AUTONAME)
+# ============================================
 
 
 @bot.on(dev_cmd("bye", outgoing=True))
 async def bye(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
-        await e.edit('@Leoatomic [`845549379`] si è kickato.')
+        await e.edit(f'{DEFAULTUSER} [`{TELEGRAM_ID}`] si è kickato.')
         time.sleep(3)
         if '-' in str(e.chat_id):
             await bot(LeaveChannelRequest(e.chat_id))
