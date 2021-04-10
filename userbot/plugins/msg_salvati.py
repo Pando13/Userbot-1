@@ -12,10 +12,10 @@ from userbot.system import register, errors_handler
 # ================= CONSTANT =================
 BOTLOG = True
 BOTLOG_CHATID = Var.PRIVATE_GROUP_ID
-TELEGRAM_ID = str(TG_ID)
+TELEGRAM_ID = Var.TG_ID
 # ============================================
 
-@register(outgoing=True, pattern=r"^.salva")
+@register(outgoing=True, pattern=r"^.salva(?: |$)([\s\S]*)")
 @errors_handler
 async def log(log_text):
     """ Col comando .salva, salva un messaggio """
