@@ -3,7 +3,7 @@ import re
 
 from telethon import Button
 from userbot.system import dev_cmd
-from userbot.plugins import TG_BOT_USER_NAME_BF_HER
+
 
 # regex obtained from:
 # https://github.com/PaulSonOfLars/tgbot/blob/master/tg_bot/modules/helper_funcs/string_handling.py#L23
@@ -66,26 +66,6 @@ async def _(event):
 
 
 # Helpers
-
-
-@bot.on(dev_cmd(pattern=r"ibutton ?(.*)", outgoing=True))
-async def _(event):
-    if event.fwd_from:
-        return
-    reply_to_id = await reply_id(event)
-    # soon will try to add media support
-    reply_message = await event.get_reply_message()
-    if reply_message:
-        markdown_note = reply_message.text
-    else:
-        markdown_note = "".join(event.text.split(maxsplit=1)[1:])
-    if not markdown_note:
-        return await edit_delete(event, "`what text should i use in button post`")
-    catinput = "Inline buttons " + markdown_note
-    results = await event.client.inline_query(TG_BOT_USER_NAME_BF_HER, catinput)
-    await results[0].click(event.chat_id, reply_to=reply_to_id, hide_via=True)
-    await event.delete()
-
 
 def build_keyboard(buttons):
     keyb = []
