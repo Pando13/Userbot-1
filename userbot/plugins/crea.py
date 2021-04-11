@@ -2,7 +2,7 @@
 Available Commands:
 .create (b|g) GroupName"""
 from telethon.tl import functions
-
+from userbot.system import dev_cmd
 
 @bot.on(admin_cmd(pattern="create (b|g|c) (.*)"))  # pylint:disable=E0602
 @bot.on(sudo_cmd(pattern="create (b|g|c) (.*)", allow_sudo=True))
