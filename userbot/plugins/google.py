@@ -9,7 +9,6 @@ from search_engine_parser import GoogleSearch
 from asyncio import sleep
 from userbot.system import register
 from telethon.tl.types import DocumentAttributeAudio
-from . import BOTLOG, BOTLOG_CHATID
 import io
 import urllib
 import requests
@@ -43,8 +42,4 @@ async def gsearch(q_event):
     await q_event.edit(
         "**Ricerca:**\n`" + match + "`\n\n**Risultati:**\n" + msg, link_preview=False
     )
-    if BOTLOG:
-        await q_event.client.send_message(
-            BOTLOG_CHATID,
-            "Google Search query `" + match + "` was executed successfully",
-        )
+   
