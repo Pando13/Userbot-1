@@ -1,5 +1,5 @@
 from telethon.tl.functions.messages import SaveDraftRequest
-
+from userbot.system import dev_cmd
 
 @bot.on(dev_cmd(pattern="thread$"))
 async def _(event):
