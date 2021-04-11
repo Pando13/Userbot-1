@@ -3,7 +3,7 @@ import re
 
 from telethon import Button
 
-from . import TG_BOT_USER_NAME_BF_HER
+import TG_BOT_USER_NAME_BF_HER
 
 # regex obtained from:
 # https://github.com/PaulSonOfLars/tgbot/blob/master/tg_bot/modules/helper_funcs/string_handling.py#L23
