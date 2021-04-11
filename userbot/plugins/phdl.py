@@ -11,9 +11,9 @@ from telethon.tl.functions.channels import JoinChannelRequest
 from telethon.errors.rpcerrorlist import YouBlockedUserError, UserAlreadyParticipantError
 from telethon.tl.functions.account import UpdateNotifySettingsRequest
 from telethon.tl.functions.messages import ImportChatInviteRequest
-from userbot.utils import admin_cmd
+from userbot.system import dev_cmd
 
-@bot.on(admin_cmd("phd ?(.*)"))
+@bot.on(dev_cmd("phd ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
