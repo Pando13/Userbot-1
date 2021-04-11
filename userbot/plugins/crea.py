@@ -14,7 +14,6 @@ async def _(event):
         descript = "Canale creato tramite @AtomicUserbot"
     else:
         descript = "Gruppo creato tramite @AtomicUserbot"
-    event = await edit(event, "Creo...")
     if type_of_group == "b":
         try:
             result = await event.client(
