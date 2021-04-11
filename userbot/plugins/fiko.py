@@ -17,4 +17,11 @@ TELEGRAM_NAME = str(AUTONAME)
 async def _(event):
     if event.fwd_from:
         return
-    await event.edit(f"[{TELEGRAM_NAME}⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣](tg://user?id={TELEGRAM_ID}) è veramente molto fiko 🦾 perché ha l'**Userbot**! [🪐](t.me/AtomicUserbot)")
+    await event.edit(f"[{TELEGRAM_NAME}⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣](tg://user?id={TELEGRAM_ID}) è veramente molto fiko 🦾 perché ha **AtomicUserbot**! [🪐](t.me/AtomicUserbot)")
+
+    
+@bot.on(dev_cmd(pattern="own", outgoing=True))
+async def _(event):
+    if event.fwd_from:
+        return
+    await event.edit(f"[𝙇𝙚𝙤⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣](t.me/leoatomic) è il 🤴🏻 **Creatore** (fiko [😎](t.me/AtomicUserbot)) di questo Userbot!")
