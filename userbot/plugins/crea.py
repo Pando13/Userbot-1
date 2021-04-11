@@ -4,7 +4,7 @@ Available Commands:
 from telethon.tl import functions
 from userbot.system import dev_cmd
 
-@bot.on(dev_cmd(pattern="create (b|g|c) (.*)"))  # pylint:disable=E0602
+@bot.on(dev_cmd(pattern="crea (b|g|c) (.*)"))  # pylint:disable=E0602
 async def _(event):
     if event.fwd_from:
         return
