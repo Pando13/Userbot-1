@@ -10,7 +10,7 @@ from userbot import TG_BOT_USER_NAME_BF_HER
 BTN_URL_REGEX = re.compile(r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)")
 
 
-@bot.on(admin_cmd(pattern=r"cbutton ?(.*)", outgoing=True))
+@bot.on(dev_cmd(pattern=r"cbutton ?(.*)", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -68,7 +68,7 @@ async def _(event):
 # Helpers
 
 
-@bot.on(admin_cmd(pattern=r"ibutton ?(.*)", outgoing=True))
+@bot.on(dev_cmd(pattern=r"ibutton ?(.*)", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
