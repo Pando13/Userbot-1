@@ -18,7 +18,7 @@ DEFAULTUSER  = str(ALIVE_NAME)
 @bot.on(dev_cmd("bye", outgoing=True))
 async def bye(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
-        await e.edit(f'[{DEFAULTUSER}⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣](tg://user?id={TELEGRAM_ID}) [`{TELEGRAM_ID}`] si è kickato.')
+        await e.edit(f'[{DEFAULTUSER}⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣](tg://user?id={TELEGRAM_ID}) [`{TELEGRAM_ID}`] kickato.')
         time.sleep(3)
         if '-' in str(e.chat_id):
             await bot(LeaveChannelRequest(e.chat_id))
