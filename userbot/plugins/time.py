@@ -15,7 +15,7 @@ FONT_FILE_TO_USE = "/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf"
 async def _(event):
     if event.fwd_from:
         return
-    current_time = datetime.now().strftime("⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡ \n🌍 LUOGO: Italia \n⌚️ Ora: %H:%M:%S \n🗓 Data: %d.%m.%y \n⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡")
+    current_time = datetime.now().strftime("⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡ \n LUOGO: Italia \n Ora: %H:%M:%S \nData: %d.%m.%y \n⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡")
     start = datetime.now()
     input_str = event.pattern_match.group(1)
     reply_msg_id = event.message.id
