@@ -1,7 +1,7 @@
 from telethon.tl.functions.messages import SaveDraftRequest
 
 
-@bot.on(admin_cmd(pattern="thread$"))
+@bot.on(dev_cmd(pattern="thread$"))
 async def _(event):
     if event.fwd_from:
         return
