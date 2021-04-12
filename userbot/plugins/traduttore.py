@@ -23,7 +23,7 @@ async def _(event):
     elif ";" in input_str:
         lan, text = input_str.split(";")
     else:
-        await edit_delete(event, "`.tl LanguageCode` as reply to a message", time=5)
+        await event.edit("`.tl LanguageCode` as reply to a message", time=5)
         return
     lan = lan.strip()
     Translator()
@@ -32,9 +32,9 @@ async def _(event):
         after_tr_text = translated.text
         output_str = f"**TRANSLATED from {LANGUAGES[translated.src].title()} to {LANGUAGES[lan].title()}**\
                 \n`{after_tr_text}`"
-        await edit_or_reply(event, output_str)
+        await edit_or_reply(output_str)
     except Exception as exc:
-        await edit_delete(event, str(exc), time=5)
+        await event.edit(str(exc), time=5)
                
 async def getTranslate(text, **kwargs):
     translator = Translator()
