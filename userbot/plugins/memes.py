@@ -531,6 +531,13 @@ async def slap(replied_user, event):
 
     return caption
 
+@bot.on(dev_cmd(pattern="own", outgoing=True))
+async def _(event):
+    if event.fwd_from:
+        return
+    await event.edit(f"[𝙇𝙚𝙤⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣](t.me/leoatomic) è il 🤴🏻 **Creatore** (fiko [😎](t.me/AtomicUserbot)) di questo Userbot!")			  
+			  
+			  
 @register(outgoing=True, pattern="^-_-$")
 async def lol(lel):
     if not lel.text[0].isalpha() and lel.text[0] not in ("/", "#", "@", "!"):
