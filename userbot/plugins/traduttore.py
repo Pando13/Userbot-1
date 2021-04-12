@@ -24,7 +24,7 @@ async def _(event):
     elif ";" in input_str:
         lan, text = input_str.split(";")
     else:
-        await edit_delete(event, ".tr LanguageCode` **in risposta a messaggi**", time=5)
+        await edit(event, ".tr LanguageCode` **in risposta a messaggi**", time=5)
         return
     text = deEmojify(text.strip())
     lan = lan.strip()
@@ -36,7 +36,7 @@ async def _(event):
                 \n`{after_tr_text}`"
         await edit_or_reply(event, output_str)
     except Exception as exc:
-        await edit_delete(event, str(exc), time=5)
+        await edit(event, str(exc), time=5)
         
        
 async def getTranslate(text, **kwargs):
