@@ -8,7 +8,7 @@ import re
 
 import requests
 
-from ..Config import Config
+from .Config import Config
 import emoji
 from googletrans import Translator
 from userbot import bot
