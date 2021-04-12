@@ -53,7 +53,7 @@ async def _(event):
     if tl_ib_buttons == []:
         tl_ib_buttons = None
     await tgbot.send_message(
-        entity=event.chat_id,
+        entity=await event.get_reply_message()
         message=message_text,
         parse_mode="html",
         file=tgbot_reply_message,
