@@ -29,7 +29,7 @@ async def _(event):
    await event.edit(f"**Ricerca gruppi...**")
    async with bot.conversation(chat) as conv:
          try:     
-            response = conv.wait_event(events.NewMessage(incoming=True,from_users=461843263))
+            response = conv.wait_event(events.NewMessage(incoming=True,from_users=1557162396))
             await bot.forward_messages(chat, reply_message)
             response = await response 
          except YouBlockedUserError: 
