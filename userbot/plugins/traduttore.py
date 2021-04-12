@@ -30,7 +30,7 @@ async def _(event):
     lan = lan.strip()
     translator = Translator()
     try:
-        translated = translator.translate(text, dest=lan)
+        translated = translator.getTranslate(text, dest=lan)
         after_tr_text = translated.text
         # TODO: emojify the :
         # either here, or before translation
