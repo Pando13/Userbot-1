@@ -52,6 +52,6 @@ async def getTranslate(text, **kwargs):
         try:
             result = translator.translate(text, **kwargs)
         except Exception:
-            translator = none
+            translator = Translator()
             await sleep(0.1)
     return result
