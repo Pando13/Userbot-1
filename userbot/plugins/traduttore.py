@@ -8,6 +8,7 @@ from googletrans import Translator
 from userbot import bot
 from userbot.system import dev_cmd
 from asyncio import sleep
+from emoji import get_emoji_regexp
 
 @bot.on(dev_cmd("tr ?(.*)"))
 async def _(event):
