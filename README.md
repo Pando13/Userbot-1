@@ -7,6 +7,8 @@
 * Non mi assumo responsabilità per eventuali ban da parte di telegram.
 * Non mi assumo responsabilità per il vostro utilizzo del bot su Telegram.
 
+***
+
 [![Python](https://img.shields.io/badge/Made%20in-python-red.svg)](https://www.python.org/)
 
 [![Telegram](https://img.shields.io/badge/Telegram-%20@Leoatomic-black.svg)](https://t.me/Leoatomic)
