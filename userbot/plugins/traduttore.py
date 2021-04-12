@@ -45,7 +45,6 @@ async def _(event):
     except Exception as exc:
         await event.edit(event, str(exc)
         
-       
 async def getTranslate(text, **kwargs):
     translator = Translator()
     result = None
