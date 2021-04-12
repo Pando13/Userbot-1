@@ -8,7 +8,7 @@ import re
 
 import requests
 
-from userbot.Config import Config
+from userbot.uniborgConfig import Config
 import emoji
 from googletrans import Translator
 from userbot import bot
