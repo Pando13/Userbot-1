@@ -7,7 +7,7 @@ from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.account import UpdateNotifySettingsRequest
 import asyncio
 from userbot import CMD_HELP, ALIVE_NAME, bot
-from userbot.system import 
+from userbot.system import dev_cmd
 
 
 @bot.on(dev_cmd(pattern=("ginfo ?(.*)")))
