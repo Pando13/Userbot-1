@@ -1,3 +1,15 @@
+import logging
+logging.basicConfig(format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s',
+                    level=logging.WARNING)
+import datetime
+from telethon import events
+from telethon.errors.rpcerrorlist import YouBlockedUserError
+from telethon.tl.functions.account import UpdateNotifySettingsRequest
+import asyncio
+from userbot import CMD_HELP, ALIVE_NAME, bot
+from userbot.system import 
+
+
 @bot.on(dev_cmd(pattern=("ginfo ?(.*)")))
 async def _(event):
    if event.fwd_from:
