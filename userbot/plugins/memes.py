@@ -11,9 +11,12 @@ from collections import deque
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
 
+from telethon import events
+
+from userbot.system import 
 from cowpy import cow
 
-from userbot import CMD_HELP,YOUTUBE_API_KEY
+from userbot import CMD_HELP,YOUTUBE_API_KEY, bot
 from userbot.system import register
 
 # ================= CONSTANT =================
