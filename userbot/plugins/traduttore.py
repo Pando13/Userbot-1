@@ -25,7 +25,6 @@ async def _(event):
     else:
         await edit_delete(event, "`.tl LanguageCode` as reply to a message", time=5)
         return
-    text = deEmojify(text.strip())
     lan = lan.strip()
     Translator()
     try:
