@@ -4,38 +4,47 @@ Commands:
 .tr LangaugeCode | text to translate"""
 
 import emoji
-from asyncio import sleep
-from googletrans import LANGUAGES, Translator
+from googletrans import Translator
 from userbot import bot
 from userbot.system import dev_cmd
+
 
 @bot.on(dev_cmd("tr ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
     if "trim" in event.raw_text:
+        # https://t.me/c/1220993104/192075
         return
     input_str = event.pattern_match.group(1)
     if event.reply_to_msg_id:
         previous_message = await event.get_reply_message()
         text = previous_message.message
-        lan = input_str or "en"
-    elif ";" in input_str:
-        lan, text = input_str.split(";")
+        lan = input_str or "it"
+    elif "|" in input_str:
+        lan, text = input_str.split("|")
     else:
-        await event.edit("`.tl LanguageCode` as reply to a message", time=5)
+        await event.edit("`.tr LanguageCode` **in risposta a messaggi**")
         return
+    text = emoji.demojize(text.strip())
     lan = lan.strip()
-    Translator()
+    translator = Translator()
     try:
-        translated = await getTranslate(text, dest=lan)
+        translated = translator.translate(text, dest=lan)
         after_tr_text = translated.text
-        output_str = f"**TRANSLATED from {LANGUAGES[translated.src].title()} to {LANGUAGES[lan].title()}**\
-                \n`{after_tr_text}`"
-        await edit_or_reply(output_str)
+        # TODO: emojify the :
+        # either here, or before translation
+        output_str = """**TRADUZIONE** da {} a {}
+{}""".format(
+            translated.src,
+            lan,
+            after_tr_text
+        )
+        await event.edit(output_str)
     except Exception as exc:
-        await event.edit(str(exc), time=5)
-               
+        await event.edit(str(exc))
+        
+       
 async def getTranslate(text, **kwargs):
     translator = Translator()
     result = None
