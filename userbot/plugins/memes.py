@@ -13,11 +13,10 @@ from telethon.tl.types import MessageEntityMentionName
 
 from telethon import events
 
-from userbot.system import 
 from cowpy import cow
 
 from userbot import CMD_HELP,YOUTUBE_API_KEY, bot
-from userbot.system import register
+from userbot.system import register, dev_cmd
 
 # ================= CONSTANT =================
 
