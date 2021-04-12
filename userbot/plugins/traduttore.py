@@ -31,7 +31,7 @@ async def _(event):
     elif ";" in input_str:
         lan, text = input_str.split(";")
     else:
-        await edit_delete(event, ".tr LanguageCode` **in risposta a messaggi**", time=5)
+        await event_edit(event, ".tr LanguageCode` **in risposta a messaggi**", time=5)
         return
     text = deEmojify(text.strip())
     lan = lan.strip()
@@ -43,7 +43,7 @@ async def _(event):
                 \n`{after_tr_text}`"
         await edit_or_reply(event, output_str)
     except Exception as exc:
-        await edit_delete(event, str(exc), time=5)
+        await event_edit(event, str(exc), time=5)
         
        
 async def getTranslate(text, **kwargs):
@@ -61,22 +61,3 @@ def deEmojify(inputString: str) -> str:
     """Remove emojis and other non-safe characters from string"""
     return get_emoji_regexp().sub("", inputString)
 
-async def edit_delete(event, text, time=None, parse_mode=None, link_preview=None):
-    parse_mode = parse_mode or "md"
-    link_preview = link_preview or False
-    time = time or 5
-    if event.sender_id in Config.SUDO_USERS:
-        reply_to = await event.get_reply_message()
-        catevent = (
-            await reply_to.reply(text, link_preview=link_preview, parse_mode=parse_mode)
-            if reply_to
-            else await event.reply(
-                text, link_preview=link_preview, parse_mode=parse_mode
-            )
-        )
-    else:
-        catevent = await event.edit(
-            text, link_preview=link_preview, parse_mode=parse_mode
-        )
-    await asyncio.sleep(time)
-    return await catevent.delete()
