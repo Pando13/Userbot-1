@@ -9,6 +9,7 @@ from userbot import bot
 from userbot.system import dev_cmd
 from asyncio import sleep
 from emoji import get_emoji_regexp
+from telethon import events
 
 @bot.on(dev_cmd("tr ?(.*)"))
 async def _(event):
