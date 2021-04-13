@@ -30,7 +30,7 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "@AtomicUserbot"
 TELEGRAM_ID = str(TG_ID)
 # ============================================
 
-@bot.on(dev_cmd(pattern="sticker ?(.*)"))
+@bot.on(dev_cmd(pattern="ssticker ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
