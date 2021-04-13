@@ -38,11 +38,9 @@ async def _(event):
     await event.edit("**Ricerca del brano...**")    
     bruh(str(cmd))
     l = glob.glob("*.mp3")
-    load = l[0]
     await event.edit("**Brano trovato**")
     await bot.send_file(
                 event.chat_id,
-                load,
                 force_document=True,
                 allow_cache=False,
                 caption=cmd,
