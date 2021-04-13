@@ -3,7 +3,6 @@ import asyncio
 import time
 import glob
 import subprocess
-import me
 from telethon import events
 from telethon.errors import MessageEmptyError, MessageTooLongError, MessageNotModifiedError
 
