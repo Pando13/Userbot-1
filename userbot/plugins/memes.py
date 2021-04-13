@@ -426,11 +426,11 @@ async def univsaye(cowmsg):
 
         await cowmsg.edit(f"`{cheese.milk(text).replace('`', '´')}`")
 
-@register(outgoing=True, pattern="^:/$")
+@register(outgoing=True, pattern="^:\$")
 async def kek(keks):
     if not keks.text[0].isalpha() and keks.text[0] not in ("/", "#", "@", "!"):
         """ Check yourself ;)"""
-        uio = ["/", "\\"]
+        uio = ["\", "//"]
         for i in range(1, 15):
             time.sleep(0.3)
             await keks.edit(":" + uio[i % 2])
