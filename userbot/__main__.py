@@ -28,7 +28,7 @@ from userbot.system import dev_cmd, command
 
 # ================= CONSTANT =================
 DEFAULTUSERBIO = str(DEFAULT_BIO) if DEFAULT_BIO else "ᗯᗩᏆᎢᏆᑎᏀ ᏞᏆᏦᗴ ᎢᏆᗰᗴ"
-DEL_TIME_OUT = 45
+DEL_TIME_OUT = 60
 
 
 async def add_bot(bot_token):
