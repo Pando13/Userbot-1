@@ -430,7 +430,7 @@ async def univsaye(cowmsg):
 async def kek(keks):
     if not keks.text[0].isalpha() and keks.text[0] not in ("/", "#", "@", "!"):
         """ Check yourself ;)"""
-        uio = ["\", "//"]
+        uio = ["/", "\\"]
         for i in range(1, 15):
             time.sleep(0.3)
             await keks.edit(":" + uio[i % 2])
