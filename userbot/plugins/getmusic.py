@@ -39,7 +39,6 @@ async def _(event):
     loa = glob.glob("*.mp3")
     await event.edit("**Brano trovato**")
     await bot.send_file(
-                me,
                 event.chat_id,
                 loa,
                 force_document=True,
