@@ -30,8 +30,7 @@ async def _(event):
    async with bot.conversation(chat) as conv:
          try:     
             response = conv.wait_event(events.NewMessage(incoming=True,from_users=1557162396))
-            await bot.forward_messages(chat)
-            await bot.forward_messages(reply_message)
+            await bot.forward_messages(chat, reply_messages)
             response = await response 
          except YouBlockedUserError: 
             await event.reply("**Sblocca** `@tgscanrobot`")
