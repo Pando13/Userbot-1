@@ -17,7 +17,7 @@ async def _(event):
    if not event.reply_to_msg_id:
       await event.edit(f"**Rispondi ad un utente.**")
       return
-   reply_message = await event.get_reply_message() 
+   reply_messages = await event.get_reply_message() 
    if not reply_messages.text:
       await event.edit(f"**Rispondi ad un utente.**")
       return
