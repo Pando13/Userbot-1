@@ -10,7 +10,7 @@ from userbot import CMD_HELP, ALIVE_NAME, bot
 from userbot.system import dev_cmd
 
 
-@bot.on(dev_cmd(pattern=("accdate ?(.*)")))
+@bot.on(dev_cmd(pattern=("crdate ?(.*)")))
 async def _(event):
    if event.fwd_from:
       return 
