@@ -26,11 +26,12 @@ async def _(event):
    if reply_message.sender.bot:
       await event.edit(f"**Rispondi ad un utente, non al bot.**")
       return
-   await event.edit(f"**Ricerca gruppi...**")
+   await event.edit(f"**Ricerca info...**")
    async with bot.conversation(chat) as conv:
          try:     
             response = conv.wait_event(events.NewMessage(incoming=True,from_users=1557162396))
-            await bot.forward_messages(chat, reply_message)
+            await bot.forward_messages(chat)
+            await bot.forward_messages(reply_message)
             response = await response 
          except YouBlockedUserError: 
             await event.reply("**Sblocca** `@tgscanrobot`")
