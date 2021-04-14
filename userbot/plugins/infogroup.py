@@ -23,7 +23,7 @@ async def _(event):
       return
    chat = "@tgscanrobot"
    sender = reply_messages.sender
-   if c.sender.bot:
+   if reply_messages.sender.bot:
       await event.edit(f"**Rispondi ad un utente, non al bot.**")
       return
    await event.edit(f"**Ricerca info...**")
