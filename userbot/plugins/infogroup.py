@@ -13,7 +13,7 @@ message_sent = 0
 @bot.on(dev_cmd(pattern=("ginfo ?(.*)")))
 async def _(event):
   global reply_message
-   if reply_message <1:
+   if reply_message < 1:
       reply_message += 1
       return
    if event.fwd_from:
