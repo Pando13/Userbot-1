@@ -108,11 +108,10 @@ async def set_clock():
     except FloodWaitError as ex:
         logger.warning(str(e))
         await asyncio.sleep(ex.seconds)        
-        
+        asyncio.get_event_loop().run_forever()
         
         
 if len(argv) not in (1, 3, 4):
     bot.disconnect()
 else:
-    bot.loop.create_task(set_clock())
     bot.run_until_disconnected()
