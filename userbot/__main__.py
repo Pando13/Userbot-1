@@ -4,7 +4,7 @@ try:
 except:
  os.system("pip3 install aiocron")
 
-def aiocron:
+def aiocron():
     
     os.system("aiocron")
  
