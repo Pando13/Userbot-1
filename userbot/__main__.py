@@ -1,12 +1,16 @@
 import os
+from sys import platform
 try:
- import aiocron
+    import aiocron
 except:
- os.system("pip3 install aiocron")
-
-def aiocron(crontab):
-    
-    os.system("aiocron")
+    if platform =='linux' or platform == 'linux2':
+        os.system('pip3 install aiocron')
+        import aiocron
+        os.system('clear')
+    elif platform == 'win32':
+        os.system('pip install aiocron')
+        import aiocron
+        os.system('cls')
  
 from userbot import bot
 from sys import argv
