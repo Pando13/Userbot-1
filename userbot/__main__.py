@@ -1,3 +1,6 @@
+pip3 install aiocron
+import aiocron, asyncio
+
 from userbot import bot
 from sys import argv
 import sys
@@ -81,24 +84,24 @@ import userbot._core
 print("AtomicUserbot in esecuzione, test con .alive")
 
 
-async def btime():
-    while True:
-        DMY = time.strftime("%d/%m/%Y")
-        HM = time.strftime("%H:%M")
-        bio = f"⌚️ {HM} | {DEFAULTUSERBIO} | {DMY} 🗓"
-        print(bio)
-        try:
-            await bot(functions.account.UpdateProfileRequest(  # pylint:disable=E0602
+
+@aiocron.crontab('*/1 * * * *')
+async def set_clock():
+    DMY = time.strftime("%d/%m/%Y")
+    HM = time.strftime("%H:%M")
+    bio = f"⌚️ {HM} | {DEFAULTUSERBIO} | {DMY} 🗓"
+    try:
+        await bot(functions.account.UpdateProfileRequest(  # pylint:disable=E0602
                 about=bio
             ))
-        except FloodWaitError as ex:
-            logger.warning(str(e))
-            await asyncio.sleep(ex.seconds)
-
-        await asyncio.sleep(DEL_TIME_OUT)
-
+    except FloodWaitError as ex:
+        logger.warning(str(e))
+        await asyncio.sleep(ex.seconds)        
+        
+        
+        
 if len(argv) not in (1, 3, 4):
     bot.disconnect()
 else:
-    bot.loop.create_task(btime())
+    bot.loop.create_task(set_clock())
     bot.run_until_disconnected()
