@@ -1,4 +1,4 @@
-pip3 install aiocron
+
 import aiocron, asyncio
 
 from userbot import bot
