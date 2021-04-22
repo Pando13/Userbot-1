@@ -4,7 +4,10 @@ try:
 except:
  os.system("pip3 install aiocron")
 
-
+def aiocron:
+    
+    os.system("aiocron")
+ 
 from userbot import bot
 from sys import argv
 import sys
