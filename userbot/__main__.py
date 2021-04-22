@@ -1,11 +1,15 @@
-pip install aiocron
-import aiocron, asyncio
+import os
+try:
+ import aiocron
+except:
+ os.system("pip3 install aiocron")
+
 
 from userbot import bot
 from sys import argv
 import sys
 from telethon.errors.rpcerrorlist import PhoneNumberInvalidError
-import os
+
 from telethon import TelegramClient
 from var import Var
 from userbot.system import load_module
