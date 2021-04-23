@@ -13,7 +13,7 @@ from asyncio import sleep
 
 from googletrans import LANGUAGES, Translator
 
-from . import BOTLOG, BOTLOG_CHATID, deEmojify
+from userbot import BOTLOG, BOTLOG_CHATID, deEmojify
 from .sql_helper.globals import addgvar, gvarstatus
 
 
