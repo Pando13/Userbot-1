@@ -3,8 +3,7 @@ Commands:
 .tr LanguageCode as reply to a message
 .tr LangaugeCode | text to translate"""
 
-import emoji 
-from emoji import get_emoji_regexp
+
 from googletrans import Translator
 from userbot import bot
 from userbot.system import dev_cmd
@@ -13,7 +12,7 @@ from asyncio import sleep
 
 from googletrans import LANGUAGES, Translator
 
-from userbot import BOTLOG, BOTLOG_CHATID, deEmojify
+from userbot import BOTLOG, BOTLOG_CHATID
 from .sql_helper.globals import addgvar, gvarstatus
 
 
@@ -33,7 +32,6 @@ async def _(event):
     else:
         await edit_delete(event, "`.tl LanguageCode` as reply to a message", time=5)
         return
-    text = deEmojify(text.strip())
     lan = lan.strip()
     Translator()
     try:
@@ -133,9 +131,7 @@ async def edit_delete(event, text, time=None, parse_mode=None, link_preview=None
     await asyncio.sleep(time)
     return await catevent.delete()
 
-def deEmojify(inputString: str) -> str:
-    """Remove emojis and other non-safe characters from string"""
-    return get_emoji_regexp().sub("", inputString)
+
 
 async def getTranslate(text, **kwargs):
     translator = Translator()
