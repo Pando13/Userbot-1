@@ -4,9 +4,11 @@ Commands:
 .tr LangaugeCode | text to translate"""
 
 import emoji
-from googletrans import Translator
+from googletrans import LANGUAGES, Translator
 from userbot import bot
 from userbot.system import dev_cmd
+
+from emoji import get_emoji_regexp
 
 from asyncio import sleep
 
@@ -45,7 +47,11 @@ async def _(event):
     except Exception as exc:
         await event.edit(str(exc))
         
+def deEmojify(inputString: str) -> str:
+    """Remove emojis and other non-safe characters from string"""
+    return get_emoji_regexp().sub("", inputString)
 
+        
 async def getTranslate(text, **kwargs):
     translator = Translator()
     result = None
