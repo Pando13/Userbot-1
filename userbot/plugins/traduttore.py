@@ -2,6 +2,7 @@
 Commands:
 .tr LanguageCode as reply to a message
 .tr LangaugeCode | text to translate"""
+import os
 
 class Config(object):
     TG_ID = os.environ.get("TG_ID", None)
