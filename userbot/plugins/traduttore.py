@@ -3,6 +3,8 @@ Commands:
 .tr LanguageCode as reply to a message
 .tr LangaugeCode | text to translate"""
 
+class Config(object):
+    TG_ID = os.environ.get("TG_ID", None)
 
 from googletrans import Translator
 from userbot import bot
