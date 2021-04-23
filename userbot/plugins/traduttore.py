@@ -13,7 +13,7 @@ from asyncio import sleep
 from googletrans import LANGUAGES, Translator
 
 from userbot import BOTLOG, BOTLOG_CHATID
-from .sql_helper.globals import addgvar, gvarstatus
+
 
 
 @bot.on(dev_cmd("tr ?(.*)"))      
