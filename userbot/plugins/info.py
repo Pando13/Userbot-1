@@ -233,9 +233,9 @@ async def _(event):
     
 🧑‍💻 <b>Utente:<b/> <a href='tg://user?id={}'>{} {}</a>
 🔗 <b>Username:</b> {}
-🆔 <code>{}</code>
-💭 <b>Bio:<b/> {}
+🔖 <b>ID:</b> <code>{}</code>
 🌐 <b>DC:<b/> {}
+💭 <b>Bio:<b/> {}
 🖼 <b>Foto:<b/> {}
 ✅ <b>Verificato:<b/> {}
 🤖 <b>Bot:<b/> {}
@@ -246,8 +246,8 @@ async def _(event):
         last_name,
         username,
         user_id,        
-        user_bio,
         dc_id,
+        user_bio,
         replied_user_profile_photos_count,
         replied_user.user.verified,
         replied_user.user.bot,
