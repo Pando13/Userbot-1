@@ -224,6 +224,11 @@ async def _(event):
     last_name = replied_user.user.last_name
     last_name = "{}".format(last_name) if last_name else ("")
     common_chats = replied_user.common_chats_count
+    verified = replied_user.user.verified
+    verified = "{}".format(verified) if verified else ("No")
+    is_bot = replied_user.user.bot
+    is_bot = "{}".format(is_bot) if is_bot else ("No")
+    
     try:
         dc_id, location = get_input_location(replied_user.profile_photo)
     except Exception as e:
@@ -249,8 +254,8 @@ async def _(event):
         dc_id,
         user_bio,
         replied_user_profile_photos_count,
-        replied_user.user.verified,
-        replied_user.user.bot,
+        verified,
+        is_bot,
         common_chats
     )
     message_id_to_reply = event.message.reply_to_msg_id
