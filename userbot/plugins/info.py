@@ -219,6 +219,9 @@ async def _(event):
     user_bio = replied_user.about
     if user_bio is not None:
         user_bio = html.escape(replied_user.about)
+    username = replied_user.user.username
+    username = "@{}".format(username) if username else ("Mancante")
+    last_name = replied_user.user.last_name
     common_chats = replied_user.common_chats_count
     try:
         dc_id, location = get_input_location(replied_user.profile_photo)
@@ -227,17 +230,20 @@ async def _(event):
         location = str(e)
     caption = """⚙️ <b>Informazioni:<b/>
     
-🔗 <b>Menzione:<b/> <a href='tg://user?id={}'>{}</a>
+🤵 <b>Utente:<b/> <a href='tg://user?id={}'>{} {}</a>
+🔗 <b>Username:</b> {}\n"
 🆔 <code>{}</code>
 💭 <b>Bio:<b/> {}
 🌐 <b>DC:<b/> {}
-🖼 <b>PFP:<b/> {}
+🖼 <b>Foto:<b/> {}
 ✅ <b>Verificato:<b/> {}
 🤖 <b>Bot:<b/> {}
 👥 <b>Gruppi in Comune:<b/> {}
 """.format(
         user_id,
         first_name,
+        last_name;
+        username,
         user_id,        
         user_bio,
         dc_id,
