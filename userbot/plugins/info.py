@@ -222,6 +222,7 @@ async def _(event):
     username = replied_user.user.username
     username = "@{}".format(username) if username else ("Mancante")
     last_name = replied_user.user.last_name
+    last_name = "{}".format(last_name) if last_name else ("")
     common_chats = replied_user.common_chats_count
     try:
         dc_id, location = get_input_location(replied_user.profile_photo)
@@ -230,8 +231,8 @@ async def _(event):
         location = str(e)
     caption = """⚙️ <b>Informazioni:<b/>
     
-🤵 <b>Utente:<b/> <a href='tg://user?id={}'>{} {}</a>
-🔗 <b>Username:</b> {}\n"
+🧑‍💻 <b>Utente:<b/> <a href='tg://user?id={}'>{} {}</a>
+🔗 <b>Username:</b> {}
 🆔 <code>{}</code>
 💭 <b>Bio:<b/> {}
 🌐 <b>DC:<b/> {}
