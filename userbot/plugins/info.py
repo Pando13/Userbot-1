@@ -10,7 +10,7 @@ import asyncio
 import time
 import sys
 import html
-
+import date
 from datetime import datetime
 from emoji import emojize
 from math import sqrt
@@ -202,7 +202,7 @@ async def _(event):
         max_id=0,
         limit=70
     ))
-    replied_user_profile_photos_count = "NaN"
+    replied_user_profile_photos_count = "Non disponibile"
     try:
         replied_user_profile_photos_count = replied_user_profile_photos.count
     except AttributeError as e:
@@ -217,15 +217,16 @@ async def _(event):
         first_name = first_name.replace("\u2060", "")
     # inspired by https://telegram.dog/afsaI181
     user_bio = replied_user.about
+    if user_bio else ("No")
     if user_bio is not None:
-        user_bio = html.escape(replied_user.about)
+        user_bio = html.escape(replied_user.about)  
     username = replied_user.user.username
     username = "@{}".format(username) if username else ("Mancante")
     last_name = replied_user.user.last_name
     last_name = "{}".format(last_name) if last_name else ("")
     common_chats = replied_user.common_chats_count
     status = replied_user.user.status
-    status =  "{}".format(status) if status else ("Non disponibile")
+    status =  "{}".format(status) 
     if status == ("UserStatusEmpty()"):
         status = ("Non disponibile")
     if status == ("UserStatusRecently()"):
@@ -243,9 +244,9 @@ async def _(event):
     try:
         dc_id, location = get_input_location(replied_user.profile_photo)
     except Exception as e:
-        dc_id = "Need a Profile Picture to check **this**"
+        dc_id = "Non disponibile"
         location = str(e)
-    caption = """⚙️ <b>Informazioni:<b/>
+    caption = """⚙️ <b>INNFORMAZIONI:<b/>
     
 🧑‍💻 <b>Utente:<b/> <a href='tg://user?id={}'>{} {}</a>
 🔗 <b>Username:</b> {}
