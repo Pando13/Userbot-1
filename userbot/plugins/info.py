@@ -217,7 +217,6 @@ async def _(event):
         first_name = first_name.replace("\u2060", "")
     # inspired by https://telegram.dog/afsaI181
     user_bio = replied_user.about
-    user_bio = "{}".format(user_bio) if user_bio else ("No")
     if user_bio is not None:
         user_bio = html.escape(replied_user.about)  
     username = replied_user.user.username
