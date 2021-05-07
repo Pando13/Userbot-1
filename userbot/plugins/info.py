@@ -226,7 +226,7 @@ async def _(event):
     common_chats = replied_user.common_chats_count
     status = replied_user.user.status
     status =  "{}".format(status) if status else ("Non disponibile")
-    if status == "UserStatusRecently()"
+    if status == ("UserStatusRecently()"):
     status = ("Ultimo accesso recentemente")
     verified = replied_user.user.verified
     verified = "{}".format(verified) if verified else ("No")
