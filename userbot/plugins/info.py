@@ -224,7 +224,7 @@ async def _(event):
     last_name = replied_user.user.last_name
     last_name = "{}".format(last_name) if last_name else ("")
     common_chats = replied_user.common_chats_count
-    miin = replied_user.user.min
+    status =  "{}".format(user_.status) if user_.status else ("Mancante")
     verified = replied_user.user.verified
     verified = "{}".format(verified) if verified else ("No")
     is_bot = replied_user.user.bot
@@ -241,7 +241,7 @@ async def _(event):
 🔖 <b>ID:</b> <code>{}</code>
 🌐 <b>DC:<b/> {}
 💭 <b>Bio:<b/> {}
-ℹ️ <b>min:<b/> {}
+ℹ️ <b>Status:<b/> {}
 🖼 <b>Foto:<b/> {}
 ✅ <b>Verificato:<b/> {}
 🤖 <b>Bot:<b/> {}
@@ -254,7 +254,7 @@ async def _(event):
         user_id,        
         dc_id,
         user_bio,
-        miin,
+        status,
         replied_user_profile_photos_count,
         verified,
         is_bot,
