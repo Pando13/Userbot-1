@@ -229,7 +229,6 @@ async def _(event):
     verified = "{}".format(verified) if verified else ("No")
     is_bot = replied_user.user.bot
     is_bot = "{}".format(is_bot) if is_bot else ("No")
-    next_offline_date
     try:
         dc_id, location = get_input_location(replied_user.profile_photo)
     except Exception as e:
