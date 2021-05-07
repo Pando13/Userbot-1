@@ -10,7 +10,7 @@ import asyncio
 import time
 import sys
 import html
-import date
+
 from datetime import datetime
 from emoji import emojize
 from math import sqrt
