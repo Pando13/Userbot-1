@@ -228,6 +228,8 @@ async def _(event):
     status =  "{}".format(status) if status else ("Non disponibile")
     if status == ("UserStatusRecently()"):
         status = ("Ultimo accesso recentemente")
+    if status == ("UserStatusOnline()"):
+        status = ("Online")
     verified = replied_user.user.verified
     verified = "{}".format(verified) if verified else ("No")
     is_bot = replied_user.user.bot
