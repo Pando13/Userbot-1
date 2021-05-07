@@ -224,7 +224,7 @@ async def _(event):
     last_name = replied_user.user.last_name
     last_name = "{}".format(last_name) if last_name else ("")
     common_chats = replied_user.common_chats_count
-    status =  "{}".format(user_.status) if user_.status else ("Mancante")
+    status =  "{}".format(status) if replied_user.user.status else ("Mancante")
     verified = replied_user.user.verified
     verified = "{}".format(verified) if verified else ("No")
     is_bot = replied_user.user.bot
