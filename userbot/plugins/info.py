@@ -224,12 +224,12 @@ async def _(event):
     last_name = replied_user.user.last_name
     last_name = "{}".format(last_name) if last_name else ("")
     common_chats = replied_user.common_chats_count
-    status = replied_user.was_online
+    miin = replied_user.user.min
     verified = replied_user.user.verified
     verified = "{}".format(verified) if verified else ("No")
     is_bot = replied_user.user.bot
     is_bot = "{}".format(is_bot) if is_bot else ("No")
-    
+    next_offline_date
     try:
         dc_id, location = get_input_location(replied_user.profile_photo)
     except Exception as e:
@@ -242,7 +242,7 @@ async def _(event):
 🔖 <b>ID:</b> <code>{}</code>
 🌐 <b>DC:<b/> {}
 💭 <b>Bio:<b/> {}
-ℹ️ <b>Stato:<b/> {}
+ℹ️ <b>min:<b/> {}
 🖼 <b>Foto:<b/> {}
 ✅ <b>Verificato:<b/> {}
 🤖 <b>Bot:<b/> {}
@@ -255,7 +255,7 @@ async def _(event):
         user_id,        
         dc_id,
         user_bio,
-        status,
+        miin,
         replied_user_profile_photos_count,
         verified,
         is_bot,
