@@ -224,7 +224,7 @@ async def _(event):
     last_name = replied_user.user.last_name
     last_name = "{}".format(last_name) if last_name else ("")
     common_chats = replied_user.common_chats_count
-    status = replied_user.user.status 
+    lang_code = replied_user.user.lang_code 
     verified = replied_user.user.verified
     verified = "{}".format(verified) if verified else ("No")
     is_bot = replied_user.user.bot
@@ -255,7 +255,7 @@ async def _(event):
         user_id,        
         dc_id,
         user_bio,
-        status,
+        lang_code,
         replied_user_profile_photos_count,
         verified,
         is_bot,
