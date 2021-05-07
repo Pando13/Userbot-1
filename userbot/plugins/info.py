@@ -225,7 +225,7 @@ async def _(event):
     last_name = "{}".format(last_name) if last_name else ("")
     common_chats = replied_user.common_chats_count
     status = replied_user.user.status
-    status =  "{}".strformat(status) if status else ("Non disponibile")
+    status =  "{}".format(str(status)) if status else ("Non disponibile")
     if status == ("UserStatusRecently()"):
         status = ("Ultimo accesso recentemente")
     if status == ("UserStatusLastWeek()"):
