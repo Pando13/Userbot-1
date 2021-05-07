@@ -32,9 +32,6 @@ from userbot.system import dev_cmd, register, errors_handler
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "@AtomicUserbot"
 # ============================================
 
-
-
-
 @register(pattern=".chatinfo(?: |$)(.*)", outgoing=True)
 @errors_handler
 async def info(event):
