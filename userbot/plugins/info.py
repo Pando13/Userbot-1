@@ -245,7 +245,7 @@ async def _(event):
     except Exception as e:
         dc_id = "Non disponibile"
         location = str(e)
-    caption = """⚙️ <b>INNFORMAZIONI:<b/>
+    caption = """⚙️ <b>INFORMAZIONI:<b/>
     
 🧑‍💻 <b>Utente:<b/> <a href='tg://user?id={}'>{} {}</a>
 🔗 <b>Username:</b> {}
