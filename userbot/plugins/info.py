@@ -231,7 +231,7 @@ async def _(event):
         status = ("Ultimo accesso entro una settimana")
     if status == ("UserStatusLastMonth()"):
         status = ("Ultimo accesso entro un mese")
-        else ("Online")
+        else: ("Online")
     verified = replied_user.user.verified
     verified = "{}".format(verified) if verified else ("No")
     is_bot = replied_user.user.bot
