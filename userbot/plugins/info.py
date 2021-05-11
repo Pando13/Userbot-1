@@ -231,7 +231,7 @@ async def _(event):
         status = ("Ultimo accesso entro una settimana")
     if status == ("UserStatusLastMonth()"):
         status = ("Ultimo accesso entro un mese")
-    if not (("UserStatusEmpty()") or ("UserStatusRecently()") or ("UserStatusLastWeek()") or ("UserStatusLastMonth()")):
+    if status is not (("UserStatusEmpty()") or ("UserStatusRecently()") or ("UserStatusLastWeek()") or ("UserStatusLastMonth()")):
          status = ("Online")
     verified = replied_user.user.verified
     verified = "{}".format(verified) if verified else ("No")
