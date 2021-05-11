@@ -223,19 +223,15 @@ async def _(event):
     common_chats = replied_user.common_chats_count
     status = replied_user.user.status
     status =  "{}".format(status)
-    vuoto = ("UserStatusEmpty()")
-    recente = ("UserStatusRecently()")
-    settimana = ("Ultimo accesso entro una settimana")
-    mese = ("Ultimo accesso entro un mese")
-    if status == vuoto:
+    if status == ("UserStatusEmpty()"):
         status = ("Non disponibile")
-    if status == recente:
+    if status == ("UserStatusRecently()"):
         status = ("Ultimo accesso recentemente")
-    if status == settimana:
+    if status == ("UserStatusLastWeek()"):
         status = ("Ultimo accesso entro una settimana")
-    if status == mese:
+    if status == ("UserStatusLastMonth()"):
         status = ("Ultimo accesso entro un mese")
-    if not (vuoto or recente or settimana or mese):
+    if not (("UserStatusEmpty()") or ("UserStatusRecently()") or ("UserStatusLastWeek()") or ("UserStatusLastMonth()")):
          status = ("Online")
     verified = replied_user.user.verified
     verified = "{}".format(verified) if verified else ("No")
