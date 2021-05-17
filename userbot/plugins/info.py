@@ -140,48 +140,48 @@ async def fetch_info(chat, event):
         for bot in bots_list:
             bots += 1
 
-    caption = "<b>📌 CHAT INFO:</b>\n\n"
-    caption += f"  ★ ID: <code>{chat_obj_info.id}</code>\n"
+    caption = "<b>📌 ℹ️ Informazioni Chat:</b>\n\n"
+    caption += f"  🔖 ID: <code>{chat_obj_info.id}</code>\n"
     if chat_title is not None:
         caption += f"  ★ {chat_type} : {chat_title}\n"
     if former_title is not None:  # Meant is the very first title
         caption += f"  ★ Former name: {former_title}\n"
     if username is not None:
         caption += f"  ★ {chat_type} : Pubblico\n"
-        caption += f"  ★ Link: {username}\n"
+        caption += f"  🔗 Link: {username}\n"
     else:
         caption += f"  ★ {chat_type} : Privato\n"
     if creator_username is not None:
-        caption += f"  ★ Founder: {creator_username}\n"
+        caption += f"  👑 Fondatore: {creator_username}\n"
     elif creator_valid:
-        caption += f"  ★ Founder: <a href=\"tg://user?id={creator_id}\">{creator_firstname}</a>\n"
+        caption += f"  👑 Fondatore: <a href=\"tg://user?id={creator_id}\">{creator_firstname}</a>\n"
     if created is not None:
-        caption += f"  ★ Creato il: <code>{created.date().strftime('%b %d, %Y')} - {created.time()}</code>\n"
+        caption += f"  📆 Data creazione: <code>{created.date().strftime('%b %d, %Y')} - {created.time()}</code>\n"
     else:
-        caption += f"  ★ Creato il: <code>{chat_obj_info.date.date().strftime('%b %d, %Y')} - {chat_obj_info.date.time()}</code> {warn_emoji}\n"
-        caption += f"  ★ DC ID: {dc_id}\n"
+        caption += f"  📆 Data creazione: <code>{chat_obj_info.date.date().strftime('%b %d, %Y')} - {chat_obj_info.date.time()}</code> {warn_emoji}\n"
+        caption += f"  🌐 DC: {dc_id}\n"
     if messages_viewable is not None:
-        caption += f"  ★ View messaggi: <code>{messages_viewable}</code>\n"
+        caption += f"  👀 Messaggi visualizzati: <code>{messages_viewable}</code>\n"
     if messages_sent:
-        caption += f"  ★ Messaggi scritti: <code>{messages_sent}</code>\n"
+        caption += f"  ✒️ Messaggi scritti: <code>{messages_sent}</code>\n"
     elif messages_sent_alt:
-        caption += f"  ★ Messages sent: <code>{messages_sent_alt}</code> {warn_emoji}\n"
+        caption += f"  ✒️ Messaggi scritti: <code>{messages_sent_alt}</code> {warn_emoji}\n"
     if members is not None:
-        caption += f"  ★ Membri: <code>{members}</code>\n"
+        caption += f"  👨🏻‍💻 Membri: <code>{members}</code>\n"
     if admins is not None:
-        caption += f"  ★ Admins: <code>{admins}</code>\n"
+        caption += f"  👨🏻‍✈️ Admins: <code>{admins}</code>\n"
     if bots_list:
-        caption += f"  ★ Bot: <code>{bots}</code>\n"
+        caption += f"   🤖 Bot: <code>{bots}</code>\n"
     if members_online:
-        caption += f"  ★ User online: <code>{members_online}</code>\n"
+        caption += f"  〽️ Utenti online: <code>{members_online}</code>\n"
     if banned_users is not None:
-        caption += f"  ★ User bannati: <code>{banned_users}</code>\n"
+        caption += f"   🚷 Utenti bannati: <code>{banned_users}</code>\n"
     if group_stickers is not None:
         caption += f"  ★ {chat_type} Stickers: <a href=\"t.me/addstickers/{chat.full_chat.stickerset.short_name}\">{group_stickers}</a>\n"
     if not broadcast:
-        caption += f"  ★ Supergruppo: {supergroup}\n\n"
+        caption += f"  💥 Supergruppo: {supergroup}\n\n"
     if description:
-        caption += f"<b>📌 DESCRIZIONE:</b>\n\n<code>{description}</code>\n"
+        caption += f"<b>📚 Descrizione::</b>\n\n<code>{description}</code>\n"
     return caption
 
 
@@ -248,7 +248,7 @@ async def _(event):
 🔗 <b>Username:</b> {}
 🔖 <b>ID:</b> <code>{}</code>
 🌐 <b>DC:<b/> {}
-💭 <b>Bio:<b/> {}
+💭 <b>Bio:<b/> <code>{}</code>
 👁‍🗨 <b>Stato:<b/> {}
 🖼 <b>Foto:<b/> {}
 ✅ <b>Verificato:<b/> {}
@@ -396,20 +396,20 @@ async def stats(event: NewMessage.Event) -> None:  # pylint: disable = R0912, R0
     stop_time = time.time() - start_time
 
     full_name = inline_mention(await event.client.get_me())
-    response = f'📌 **STATISTICHE {full_name}** \n\n'
-    response += f'**Chat Totali:** {private_chats} \n'
-    response += f'   ★ User: {private_chats - bots} \n'
-    response += f'   ★ Bot: {bots} \n'
-    response += f'**Gruppi:** {groups} \n'
-    response += f'**Canali:** {broadcast_channels} \n'
-    response += f'**Admin in Gruppi:** {admin_in_groups} \n'
-    response += f'   ★ Founder: {creator_in_groups} \n'
-    response += f'   ★ Admin: {admin_in_groups - creator_in_groups} \n'
+    response = f'ℹ️ Ecco le statistiche di {full_name}** \n\n'
+    response += f'**📚 Chat Totali::** {private_chats} \n'
+    response += f'   👨🏻‍💻 Utenti: {private_chats - bots} \n'
+    response += f'   🤖 Bot: {bots} \n'
+    response += f'**🗯 Gruppi:** {groups} \n'
+    response += f'**📣 Canali:** {broadcast_channels} \n'
+    response += f'**🤵🏻‍♂️ Admin in Gruppi:** {admin_in_groups} \n'
+    response += f'   👑 Fondatore: {creator_in_groups} \n'
+    response += f'   👨🏻‍✈️ Admin: {admin_in_groups - creator_in_groups} \n'
     response += f'**Admin in Canali:** {admin_in_broadcast_channels} \n'
     response += f'   ★ Founder: {creator_in_channels} \n'
     response += f'   ★ Admin: {admin_in_broadcast_channels - creator_in_channels}` \n'
-    response += f'**Unread:** {unread} \n'
-    response += f'**Unread Mentions:** {unread_mentions} \n\n'
+    response += f'**👀 Non lette:** {unread} \n'
+    response += f'**📮 Menzioni non lette:** {unread_mentions} \n\n'
     response += f'📌 __Editato in:__ {stop_time:.02f}s \n'
 
     await event.edit(response)
