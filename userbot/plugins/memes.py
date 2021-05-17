@@ -110,19 +110,19 @@ async def _(event):
         if input_str:
             input_str = input_str.lower()
         if r % 2 == 1:
-            if input_str == "heads":
+            if input_str == "testa":
                 await event.edit("**Testa**.\nHai indovinato.")
             elif input_str == "tails":
-                await event.edit("**Heads**.\nNon hai indovinato")
+                await event.edit("**Testa**.\nNon hai indovinato")
             else:
-                await event.edit("**Heads**")
+                await event.edit("**Testa**")
         elif r % 2 == 0:
-            if input_str == "tails":
+            if input_str == "croce":
                 await event.edit("**Croce**.\nHai indovinato.")
             elif input_str == "heads":
                 await event.edit("**Croce**.\nNon hai indovinato")
             else:
-                await event.edit("**Croce)
+                await event.edit("**Croce**")
         else:
             await event.edit("Cambia moneta, questa è falsa..")
 
