@@ -79,7 +79,7 @@ async def _(event):
             await event.edit(str(e))
         else:
             await event.edit(
-                "Current Chat Default Permissions Changed Successfully, in API"
+                "Permessi della chat cambiati correttamente"
             )
 
 
@@ -96,7 +96,7 @@ async def _(event):
         )
     else:
         await event.edit(
-            "Use `.lock` without any parameters to unlock API locks"
+            "Usa .lock senza alcun parametro per sbloccarli tutti"
         )
 
 
@@ -107,9 +107,9 @@ async def _(event):
     res = ""
     current_db_locks = get_locks(event.chat_id)
     if not current_db_locks:
-        res = "There are no DataBase locks in this chat"
+        res = "Non ci sono blocchi"
     else:
-        res = "Following are the DataBase locks in this chat: \n"
+        res = "Ecco i permessi disponibili: \n"
         res += "👉 `bots`: `{}`\n".format(current_db_locks.bots)
         res += "👉 `commands`: `{}`\n".format(current_db_locks.commands)
         res += "👉 `email`: `{}`\n".format(current_db_locks.email)
@@ -121,7 +121,7 @@ async def _(event):
     except AttributeError as e:
         logger.info(str(e))
     else:
-        res += "\nFollowing are the API locks in this chat: \n"
+        res += "\nEcco i permessi disponibili: \n"
         res += "👉 `msg`: `{}`\n".format(current_api_locks.send_messages)
         res += "👉 `media`: `{}`\n".format(current_api_locks.send_media)
         res += "👉 `sticker`: `{}`\n".format(current_api_locks.send_stickers)
@@ -152,7 +152,7 @@ async def check_incoming_messages(event):
                 await event.delete()
             except Exception as e:
                 await event.reply(
-                    "I don't seem to have ADMIN permission here. \n`{}`".format(str(e))
+                    "Non sono admin. \n`{}`".format(str(e))
                 )
                 update_lock(peer_id, "commands", False)
     if is_locked(peer_id, "forward"):
