@@ -153,8 +153,8 @@ async def bluetext(bte):
     if not bte.text[0].isalpha() and bte.text[0] not in ("/", "#", "@", "!"):
         if await bte.get_reply_message():
             await bte.edit(
-                "`/TESTO /BLU /DEVO /CLICCARE`\n"
-                "`/SONO /UNO /STUPIDO /ANIMALE /ATTRATTO /DAI /COLORI`"
+                "/TESTO /BLU /DEVO /CLICCARE\n"
+                "/SONO /UNO /STUPIDO /ANIMALE /ATTRATTO /DAI /COLORI"
             )
 
 
