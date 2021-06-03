@@ -4,7 +4,6 @@ import re
 
 from telethon.events import CallbackQuery
 
-from userbot import catub
 
 
 @bot.tgbot.on(CallbackQuery(data=re.compile(b"secret_(.*)")))
