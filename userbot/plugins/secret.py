@@ -1,7 +1,6 @@
 import asyncio
 import os
 
-import ujson
 from pyrogram import filters
 from pyrogram.errors import BadRequest, MessageNotModified
 from pyrogram.types import CallbackQuery, InlineKeyboardButton, InlineKeyboardMarkup
