@@ -7,7 +7,7 @@ from telethon.events import CallbackQuery
 from userbot import catub
 
 
-@catub.tgbot.on(CallbackQuery(data=re.compile(b"secret_(.*)")))
+@bot.tgbot.on(CallbackQuery(data=re.compile(b"secret_(.*)")))
 async def on_plug_in_callback_query_handler(event):
     timestamp = int(event.pattern_match.group(1).decode("UTF-8"))
     if os.path.exists("./userbot/secrets.txt"):
@@ -15,7 +15,7 @@ async def on_plug_in_callback_query_handler(event):
         try:
             message = jsondata[f"{timestamp}"]
             userid = message["userid"]
-            ids = [userid, catub.uid]
+            ids = [userid]
             if event.query.user_id in ids:
                 encrypted_tcxt = message["text"]
                 reply_pop_up_alert = encrypted_tcxt
