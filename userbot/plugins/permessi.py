@@ -11,7 +11,7 @@ from userbot.system import dev_cmd
 
 @bot.on(dev_cmd(pattern=f"listapermessi", outgoing=True))
 async def _(event):
-    await event.edit("**Comandi disponibili:** .lock <option>, .unlock <option>, .locks \n**API Options:** msg, media, sticker, gif, game, binline, poll, adduser, pin, changeinfo \n**DB Options:** bots, commands, email, forward, url")
+    await event.edit("**Comandi disponibili:** .lock <option>, .unlock <option>, .locks \n**Default:** msg, media, sticker, gif, game, binline, poll, adduser, pin, changeinfo \n**Virtuali:** bots, commands, email, forward, url")
 
 
 @bot.on(dev_cmd("lock( (?P<target>\S+)|$)"))
@@ -114,7 +114,7 @@ async def _(event):
     if not current_db_locks:
         res = "🔒 Non ci sono blocchi"
     else:
-        res = "Ecco i permessi virtuali attivi: \n\n"
+        res = "**Ecco i permessi virtuali attivi:** \n\n"
         res += "🤖 **Bot:** `{}`\n".format(current_db_locks.bots)
         res += "🕹 **Comandi:** `{}`\n".format(current_db_locks.commands)
         res += "📧 **E-Mail:** `{}`\n".format(current_db_locks.email)
@@ -126,7 +126,7 @@ async def _(event):
     except AttributeError as e:
         logger.info(str(e))
     else:
-        res += "\n 🔐 Ecco i permessi disponibili: \n\n"
+        res += "\n🔐 **Ecco i permessi disponibili:** \n\n"
         res += "📩 **Messaggi:** `{}`\n".format(current_api_locks.send_messages)
         res += "🖼 **Media:** `{}`\n".format(current_api_locks.send_media)
         res += "🔖 **Sticker:** `{}`\n".format(current_api_locks.send_stickers)
@@ -136,7 +136,7 @@ async def _(event):
         res += "🧮 **Sondaggi:** `{}`\n".format(current_api_locks.send_polls)
         res += "👥 **Aggiungere utenti:** `{}`\n".format(current_api_locks.invite_users)
         res += "🖇 **Fissare mssaggi:** `{}`\n".format(current_api_locks.pin_messages)
-        res += "🔏 **Cambiare informazioni:**+ `{}`\n".format(current_api_locks.change_info)
+        res += "🔏 **Cambiare informazioni:** `{}`\n".format(current_api_locks.change_info)
     await event.edit(res)
 
 
