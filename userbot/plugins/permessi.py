@@ -112,9 +112,9 @@ async def _(event):
     res = ""
     current_db_locks = get_locks(event.chat_id)
     if not current_db_locks:
-        res = "🔒 Non ci sono blocchi"
+        res = "🔒 Non ci sono blocchi virtuali"
     else:
-        res = "**Ecco i permessi virtuali attivi:** \n\n"
+        res = "**Permessi virtuali attivi:** \n\n"
         res += "🤖 **Bot:** `{}`\n".format(current_db_locks.bots)
         res += "🕹 **Comandi:** `{}`\n".format(current_db_locks.commands)
         res += "📧 **E-Mail:** `{}`\n".format(current_db_locks.email)
@@ -126,7 +126,7 @@ async def _(event):
     except AttributeError as e:
         logger.info(str(e))
     else:
-        res += "\n🔐 **Ecco i permessi disponibili:** \n\n"
+        res += "\n🔐 **Permessi della chat:** \n\n"
         res += "📩 **Messaggi:** `{}`\n".format(current_api_locks.send_messages)
         res += "🖼 **Media:** `{}`\n".format(current_api_locks.send_media)
         res += "🔖 **Sticker:** `{}`\n".format(current_api_locks.send_stickers)
