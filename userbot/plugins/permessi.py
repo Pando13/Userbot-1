@@ -109,29 +109,29 @@ async def _(event):
     if not current_db_locks:
         res = "🔒 Non ci sono blocchi"
     else:
-        res = "Ecco i permessi virtuali attivi: \n"
-        res += "🤖 Bot: `{}`\n".format(current_db_locks.bots)
-        res += "🕹 Comandi`: `{}`\n".format(current_db_locks.commands)
-        res += "📧 E-Mail: `{}`\n".format(current_db_locks.email)
-        res += "📤 Inoltro: `{}`\n".format(current_db_locks.forward)
-        res += "🔗 Link: `{}`\n".format(current_db_locks.url)
+        res = "Ecco i permessi virtuali attivi: \n\n"
+        res += "🤖 **Bot:** `{}`\n".format(current_db_locks.bots)
+        res += "🕹 **Comandi:** `{}`\n".format(current_db_locks.commands)
+        res += "📧 **E-Mail:** `{}`\n".format(current_db_locks.email)
+        res += "📤 **Inoltro:** `{}`\n".format(current_db_locks.forward)
+        res += "🔗 **Link:** `{}`\n".format(current_db_locks.url)
     current_chat = await event.get_chat()
     try:
         current_api_locks = current_chat.default_banned_rights
     except AttributeError as e:
         logger.info(str(e))
     else:
-        res += "\n 🔐 Ecco i permessi disponibili: \n"
-        res += "📩 Messaggi: `{}`\n".format(current_api_locks.send_messages)
-        res += "🖼 Media: `{}`\n".format(current_api_locks.send_media)
-        res += "🔖 Sticker: `{}`\n".format(current_api_locks.send_stickers)
-        res += "📹 Gif: `{}`\n".format(current_api_locks.send_gifs)
-        res += "🎮 Giochi: `{}`\n".format(current_api_locks.send_games)
-        res += "📟 Bot Inline: `{}`\n".format(current_api_locks.send_inline)
-        res += "🧮 Sondaggi: `{}`\n".format(current_api_locks.send_polls)
-        res += "👥 Aggiungere utenti: `{}`\n".format(current_api_locks.invite_users)
-        res += "🖇 Fissarre MEssaggi: `{}`\n".format(current_api_locks.pin_messages)
-        res += "🔏 Cambiare informazioni: `{}`\n".format(current_api_locks.change_info)
+        res += "\n 🔐 Ecco i permessi disponibili: \n\n"
+        res += "📩 **Messaggi:** `{}`\n".format(current_api_locks.send_messages)
+        res += "🖼 **Media:** `{}`\n".format(current_api_locks.send_media)
+        res += "🔖 **Sticker:** `{}`\n".format(current_api_locks.send_stickers)
+        res += "📹 **Gif:** `{}`\n".format(current_api_locks.send_gifs)
+        res += "🎮 **Giochi:** `{}`\n".format(current_api_locks.send_games)
+        res += "📟 **Bot Inline:** `{}`\n".format(current_api_locks.send_inline)
+        res += "🧮 **Sondaggi:** `{}`\n".format(current_api_locks.send_polls)
+        res += "👥 **Aggiungere utenti:** `{}`\n".format(current_api_locks.invite_users)
+        res += "🖇 **Fissare mssaggi:** `{}`\n".format(current_api_locks.pin_messages)
+        res += "🔏 **Cambiare informazioni:**+ `{}`\n".format(current_api_locks.change_info)
     await event.edit(res)
 
 
