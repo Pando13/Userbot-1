@@ -9,6 +9,11 @@ from userbot import bot
 from userbot.system import dev_cmd
 
 
+@bot.on(dev_cmd(pattern=f"listapermessi", outgoing=True))
+async def _(event):
+    await event.edit("**Comandi disponibili:** .lock <option>, .unlock <option>, .locks \n**API Options:** msg, media, sticker, gif, game, binline, poll, adduser, pin, changeinfo \n**DB Options:** bots, commands, email, forward, url")
+
+
 @bot.on(dev_cmd("lock( (?P<target>\S+)|$)"))
 async def _(event):
      # Space weirdness in regex required because argument is optional and other
