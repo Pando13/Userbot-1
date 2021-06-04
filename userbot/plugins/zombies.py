@@ -3,7 +3,7 @@ Uso: Cerca account eliminati nei gruppi.
 con ".zombies clean" rimuovi gli account eliminati."""
 
 from telethon import events
-from userbot.utils import admin_cmd
+from userbot.system import dev_cmd
 #
 from asyncio import sleep
 from os import remove
@@ -53,7 +53,7 @@ UNMUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=False)
 
 
 
-@bot.on(admin_cmd(pattern=f"zombies", allow_sudo=True))
+@bot.on(dev_cmd(pattern=f"zombies", allow_sudo=True))
 @bot.on(events.NewMessage(pattern="^.zombies(?: |$)(.*)", outgoing=True))
 async def rm_deletedacc(show):
     """ For .zombies command, list all the ghost/deleted/zombie accounts in a chat. """
