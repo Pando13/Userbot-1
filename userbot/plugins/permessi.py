@@ -112,7 +112,7 @@ async def _(event):
     res = ""
     current_db_locks = get_locks(event.chat_id)
     if not current_db_locks:
-        res = "🔒 Non ci sono blocchi virtuali"
+        res = "🔒 Non ho individuato blocchi virtuali"
     else:
         res = "**Permessi virtuali attivi:** \n\n"
         res += "🤖 **Bot:** `{}`\n".format(current_db_locks.bots)
