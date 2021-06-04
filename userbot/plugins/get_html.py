@@ -14,11 +14,11 @@ async def _(event):
    if event.fwd_from:
       return 
    if not event.reply_to_msg_id:
-      await event.edit(f"**Rispondi ad un utente.**")
+      await event.edit(f"**Rispondi ad un messaggio di un utente formattato in html.**")
       return
    reply_message = await event.get_reply_message() 
    if not reply_message.text:
-      await event.edit(f"**Rispondi ad un utente.**")
+      await event.edit(f"**Rispondi ad un messaggio di un utente formattato in html.**")
       return
    chat = "@markuptohtmlbot"
    sender = reply_message.sender
