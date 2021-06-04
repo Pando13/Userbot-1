@@ -8,10 +8,10 @@ from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP
 from userbot.system import register, errors_handler
 
 
-@register(outgoing=True, pattern="^.purge$")
+@register(outgoing=True, pattern="^.clear$")
 @errors_handler
 async def fastpurger(purg):
-    """ For .purge command, purge all messages starting from the reply. """
+    """ For .clear command, purge all messages starting from the reply. """
     chat = await purg.get_input_chat()
     msgs = []
     count = 0
@@ -40,10 +40,10 @@ async def fastpurger(purg):
     await done.delete()
 
 
-@register(outgoing=True, pattern="^.purgeme")
+@register(outgoing=True, pattern="^.clearme")
 @errors_handler
 async def purgeme(delme):
-    """ For .purgeme, delete x count of your latest message."""
+    """ For .clearme, delete x count of your latest message."""
     message = delme.text
     count = int(message[9:])
     i = 1
@@ -123,14 +123,14 @@ async def selfdestruct(destroy):
 
 
 CMD_HELP.update({
-    'purge':
-    '.purge\
+    'clear':
+    '.clear\
         \nUsage: Purges all messages starting from the reply.'
 })
 
 CMD_HELP.update({
-    'purgeme':
-    '.purgeme <x>\
+    'clearme':
+    '.clearme <x>\
         \nUsage: Deletes x amount of your latest messages.'
 })
 
