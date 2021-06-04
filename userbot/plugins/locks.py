@@ -1,6 +1,6 @@
-"""Default Permission in Telegram 5.0.1
-Available Commands: .lock <option>, .unlock <option>, .locks
-API Options: msg, media, sticker, gif, gamee, ainline, gpoll, adduser, cpin, changeinfo
+"""Permessi di default
+Comandi disponibili: .lock <option>, .unlock <option>, .locks
+API Options: msg, media, sticker, gif, game, binline, poll, adduser, pin, changeinfo
 DB Options: bots, commands, email, forward, url"""
 
 from telethon import events, functions, types
@@ -20,18 +20,18 @@ async def _(event):
     if input_str in (("bots", "commands", "email", "forward", "url")):
         update_lock(peer_id, input_str, True)
         await event.edit(
-            "Locked {}".format(input_str)
+            "Bloccato {}".format(input_str)
         )
     else:
         msg = None
         media = None
         sticker = None
         gif = None
-        gamee = None
-        ainline = None
-        gpoll = None
+        game = None
+        binline = None
+        poll = None
         adduser = None
-        cpin = None
+        pin = None
         changeinfo = None
         if input_str:
             if "msg" in input_str:
@@ -44,13 +44,13 @@ async def _(event):
                 gif = True
             if "gamee" in input_str:
                 gamee = True
-            if "ainline" in input_str:
+            if "binline" in input_str:
                 ainline = True
-            if "gpoll" in input_str:
+            if "poll" in input_str:
                 gpoll = True
             if "adduser" in input_str:
                 adduser = True
-            if "cpin" in input_str:
+            if "pin" in input_str:
                 cpin = True
             if "changeinfo" in input_str:
                 changeinfo = True
@@ -61,11 +61,11 @@ async def _(event):
             send_media=media,
             send_stickers=sticker,
             send_gifs=gif,
-            send_games=gamee,
-            send_inline=ainline,
-            send_polls=gpoll,
+            send_games=game,
+            send_inline=binline,
+            send_polls=poll,
             invite_users=adduser,
-            pin_messages=cpin,
+            pin_messages=pin,
             change_info=changeinfo,
         )
         try:
@@ -83,7 +83,7 @@ async def _(event):
             )
 
 
-@bot.on(dev_cmd("unlock ?(.*)"))
+@bot.on(dev_cmd("sblocca ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -92,7 +92,7 @@ async def _(event):
     if input_str in (("bots", "commands", "email", "forward", "url")):
         update_lock(peer_id, input_str, False)
         await event.edit(
-            "UnLocked {}".format(input_str)
+            "Sbloccato {}".format(input_str)
         )
     else:
         await event.edit(
@@ -100,38 +100,38 @@ async def _(event):
         )
 
 
-@bot.on(dev_cmd("curenabledlocks"))
+@bot.on(dev_cmd("permessi"))
 async def _(event):
     if event.fwd_from:
         return
     res = ""
     current_db_locks = get_locks(event.chat_id)
     if not current_db_locks:
-        res = "Non ci sono blocchi"
+        res = "🔒 Non ci sono blocchi"
     else:
-        res = "Ecco i permessi disponibili: \n"
-        res += "👉 `bots`: `{}`\n".format(current_db_locks.bots)
-        res += "👉 `commands`: `{}`\n".format(current_db_locks.commands)
-        res += "👉 `email`: `{}`\n".format(current_db_locks.email)
-        res += "👉 `forward`: `{}`\n".format(current_db_locks.forward)
-        res += "👉 `url`: `{}`\n".format(current_db_locks.url)
+        res = "Ecco i permessi virtuali attivi: \n"
+        res += "🤖 Bot: `{}`\n".format(current_db_locks.bots)
+        res += "🕹 Comandi`: `{}`\n".format(current_db_locks.commands)
+        res += "📧 E-Mail: `{}`\n".format(current_db_locks.email)
+        res += "📤 Inoltro: `{}`\n".format(current_db_locks.forward)
+        res += "🔗 Link: `{}`\n".format(current_db_locks.url)
     current_chat = await event.get_chat()
     try:
         current_api_locks = current_chat.default_banned_rights
     except AttributeError as e:
         logger.info(str(e))
     else:
-        res += "\nEcco i permessi disponibili: \n"
-        res += "👉 `msg`: `{}`\n".format(current_api_locks.send_messages)
-        res += "👉 `media`: `{}`\n".format(current_api_locks.send_media)
-        res += "👉 `sticker`: `{}`\n".format(current_api_locks.send_stickers)
-        res += "👉 `gif`: `{}`\n".format(current_api_locks.send_gifs)
-        res += "👉 `gamee`: `{}`\n".format(current_api_locks.send_games)
-        res += "👉 `ainline`: `{}`\n".format(current_api_locks.send_inline)
-        res += "👉 `gpoll`: `{}`\n".format(current_api_locks.send_polls)
-        res += "👉 `adduser`: `{}`\n".format(current_api_locks.invite_users)
-        res += "👉 `cpin`: `{}`\n".format(current_api_locks.pin_messages)
-        res += "👉 `changeinfo`: `{}`\n".format(current_api_locks.change_info)
+        res += "\n 🔐 Ecco i permessi disponibili: \n"
+        res += "📩 Messaggi: `{}`\n".format(current_api_locks.send_messages)
+        res += "🖼 Media: `{}`\n".format(current_api_locks.send_media)
+        res += "🔖 Sticker: `{}`\n".format(current_api_locks.send_stickers)
+        res += "📹 Gif: `{}`\n".format(current_api_locks.send_gifs)
+        res += "🎮 Giochi: `{}`\n".format(current_api_locks.send_games)
+        res += "📟 Bot Inline: `{}`\n".format(current_api_locks.send_inline)
+        res += "🧮 Sondaggi: `{}`\n".format(current_api_locks.send_polls)
+        res += "👥 Aggiungere utenti: `{}`\n".format(current_api_locks.invite_users)
+        res += "🖇 Fissarre MEssaggi: `{}`\n".format(current_api_locks.pin_messages)
+        res += "🔏 Cambiare informazioni: `{}`\n".format(current_api_locks.change_info)
     await event.edit(res)
 
 
@@ -161,7 +161,7 @@ async def check_incoming_messages(event):
                 await event.delete()
             except Exception as e:
                 await event.reply(
-                    "I don't seem to have ADMIN permission here. \n`{}`".format(str(e))
+                    "Non sono admin. \n`{}`".format(str(e))
                 )
                 update_lock(peer_id, "forward", False)
     if is_locked(peer_id, "email"):
@@ -176,7 +176,7 @@ async def check_incoming_messages(event):
                 await event.delete()
             except Exception as e:
                 await event.reply(
-                    "I don't seem to have ADMIN permission here. \n`{}`".format(str(e))
+                    "Non sono admin. \n`{}`".format(str(e))
                 )
                 update_lock(peer_id, "email", False)
     if is_locked(peer_id, "url"):
@@ -191,7 +191,7 @@ async def check_incoming_messages(event):
                 await event.delete()
             except Exception as e:
                 await event.reply(
-                    "I don't seem to have ADMIN permission here. \n`{}`".format(str(e))
+                    "Non sono admin. \n`{}`".format(str(e))
                 )
                 update_lock(peer_id, "url", False)
 
@@ -223,11 +223,11 @@ async def _(event):
                         ))
                     except Exception as e:
                         await event.reply(
-                            "I don't seem to have ADMIN permission here. \n`{}`".format(str(e))
+                            "Non sono admin. \n`{}`".format(str(e))
                         )
                         update_lock(event.chat_id, "bots", False)
                         break
             if Config.G_BAN_LOGGER_GROUP is not None and is_ban_able:
                 ban_reason_msg = await event.reply(
-                    "!warn [user](tg://user?id={}) Please Do Not Add BOTs to this chat.".format(users_added_by)
+                    "!warn [user](tg://user?id={}) Non aggiungere bot.".format(users_added_by)
                 )
