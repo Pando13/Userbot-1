@@ -70,7 +70,7 @@ async def rm_deletedacc(show):
                 del_u += 1
                 await sleep(1)
         if del_u > 0:
-            del_status = f"Account eliminati: **{del_u}**,\
+            del_status = f"**Account eliminati: {del_u}**\
             \nRimuovili con `.zombies clean`"
         await show.edit(del_status)
         return
@@ -106,11 +106,10 @@ async def rm_deletedacc(show):
 
 
     if del_u > 0:
-        del_status = f"Rimossi **{del_u}** accoun6t eliminati"
+        del_status = f"Rimossi **{del_u}** accounnt eliminati"
 
     if del_a > 0:
-        del_status = f"Rimossi **{del_u}** accoun6t eliminati \
-        \n**{del_a}** account eliminati degli admin non rimossi"
+        del_status = f"**Rimossi **{del_u}** accounnt eliminati \n**{del_a}** account eliminati degli admin non rimossi"
 
 
     await show.edit(del_status)
