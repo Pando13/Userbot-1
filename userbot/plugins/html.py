@@ -23,9 +23,8 @@ async def _(event):
    chat = "@markuptohtmlbot"
    sender = reply_message.sender
    if reply_message.sender.bot:
-      await event.edit(f"**Rispondi ad un utente, non al bot.**")
+      await event.edit(f"**Rispondi ad un utente, non a un bot.**")
       return
-   await event.edit(f"**Ricerca Storico...**")
    async with bot.conversation(chat) as conv:
          try:     
             response = conv.wait_event(events.NewMessage(incoming=True,from_users=494105609))
