@@ -104,7 +104,8 @@ async def _(event):
     if event.fwd_from:
         return
     res = ""
-    current_api_locks = current_chat.default_banned_rights
+    try:
+        current_api_locks = current_chat.default_banned_rights
     except AttributeError as e:
         logger.info(str(e))
     else:
