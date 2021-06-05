@@ -32,27 +32,27 @@ async def _(event):
     adduser = None
     pin = None
     changeinfo = None
-        if input_str:
-            if "msg" in input_str:
-                msg = True
-            if "media" in input_str:
-                media = True
-            if "sticker" in input_str:
-                sticker = True
-            if "gif" in input_str:
-                gif = True
-            if "gamee" in input_str:
-                gamee = True
-            if "binline" in input_str:
-                ainline = True
-            if "poll" in input_str:
-                gpoll = True
-            if "adduser" in input_str:
-                adduser = True
-            if "pin" in input_str:
-                cpin = True
-            if "changeinfo" in input_str:
-                changeinfo = True
+    if input_str:
+        if "msg" in input_str:
+            msg = True
+        if "media" in input_str:
+            media = True
+        if "sticker" in input_str:
+            sticker = True
+        if "gif" in input_str:
+            gif = True
+        if "gamee" in input_str:
+            gamee = True
+        if "binline" in input_str:
+            ainline = True
+        if "poll" in input_str:
+            gpoll = True
+        if "adduser" in input_str:
+            adduser = True
+        if "pin" in input_str:
+            cpin = True
+        if "changeinfo" in input_str:
+            changeinfo = True
         banned_rights = types.ChatBannedRights(
             until_date=None,
             # view_messages=None,
