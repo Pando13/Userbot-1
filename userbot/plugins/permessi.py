@@ -119,6 +119,6 @@ async def _(event):
         res += "📟 **Bot Inline:** `{}`\n".format(current_api_locks.send_inline)
         res += "🧮 **Sondaggi:** `{}`\n".format(current_api_locks.send_polls)
         res += "👥 **Aggiungere utenti:** `{}`\n".format(current_api_locks.invite_users)
-        res += "🖇 **Fissare mssaggi:** `{}`\n".format(current_api_locks.pin_messages)
+        res += "🖇 **Fissare messaggi:** `{}`\n".format(current_api_locks.pin_messages)
         res += "🔏 **Cambiare informazioni:** `{}`\n".format(current_api_locks.change_info)
     await event.edit(res)
