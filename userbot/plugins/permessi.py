@@ -104,6 +104,7 @@ async def _(event):
     if event.fwd_from:
         return
     res = ""
+    current_chat = await event.get_chat()
     try:
         current_api_locks = current_chat.default_banned_rights
     except AttributeError as e:
