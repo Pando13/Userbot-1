@@ -106,10 +106,10 @@ async def rm_deletedacc(show):
 
 
     if del_u > 0:
-        del_status = f"Rimossi **{del_u}** accounnt eliminati"
+        del_status = f"Rimossi **{del_u}** account eliminati"
 
     if del_a > 0:
-        del_status = f"**Rimossi **{del_u}** accounnt eliminati \n**{del_a}** account eliminati degli admin non rimossi"
+        del_status = f"**Rimossi **{del_u}** account eliminati \n**{del_a}** account eliminati degli admin non rimossi"
 
 
     await show.edit(del_status)
