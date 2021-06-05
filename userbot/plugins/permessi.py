@@ -22,22 +22,16 @@ async def _(event):
         return
     input_str = event.pattern_match.group("target")
     peer_id = event.chat_id
-    if input_str in (("bots", "commands", "email", "forward", "url")):
-        update_lock(peer_id, input_str, True)
-        await event.edit(
-            "Bloccato {}".format(input_str)
-        )
-    else:
-        msg = None
-        media = None
-        sticker = None
-        gif = None
-        game = None
-        binline = None
-        poll = None
-        adduser = None
-        pin = None
-        changeinfo = None
+    msg = None
+    media = None
+    sticker = None
+    gif = None
+    game = None
+    binline = None
+    poll = None
+    adduser = None
+    pin = None
+    changeinfo = None
         if input_str:
             if "msg" in input_str:
                 msg = True
@@ -110,23 +104,11 @@ async def _(event):
     if event.fwd_from:
         return
     res = ""
-    current_db_locks = get_locks(event.chat_id)
-    if not current_db_locks:
-        res = "🔒 Non ho individuato blocchi virtuali"
-    else:
-        res = "**Permessi virtuali attivi:** \n\n"
-        res += "🤖 **Bot:** `{}`\n".format(current_db_locks.bots)
-        res += "🕹 **Comandi:** `{}`\n".format(current_db_locks.commands)
-        res += "📧 **E-Mail:** `{}`\n".format(current_db_locks.email)
-        res += "📤 **Inoltro:** `{}`\n".format(current_db_locks.forward)
-        res += "🔗 **Link:** `{}`\n".format(current_db_locks.url)
-    current_chat = await event.get_chat()
-    try:
-        current_api_locks = current_chat.default_banned_rights
+    current_api_locks = current_chat.default_banned_rights
     except AttributeError as e:
         logger.info(str(e))
     else:
-        res += "\n🔐 **Permessi della chat:** \n\n"
+        res += "🔐 **Blocchi in chat:** \n\n"
         res += "📩 **Messaggi:** `{}`\n".format(current_api_locks.send_messages)
         res += "🖼 **Media:** `{}`\n".format(current_api_locks.send_media)
         res += "🔖 **Sticker:** `{}`\n".format(current_api_locks.send_stickers)
@@ -138,101 +120,3 @@ async def _(event):
         res += "🖇 **Fissare mssaggi:** `{}`\n".format(current_api_locks.pin_messages)
         res += "🔏 **Cambiare informazioni:** `{}`\n".format(current_api_locks.change_info)
     await event.edit(res)
-
-
-@bot.on(events.MessageEdited())  # pylint:disable=E0602
-@bot.on(events.NewMessage())  # pylint:disable=E0602
-async def check_incoming_messages(event):
-    # TODO: exempt admins from locks
-    peer_id = event.chat_id
-    if is_locked(peer_id, "commands"):
-        entities = event.message.entities
-        is_command = False
-        if entities:
-            for entity in entities:
-                if isinstance(entity, types.MessageEntityBotCommand):
-                    is_command = True
-        if is_command:
-            try:
-                await event.delete()
-            except Exception as e:
-                await event.reply(
-                    "Non sono admin. \n`{}`".format(str(e))
-                )
-                update_lock(peer_id, "commands", False)
-    if is_locked(peer_id, "forward"):
-        if event.fwd_from:
-            try:
-                await event.delete()
-            except Exception as e:
-                await event.reply(
-                    "Non sono admin. \n`{}`".format(str(e))
-                )
-                update_lock(peer_id, "forward", False)
-    if is_locked(peer_id, "email"):
-        entities = event.message.entities
-        is_email = False
-        if entities:
-            for entity in entities:
-                if isinstance(entity, types.MessageEntityEmail):
-                    is_email = True
-        if is_email:
-            try:
-                await event.delete()
-            except Exception as e:
-                await event.reply(
-                    "Non sono admin. \n`{}`".format(str(e))
-                )
-                update_lock(peer_id, "email", False)
-    if is_locked(peer_id, "url"):
-        entities = event.message.entities
-        is_url = False
-        if entities:
-            for entity in entities:
-                if isinstance(entity, (types.MessageEntityTextUrl, types.MessageEntityUrl)):
-                    is_url = True
-        if is_url:
-            try:
-                await event.delete()
-            except Exception as e:
-                await event.reply(
-                    "Non sono admin. \n`{}`".format(str(e))
-                )
-                update_lock(peer_id, "url", False)
-
-
-@bot.on(events.ChatAction())  # pylint:disable=E0602
-async def _(event):
-    # TODO: exempt admins from locks
-    # check for "lock" "bots"
-    if is_locked(event.chat_id, "bots"):
-        # bots are limited Telegram accounts,
-        # and cannot join by themselves
-        if event.user_added:
-            users_added_by = event.action_message.from_id
-            is_ban_able = False
-            rights = types.ChatBannedRights(
-                until_date=None,
-                view_messages=True
-            )
-            added_users = event.action_message.action.users
-            for user_id in added_users:
-                user_obj = await bot.get_entity(user_id)
-                if user_obj.bot:
-                    is_ban_able = True
-                    try:
-                        await bot(functions.channels.EditBannedRequest(
-                            event.chat_id,
-                            user_obj,
-                            rights
-                        ))
-                    except Exception as e:
-                        await event.reply(
-                            "Non sono admin. \n`{}`".format(str(e))
-                        )
-                        update_lock(event.chat_id, "bots", False)
-                        break
-            if Config.G_BAN_LOGGER_GROUP is not None and is_ban_able:
-                ban_reason_msg = await event.reply(
-                    "!warn [user](tg://user?id={}) Non aggiungere bot.".format(users_added_by)
-                )
