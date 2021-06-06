@@ -10,7 +10,7 @@ from userbot.system import dev_cmd, command
 
 
 @command(pattern="^.block ?(.*)")
-    async def block_p_m(event):
+async def block_p_m(event):
         if event.fwd_from:
             return
         replied_user = await event.client(GetFullUserRequest(event.chat_id))
@@ -25,7 +25,7 @@ from userbot.system import dev_cmd, command
                 
                 
 @command(pattern="^.unblock ?(.*)")
-    async def unblock_p_m(event):
+async def unblock_p_m(event):
         if event.fwd_from:
             return
         replied_user = await event.client(GetFullUserRequest(event.chat_id))
