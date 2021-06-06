@@ -13,13 +13,13 @@ from userbot.system import dev_cmd, command
 async def block_p_m(event):
         if event.fwd_from:
             return
-        replied_user = await event.client(GetFullUserRequest(event.chat_id))
+        replied_user = await event.client(GetFullUserRequest(event.user_id))
         firstname = replied_user.user.first_name
         reason = event.pattern_match.group(1)
         chat = await event.get_chat()
         if event.is_private:
           await event.client(functions.contacts.BlockRequest(chat.id))
-          await event.edit("**Sei stato bloccato, non puoi inviarmi messaggi**[{}](tg://user?id={})".format(firstname, chat.id))
+          await event.edit("**Sei stato bloccato, non puoi inviarmi messaggi**[{}](tg://user?id={})".format(firstname, user.id))
                 
                 
                 
@@ -28,11 +28,11 @@ async def block_p_m(event):
 async def unblock_p_m(event):
         if event.fwd_from:
             return
-        replied_user = await event.client(GetFullUserRequest(event.chat_id))
+        replied_user = await event.client(GetFullUserRequest(event.user_id))
         firstname = replied_user.user.first_name
         reason = event.pattern_match.group(1)
         chat = await event.get_chat()
         if event.is_private:
           await event.client(functions.contacts.UnblockRequest(user.id))
-          await event.edit("**Sei stato sbloccato, puoi inviarmi messaggi**[{}](tg://user?id={})".format(firstname, chat.id))
+          await event.edit("**Sei stato sbloccato, puoi inviarmi messaggi**[{}](tg://user?id={})".format(firstname, user.id))
                 
