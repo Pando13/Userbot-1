@@ -11,6 +11,10 @@ from userbot.system import dev_cmd, command
 async def block_p_m(event):
         if event.fwd_from:
             return
+        replied_user, error_i_a = await get_full_user(event)
+        if replied_user is None:
+            await event.edit(str(error_i_a))
+            return False
         user = await event.get_chat()
         firstname = replied_user.user.first_name
         reason = event.pattern_match.group(1)
@@ -25,6 +29,12 @@ async def block_p_m(event):
 async def unblock_p_m(event):
         if event.fwd_from:
             return
+        if event.fwd_from:
+            return
+        replied_user, error_i_a = await get_full_user(event)
+        if replied_user is None:
+            await event.edit(str(error_i_a))
+            return False
         user = await event.get_chat()
         firstname = replied_user.user.first_name
         reason = event.pattern_match.group(1)
