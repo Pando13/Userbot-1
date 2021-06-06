@@ -5,7 +5,9 @@ from telethon.tl.functions.users import GetFullUserRequest
 from telethon import events, errors, functions, types
 from userbot.system import dev_cmd, command
 
+import logging
 
+logging.basicConfig(level=logging.WARNING)
 
 @command(pattern="^.block ?(.*)")
 async def block_pm(event):
