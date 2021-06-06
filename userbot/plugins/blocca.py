@@ -29,8 +29,6 @@ async def block_p_m(event):
 async def unblock_p_m(event):
         if event.fwd_from:
             return
-        if event.fwd_from:
-            return
         replied_user, error_i_a = await get_full_user(event)
         if replied_user is None:
             await event.edit(str(error_i_a))
