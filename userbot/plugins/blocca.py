@@ -18,7 +18,7 @@ async def block_p_m(event):
         reason = event.pattern_match.group(1)
         chat = await event.get_chat()
         if event.is_private:
-          await event.client(functions.contacts.BlockRequest(chat.id))
+          await event.client(functions.contacts.BlockRequest(user.id))
           await event.edit("**Sei stato bloccato, non puoi inviarmi messaggi**[{}](tg://user?id={})".format(firstname, user.id))
                 
                 
