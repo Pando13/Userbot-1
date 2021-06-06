@@ -78,7 +78,6 @@ async def _(event):
         caption,
         reply_to=message_id_to_reply,
         parse_mode="HTML",
-        file=replied_user.profile_photo,
         force_document=False,
         silent=True
     )
