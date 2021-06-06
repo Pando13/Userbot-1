@@ -229,7 +229,7 @@ async def _(event):
         status = ("Ultimo accesso recentemente")
     if status == ("UserStatusLastWeek()"):
         status = ("Ultimo accesso entro una settimana")
-     if status == ("UserStatusOffline()"):
+    if status == ("UserStatusOffline()"):
         status = ("Offline")
     if status == ("UserStatusLastMonth()"):
         status = ("Ultimo accesso entro un mese")
