@@ -1,9 +1,6 @@
 """Get Telegram Profile and other information
 Syntax:
-.dc
-.chatinfo
-.info @username
-.stats
+.get_user
 """
 
 import asyncio
@@ -33,7 +30,7 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "@AtomicUserbot"
 # ============================================
 
 
-@bot.on(dev_cmd("info ?(.*)"))
+@bot.on(dev_cmd("get_user ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
