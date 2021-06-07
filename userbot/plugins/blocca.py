@@ -1,7 +1,9 @@
 import asyncio
 import io
-
+from telethon.tl.functions.contacts import BlockRequest, UnblockRequest
+from telethon.tl.functions.messages import ReportSpamRequest
 from telethon.tl.functions.users import GetFullUserRequest
+from telethon.tl.types import User
 from telethon import events, errors, functions, types
 import userbot.plugins.sql_helper.pmpermit_sql as pmpermit_sql
 from userbot import ALIVE_NAME, LESS_SPAMMY, bot
