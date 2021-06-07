@@ -10,7 +10,7 @@ from userbot import ALIVE_NAME, LESS_SPAMMY, bot
 from userbot.system import dev_cmd, command
 
 
-@command(pattern="^.block ?(.*)")
+@command(pattern="^.blockuser ?(.*)")
 async def blockpm(block):
     if block.pattern_match.group(1):
         username = block.pattern_match.group(1)
@@ -35,19 +35,19 @@ async def blockpm(block):
         
     if block.pattern_match.group(1):
         block.reply(f"[{name0}](tg://user?id={uid}) **bloccato** ❌")
-        asyncio.sleep(4)
+        await asyncio.sleep(4)
     elif block.is_private:
         block.reply("I am blocking you now.")
-        asyncio.sleep(4)
+        await asyncio.sleep(4)
     elif block.reply_to_msg_id:
         block.edit("**Bloccato** ❌")
-        asyncio.sleep(4)
+        await asyncio.sleep(4)
     
     await block.client(BlockRequest(uid))
     await block.edit("**Bloccato** ❌")
     
 
-@command(pattern="^.unblock ?(.*)")
+@command(pattern="^.unblockuser ?(.*)")
 async def unblockpm(unblock):
     if unblock.pattern_match.group(1):
         username = unblock.pattern_match.group(1)
@@ -72,10 +72,10 @@ async def unblockpm(unblock):
     
     if unblock.pattern_match.group(1):
         unblock.edit(f"[{name0}](tg://user?id={uid}) **sbloccato** ✅")
-        asyncio.sleep(4)
+        await asyncio.sleep(4)
     elif unblock.reply_to_msg_id:
         unblock.edit("**Sbloccato** ✅")
-        asyncio.sleep(4)
+        await asyncio.sleep(4)
         
     await unblock.client(UnblockRequest(uid))
     await unblock.edit("**Sbloccato** ✅")
