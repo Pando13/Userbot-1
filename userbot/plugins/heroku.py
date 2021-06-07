@@ -14,6 +14,8 @@ from userbot.system import register, dev_cmd, command
 Heroku = heroku3.from_key(Var.HEROKU_API_KEY)
 heroku_api = "https://api.heroku.com"
 
+HEROKU_APP_NAME = Var.HEROKU_APP_NAME
+HEROKU_API_KEY = Var.HEROKU_API_KEY
 
 @register(outgoing=True, pattern=r"^\.(set|get|del) var(?: |$)(.*)(?: |$)([\s\S]*)")
 async def variable(var):
@@ -148,6 +150,32 @@ async def dyno_usage(dyno):
                            f"     •  `{hours}`**h**  `{minutes}`**m**  "
                            f"**|**  [`{percentage}`**%**]"
                            )
+
+@register(outgoing=True, pattern=r"^\.logs(?: |$)")
+async def _(dyno):
+    "To get recent 100 lines logs from heroku"
+    if (HEROKU_APP_NAME is None) or (HEROKU_API_KEY is None):
+        return await edit_delete(
+            dyno,
+            "Set the required vars in heroku to function this normally `HEROKU_API_KEY` and `HEROKU_APP_NAME`.",
+        )
+    try:
+        Heroku = heroku3.from_key(HEROKU_API_KEY)
+        app = Heroku.app(HEROKU_APP_NAME)
+    except BaseException:
+        return await dyno.reply(
+            " Please make sure your Heroku API Key, Your App name are configured correctly in the heroku"
+        )
+    data = app.get_log()
+    key = (
+        requests.post("https://nekobin.com/api/documents", json={"content": data})
+        .json()
+        .get("result")
+        .get("key")
+    )
+    url = f"https://nekobin.com/{key}"
+    reply_text = f"Recent 100 lines of heroku logs: [here]({url})"
+    await edit_or_reply(dyno, reply_text)
 
 
 @command(pattern="^.heroku info")
