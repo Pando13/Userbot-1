@@ -9,8 +9,8 @@ from userbot.system import dev_cmd, command
 
 
 @command(pattern="^.block ?(.*)")
-    async def block_p_m(event):
-        if event.fwd_from:
+async def block_p_m(event):
+    if event.fwd_from:
             return
         replied_user = await event.client(GetFullUserRequest(event.chat_id))
         firstname = replied_user.user.first_name
@@ -22,10 +22,12 @@ from userbot.system import dev_cmd, command
                 await event.edit("**Sei stato bloccato, non puoi inviarmi messaggi**[{}](tg://user?id={})".format(firstname, chat.id))
                 await asyncio.sleep(3)
                 await event.client(functions.contacts.BlockRequest(chat.id))
+    
+        
 
 @command(pattern="^.unblock ?(.*)")
-    async def block_p_m(event):
-        if event.fwd_from:
+async def unblock_p_m(event):
+    if event.fwd_from:
             return
         replied_user = await event.client(GetFullUserRequest(event.chat_id))
         firstname = replied_user.user.first_name
@@ -37,3 +39,4 @@ from userbot.system import dev_cmd, command
                 await event.edit("**Sei stato sbloccato, puoi inviarmi messaggi**[{}](tg://user?id={})".format(firstname, chat.id))
                 await asyncio.sleep(3)
                 await event.client(functions.contacts.UnBlockRequest(chat.id))
+        
