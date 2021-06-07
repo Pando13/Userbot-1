@@ -30,21 +30,21 @@ async def blockpm(block):
         uid = replied_user.user.id
         
     else:
-        x = await block.edit("Gimme the user to block!")
+        x = await block.edit("Rispondi ad un utente")
         return await delete_in(x, 5)
         
     if block.pattern_match.group(1):
-        block.reply(f"[{name0}](tg://user?id={uid}) is gonna get blocked in 2 seconds.")
+        block.reply(f"[{name0}](tg://user?id={uid}) **bloccato** ❌")
         asyncio.sleep(4)
     elif block.is_private:
         block.reply("I am blocking you now.")
         asyncio.sleep(4)
     elif block.reply_to_msg_id:
-        block.edit("You are going to be blocked from PM-ing me now.")
+        block.edit("**Bloccato** ❌")
         asyncio.sleep(4)
     
     await block.client(BlockRequest(uid))
-    await block.edit("***BLOCKED!!***")
+    await block.edit("**Bloccato** ❌")
     
 
 @command(pattern="^.unblock ?(.*)")
@@ -67,18 +67,18 @@ async def unblockpm(unblock):
        
     
     else:
-        x = await unblock.edit("I can't unblock '__NOBODY__'")
+        x = await unblock.edit("Non posso sbloccarlo")
         return await delete_in(x, 5)
     
     if unblock.pattern_match.group(1):
-        unblock.edit(f"I will unblock [{name0}](tg://user?id={uid}) in 2 seconds. Are you sure?")
+        unblock.edit(f"[{name0}](tg://user?id={uid}) **sbloccato** ✅")
         asyncio.sleep(4)
     elif unblock.reply_to_msg_id:
-        unblock.edit("You are gonna be unblocked now. Aren't you happy?")
+        unblock.edit("**Sbloccato** ✅")
         asyncio.sleep(4)
         
     await unblock.client(UnblockRequest(uid))
-    await unblock.edit("Let's make peace.")
+    await unblock.edit("**Sbloccato** ✅")
 
     
     
