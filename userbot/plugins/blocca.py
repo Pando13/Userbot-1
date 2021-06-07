@@ -19,7 +19,7 @@ async def block_p_m(event):
     if event.is_private:
         if pmpermit_sql.is_approved(chat.id):
             pmpermit_sql.disapprove(chat.id)
-            await event.edit("**Sei stato bloccato, non puoi inviarmi messaggi**[{}](tg://user?id={})".format(firstname, chat.id))
+            await event.edit(f"**Sei stato bloccato, non puoi inviarmi messaggi**[{firstname}](tg://user?id={chat.id})")
             await event.client(functions.contacts.BlockRequest(chat.id))
                 
             
@@ -34,6 +34,6 @@ async def unblock_p_m(event):
     if event.is_private:
         if pmpermit_sql.disapprove(chat.id):
             pmpermit_sql.is_approved(chat.id)
-            await event.edit("**Sei stato sbloccato, puoi inviarmi messaggi**[{}](tg://user?id={})".format(firstname, chat.id))
+            await event.edit(f"**Sei stato sbloccato, puoi inviarmi messaggi**[{firstname}](tg://user?id={chat.id})")
             await event.client(functions.contacts.UnBlockRequest(chat.id))
         
