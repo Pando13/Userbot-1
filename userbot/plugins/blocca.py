@@ -10,10 +10,6 @@ from userbot.system import dev_cmd, command
 
 @command(pattern="^.block ?(.*)")
 async def blockpm(block):
-    if not is_mongo_alive() or not is_redis_alive():
-        await block.reply("Databases are failing!")
-        return
-    
     if block.pattern_match.group(1):
         username = block.pattern_match.group(1)
         bname = await block.client.get_entity(username)
