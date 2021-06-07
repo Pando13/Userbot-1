@@ -32,8 +32,8 @@ async def unblock_p_m(event):
     reason = event.pattern_match.group(1)
     chat = await event.get_chat()
     if event.is_private:
-        if pmpermit_sql.disapprove(chat.id)
-            pmpermit_sql.is_approved(chat.id):
+        if pmpermit_sql.disapprove(chat.id):
+            pmpermit_sql.is_approved(chat.id)
             await event.edit("**Sei stato sbloccato, puoi inviarmi messaggi**[{}](tg://user?id={})".format(firstname, chat.id))
             await event.client(functions.contacts.UnBlockRequest(chat.id))
         
