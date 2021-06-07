@@ -6,7 +6,7 @@ from telethon.tl.functions.messages import ReportSpamRequest
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import User
 from userbot.system import dev_cmd, command
-
+from userbot import BOTLOG, BOTLOG_CHATID
 import logging
 
 logging.basicConfig(level=logging.WARNING)
