@@ -47,7 +47,7 @@ async def blockpm(block):
     await block.edit("***BLOCKED!!***")
     
 
-@command(pattern="^.block ?(.*)")
+@command(pattern="^.unblock ?(.*)")
 async def unblockpm(unblock):
     if unblock.pattern_match.group(1):
         username = unblock.pattern_match.group(1)
