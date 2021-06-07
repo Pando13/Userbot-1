@@ -41,7 +41,7 @@ async def blockpm(block):
         block.edit("**Bloccato** ❌")
     
     await block.client(BlockRequest(uid))
-    block.edit("**Bloccato** ❌")
+    await block.edit("**Bloccato** ❌")
     
 
 @command(pattern="^.unblockuser ?(.*)")
@@ -73,7 +73,7 @@ async def unblockpm(unblock):
         unblock.edit("**Sbloccato** ✅")
         
     await unblock.client(UnblockRequest(uid))
-    unblock.edit("**Sbloccato** ✅")
+    await unblock.edit("**Sbloccato** ✅")
 
     
     
