@@ -35,16 +35,13 @@ async def blockpm(block):
         
     if block.pattern_match.group(1):
         block.reply(f"[{name0}](tg://user?id={uid}) **bloccato** ❌")
-        await asyncio.sleep(4)
     elif block.is_private:
         block.reply("I am blocking you now.")
-        await asyncio.sleep(4)
     elif block.reply_to_msg_id:
         block.edit("**Bloccato** ❌")
-        await asyncio.sleep(4)
     
     await block.client(BlockRequest(uid))
-    await block.edit("**Bloccato** ❌")
+    block.edit("**Bloccato** ❌")
     
 
 @command(pattern="^.unblockuser ?(.*)")
@@ -72,13 +69,11 @@ async def unblockpm(unblock):
     
     if unblock.pattern_match.group(1):
         unblock.edit(f"[{name0}](tg://user?id={uid}) **sbloccato** ✅")
-        await asyncio.sleep(4)
     elif unblock.reply_to_msg_id:
         unblock.edit("**Sbloccato** ✅")
-        await asyncio.sleep(4)
         
     await unblock.client(UnblockRequest(uid))
-    await unblock.edit("**Sbloccato** ✅")
+    unblock.edit("**Sbloccato** ✅")
 
     
     
