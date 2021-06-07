@@ -8,7 +8,7 @@ from userbot import ALIVE_NAME, LESS_SPAMMY, bot
 from userbot.system import dev_cmd, command
 
 
-    @command(pattern="^.block ?(.*)")
+@command(pattern="^.block ?(.*)")
     async def block_p_m(event):
         if event.fwd_from:
             return
@@ -23,8 +23,7 @@ from userbot.system import dev_cmd, command
                 await asyncio.sleep(3)
                 await event.client(functions.contacts.BlockRequest(chat.id))
 
-                
-    @command(pattern="^.unblock ?(.*)")
+@command(pattern="^.unblock ?(.*)")
     async def block_p_m(event):
         if event.fwd_from:
             return
@@ -35,6 +34,6 @@ from userbot.system import dev_cmd, command
         if event.is_private:
             if pmpermit_sql.disapprove(chat.id)
                 pmpermit_sql.is_approved(chat.id):
-                await event.edit("**Sei stato bloccato, non puoi inviarmi messaggi**[{}](tg://user?id={})".format(firstname, chat.id))
+                await event.edit("**Sei stato sbloccato, puoi inviarmi messaggi**[{}](tg://user?id={})".format(firstname, chat.id))
                 await asyncio.sleep(3)
-                await event.client(functions.contacts.BlockRequest(chat.id))
+                await event.client(functions.contacts.UnBlockRequest(chat.id))
