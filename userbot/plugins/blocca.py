@@ -1,8 +1,10 @@
 import asyncio
 import io
 
+from telethon.tl.functions.contacts import BlockRequest, UnblockRequest
+from telethon.tl.functions.messages import ReportSpamRequest
 from telethon.tl.functions.users import GetFullUserRequest
-from telethon import events, errors, functions, types
+from telethon.tl.types import User
 from userbot.system import dev_cmd, command
 
 import logging
