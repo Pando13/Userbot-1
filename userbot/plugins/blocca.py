@@ -13,10 +13,6 @@ logging.basicConfig(level=logging.WARNING)
 
 @command(pattern="^.block ?(.*)")
 async def blockpm(block):
-    if not is_mongo_alive() or not is_redis_alive():
-        await block.reply("Databases are failing!")
-        return
-    
     if block.pattern_match.group(1):
         username = block.pattern_match.group(1)
         bname = await block.client.get_entity(username)
@@ -64,10 +60,6 @@ async def blockpm(block):
 
 @command(pattern="^.unblock ?(.*)")
 async def unblockpm(unblock):
-    if not is_mongo_alive() or not is_redis_alive():
-        await unblock.reply("Databases are failing!")
-        return
-    
     if unblock.pattern_match.group(1):
         username = unblock.pattern_match.group(1)
         ubname = await unblock.client.get_entity(username)
