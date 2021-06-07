@@ -30,10 +30,6 @@ async def blockpm(block):
     else:
         x = await block.edit("Gimme the user to block!")
         return await delete_in(x, 5)
-    
-    if await is_blocked(uid) is True:
-        x = await block.edit("The user is already in your block list.")
-        return await delete_in(x, 5)
         
     if block.pattern_match.group(1):
         block.reply(f"[{name0}](tg://user?id={uid}) is gonna get blocked in 2 seconds.")
@@ -46,7 +42,6 @@ async def blockpm(block):
         asyncio.sleep(4)
     
     await block.client(BlockRequest(uid))
-    await block_pm(uid)
     await block.edit("***BLOCKED!!***")
     
 
@@ -73,10 +68,6 @@ async def unblockpm(unblock):
         x = await unblock.edit("I can't unblock '__NOBODY__'")
         return await delete_in(x, 5)
     
-    if await is_blocked(uid) is False:
-        x = await unblock.edit("The user isn't blocked...yet.")
-        return await delete_in(x, 5)
-    
     if unblock.pattern_match.group(1):
         unblock.edit(f"I will unblock [{name0}](tg://user?id={uid}) in 2 seconds. Are you sure?")
         asyncio.sleep(4)
@@ -85,7 +76,6 @@ async def unblockpm(unblock):
         asyncio.sleep(4)
         
     await unblock.client(UnblockRequest(uid))
-    await unblock_pm(uid)
     await unblock.edit("Let's make peace.")
 
     
