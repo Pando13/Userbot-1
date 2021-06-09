@@ -51,7 +51,18 @@ def deEmojify(inputString: str) -> str:
     """Remove emojis and other non-safe characters from string"""
     return get_emoji_regexp().sub("", inputString)
 
-        
+def getLang(text):
+    translator = Translator()
+    lang = None
+    while lang == None:
+        try:
+            lang = translator.detect(text)
+        except:
+            translator = Translator()
+            sleep(0.5)
+            pass
+    return lang
+
 async def getTranslate(text, **kwargs):
     translator = Translator()
     result = None
