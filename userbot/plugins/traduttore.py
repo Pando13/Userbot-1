@@ -52,3 +52,6 @@ __{}__""".format(
     except Exception as exc:
         await event.edit(str(exc))
 
+def deEmojify(inputString: str) -> str:
+    """Remove emojis and other non-safe characters from string"""
+    return get_emoji_regexp().sub("", inputString)
