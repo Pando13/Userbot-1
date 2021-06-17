@@ -12,6 +12,13 @@ from emoji import get_emoji_regexp
 
 from asyncio import sleep
 
+import os
+try:
+ import googletrans , subprocess
+except:
+ os.system("pip install googletrans")
+
+
 async def getTranslate(text, **kwargs):
     translator = Translator()
     result = None
