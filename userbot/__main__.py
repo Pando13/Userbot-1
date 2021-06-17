@@ -41,7 +41,7 @@ from userbot import bot, AUTONAME, DEFAULT_BIO, CMD_HELP
 from userbot.system import dev_cmd, command
 
 # ================= CONSTANT =================
-DEFAULTUSERBIO = str(DEFAULT_BIO) if DEFAULT_BIO else "ᗯᗩᏆᎢᏆᑎᏀ ᏞᏆᏦᗴ ᎢᏆᗰᗴ"
+DEFAULTUSERBIO = str(DEFAULT_BIO) if DEFAULT_BIO else "@AtomicUserbot"
 DEL_TIME_OUT = 60
 
 
