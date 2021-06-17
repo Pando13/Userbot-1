@@ -1,6 +1,6 @@
 """Commands:
-.online
-.offline"""
+.non
+.noff"""
 import asyncio
 import time
 import random, re
@@ -18,7 +18,7 @@ from userbot.system import dev_cmd, command
 TELEGRAM_NAME = str(AUTONAME)
 # ============================================
 
-@bot.on(dev_cmd(pattern="online"))  # pylint:disable=E0602
+@bot.on(dev_cmd(pattern="non"))  # pylint:disable=E0602
 async def _(event):
     await event.edit(f"✅ Online⁣⁣ attivato.")
     while True:
@@ -28,7 +28,7 @@ async def _(event):
                 first_name=name
             ))
       
-@bot.on(dev_cmd(pattern="offline"))  # pylint:disable=E0602
+@bot.on(dev_cmd(pattern="noff"))  # pylint:disable=E0602
 async def _(event):
     await event.edit(f"✅ Offline⁣⁣ attivato.")
     while True:
