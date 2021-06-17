@@ -1,6 +1,6 @@
 """Commands:
-.
-.noff"""
+.online
+.offline"""
 import asyncio
 import time
 import random, re
