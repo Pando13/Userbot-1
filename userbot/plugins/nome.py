@@ -22,18 +22,32 @@ TELEGRAM_NAME = str(AUTONAME)
 async def _(event):
     await event.edit(f"✅ Online⁣⁣ attivato.")
     while True:
-      name = f"{TELEGRAM_NAME}⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣ [Online]⁣⁣⁣⁣"
-      logger.info(name)
-      await bot(functions.account.UpdateProfileRequest(  # pylint:disable=E0602
+        Online = time.strftime("[Online]⁣⁣⁣⁣⁣⁣")
+        name = f"{TELEGRAM_NAME} [Online]⁣⁣⁣⁣⁣⁣⁣⁣"
+        logger.info(name)
+        try:
+            await bot(functions.account.UpdateProfileRequest(  # pylint:disable=E0602
                 first_name=name
             ))
+        except FloodWaitError as ex:
+            logger.warning(str(e))
+            await asyncio.sleep(ex.seconds)
+
+        await asyncio.sleep(DEL_TIME_OUT)
       
 @bot.on(dev_cmd(pattern="offline"))  # pylint:disable=E0602
 async def _(event):
     await event.edit(f"✅ Offline⁣⁣ attivato.")
     while True:
-      name = f"{TELEGRAM_NAME}⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣ [Offline]⁣⁣⁣⁣"
-      logger.info(name)
-      await bot(functions.account.UpdateProfileRequest(  # pylint:disable=E0602
+        Offline = time.strftime("[Offline]⁣⁣⁣⁣⁣⁣")
+        name = f"{TELEGRAM_NAME} [Offline]⁣⁣⁣⁣⁣⁣⁣⁣"
+        logger.info(name)
+        try:
+            await bot(functions.account.UpdateProfileRequest(  # pylint:disable=E0602
                 first_name=name
             ))
+        except FloodWaitError as ex:
+            logger.warning(str(e))
+            await asyncio.sleep(ex.seconds)
+
+        await asyncio.sleep(DEL_TIME_OUT)
