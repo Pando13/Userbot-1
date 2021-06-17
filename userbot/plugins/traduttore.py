@@ -4,10 +4,18 @@ Commands:
 """
 
 import os
+from sys import platform
 try:
- import googletrans , subprocess
+    import googletrans
 except:
- os.system("pip install googletrans")
+    if platform =='linux' or platform == 'linux2':
+        os.system('pip3 install googletrans')
+        import aiocron
+        os.system('clear')
+    elif platform == 'win32':
+        os.system('pip install googletrans')
+        import aiocron
+        os.system('cls')
 
 import emoji
 from googletrans import LANGUAGES, Translator
