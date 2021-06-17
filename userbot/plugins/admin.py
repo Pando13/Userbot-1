@@ -145,47 +145,6 @@ async def get_user_from_id(user, event):
     return user_obj
 
 
-@bot.on(dev_cmd(pattern="kick ?(.*)", outgoing=True))
-@errors_handler
-async def kick(usr):
-    """ For .kick command, kicks the replied/tagged person from the group. """
-    # Admin or creator check
-    chat = await usr.get_chat()
-    admin = chat.admin_rights
-    creator = chat.creator
-
-    # If not admin and not creator, return
-    if not admin and not creator:
-        await usr.edit(NO_ADMIN)
-        return
-
-    user, reason = await get_user_from_event(usr)
-    if not user:
-        await usr.edit("`Couldn't fetch user.`")
-        return
-
-    await usr.edit('**Utente kickato ✅**')
-
-    try:
-        await usr.client.kick_participant(usr.chat_id, user.id)
-        await sleep(.5)
-    except Exception as e:
-        await usr.edit(NO_PERM + f"\n{str(e)}")
-        return
-
-    if reason:
-        await usr.edit(
-            f'**Utente kickato:** [{user.first_name}](tg://user?id={user.id})`!`\nMOTIVO: {reason}'
-        )
-    else:
-        await usr.edit(
-            f'**Utente kickato:** [{user.first_name}](tg://user?id={user.id})`!`')
-
-    if BOTLOG:
-        await usr.client.send_message(
-            BOTLOG_CHATID, "#KICK\n"
-            f"USER: [{user.first_name}](tg://user?id={user.id})\n"
-            f"CHAT: {usr.chat.title}(`{usr.chat_id}`)\n")
 
 
 @bot.on(dev_cmd("gpin ?(.*)"))
