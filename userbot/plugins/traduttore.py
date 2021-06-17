@@ -1,7 +1,13 @@
 """ Google Translate
 Commands:
 .tr LanguageCode as reply to a message
-.tr LangaugeCode | text to translate"""
+"""
+
+import os
+try:
+ import googletrans , subprocess
+except:
+ os.system("pip install googletrans")
 
 import emoji
 from googletrans import LANGUAGES, Translator
@@ -11,12 +17,6 @@ from userbot.system import dev_cmd
 from emoji import get_emoji_regexp
 
 from asyncio import sleep
-
-import os
-try:
- import googletrans , subprocess
-except:
- os.system("pip install googletrans")
 
 
 async def getTranslate(text, **kwargs):
