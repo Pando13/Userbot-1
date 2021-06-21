@@ -8,6 +8,7 @@ import wget
 import aiohttp
 from random import randint
 import aiofiles
+from userbot.system import dev_cmd
 
 VOICE_CHATS = {}
 DEFAULT_DOWNLOAD_DIR = '../downloads/vcbot/'
