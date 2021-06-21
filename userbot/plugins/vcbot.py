@@ -1,7 +1,6 @@
 import os
 from pytgcalls import GroupCall
 import ffmpeg
-from config import Config
 from datetime import datetime
 from pyrogram import filters, Client, idle
 import requests
@@ -15,11 +14,6 @@ DEFAULT_DOWNLOAD_DIR = '../downloads/vcbot/'
 
 # deezer download web of william butcher bot
 ARQ = "https://thearq.tech/"
-
-api_id=Config.API_ID
-api_hash=Config.API_HASH
-session_name=Config.STRING_SESSION
-app = Client(session_name, api_id, api_hash)
 
 # userbot and contacts filter by dashezup's tgvc-userbot
 self_or_contact_filter = filters.create(
