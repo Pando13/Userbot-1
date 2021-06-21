@@ -47,7 +47,7 @@ def get_arg(message):
 
 
 # jiosaavn song download
-@bot.on_message(dev_cmd(pattern="saavn", outgoing=True))
+@bot.on_message(filters.command('saavn'))
 async def song(client, message):
     message.chat.id
     message.from_user["id"]
@@ -84,7 +84,7 @@ async def _download_song(url):
     return song_name
 
 # deezer download by william butcher bot
-@bot.on_message(dev_cmd(pattern="deezer", outgoing=True))
+@bot.on_message(filters.command('deezer'))
 async def deezer(_, message):
     if len(message.command) < 2:
         await message.reply_text("Che canzone cerchi? 🧐")
@@ -107,7 +107,7 @@ async def deezer(_, message):
     os.remove(song)
     await hike.delete()
 
-@bot.on_message(dev_cmd(pattern="play", outgoing=True))
+@bot.on_message(filters.command('play'))
 async def play_track(client, message):
     if not message.reply_to_message or not message.reply_to_message.audio:
         return
@@ -138,7 +138,7 @@ async def play_track(client, message):
     await a.edit(f'▶️ Riproduco: **{audio.title}**')
 
 
-@bot.on_message(dev_cmd(pattern="stopvc", outgoing=True))
+@bot.on_message(filters.command('stopvc'))
 async def stop_playing(_, message):
     group_call = VOICE_CHATS[message.chat.id]
     group_call.stop_playout()
@@ -146,7 +146,7 @@ async def stop_playing(_, message):
     await message.reply('Chiamata terminata ❌')
 
 
-@bot.on_message(dev_cmd(pattern="joinvc", outgoing=True))
+@bot.on_message(filters.command('joinvc'))
 async def join_voice_chat(client, message):
     input_filename = os.path.join(
         client.workdir, DEFAULT_DOWNLOAD_DIR,
@@ -166,12 +166,10 @@ async def join_voice_chat(client, message):
     await message.reply('Partecipo alla chiamata ✅')
 
 
-@bot.on_message(dev_cmd(pattern="leavevc", outgoing=True))
+@bot.on_message(filters.command('leavevc')
 async def leave_voice_chat(client, message):
     chat_id = message.chat.id
     group_call = VOICE_CHATS[chat_id]
     await group_call.stop()
     VOICE_CHATS.pop(chat_id, None)
     await message.reply('Esco dalla chiamata ✅')
-
-
