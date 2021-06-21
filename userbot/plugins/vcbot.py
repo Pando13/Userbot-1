@@ -20,7 +20,7 @@ ARQ = "https://thearq.tech/"
 api_id=Var.APP_ID,
 api_hash=Var.API_HASH
 session_name=Var.STRING_SESSION
-app = Client(api_id, api_hash, session_name)
+app = Client(session_name, api_id, api_hash)
 
 # userbot and contacts filter by dashezup's tgvc-userbot
 self_or_contact_filter = filters.create(
