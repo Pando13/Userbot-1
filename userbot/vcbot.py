@@ -180,7 +180,7 @@ async def leave_voice_chat(client, message):
     await message.reply('Esco dalla chiamata ✅')
 
 app.start()
-print('>>> JEVC USERBOT STARTED')
+print('>>> USERBOT STARTED')
 idle()
 app.stop()
-print('\n>>> JEVC USERBOT STOPPED')
+print('\n>>> USERBOT STOPPED')
