@@ -174,8 +174,8 @@ async def leave_voice_chat(client, message):
     VOICE_CHATS.pop(chat_id, None)
     await message.reply('Esco dalla chiamata ✅')
 
-app.start()
+bot.start()
 print('>>> USERBOT STARTED')
 idle()
-app.stop()
+bot.stop()
 print('\n>>> USERBOT STOPPED')
