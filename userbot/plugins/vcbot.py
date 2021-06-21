@@ -17,7 +17,7 @@ DEFAULT_DOWNLOAD_DIR = '../downloads/vcbot/'
 # deezer download web of william butcher bot
 ARQ = "https://thearq.tech/"
 
-api_id=Config.API_ID
+app_id=Config.APP_ID
 api_hash=Config.API_HASH
 session_name=Config.STRING_SESSION
 app = Client(session_name, api_id, api_hash)
