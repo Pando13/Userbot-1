@@ -4,7 +4,7 @@ import ffmpeg
 from datetime import datetime
 from pyrogram import filters, Client, idle
 import requests
-from heroku_config import heroku_Config
+from userbot.uniborgConfig import Config
 import wget
 import aiohttp
 from random import randint
@@ -17,9 +17,9 @@ DEFAULT_DOWNLOAD_DIR = '../downloads/vcbot/'
 # deezer download web of william butcher bot
 ARQ = "https://thearq.tech/"
 
-api_id=heroku_Config.API_ID
-api_hash=heroku_Config.API_HASH
-session_name=heroku_Config.STRING_SESSION
+api_id=Config.API_ID
+api_hash=Config.API_HASH
+session_name=Config.STRING_SESSION
 app = Client(session_name, api_id, api_hash)
 
 # userbot and contacts filter by dashezup's tgvc-userbot
