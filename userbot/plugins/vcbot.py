@@ -47,7 +47,7 @@ def get_arg(message):
 
 # jiosaavn song download
 @bot.on(dev_cmd(filters.command('saavn') & self_or_contact_filter)
-async def _song(client, message):
+async def song(client, message):
     message.chat.id
     message.from_user["id"]
     args = get_arg(message) + " " + "song"
@@ -84,7 +84,7 @@ async def _download_song(url):
 
 # deezer download by william butcher bot
 @bot.on(dev_cmd(filters.command("deezer") & self_or_contact_filter)
-async def _deezer(_, message):
+async def deezer(_, message):
     if len(message.command) < 2:
         await message.reply_text("Che canzone cerchi? 🧐")
         return
@@ -107,7 +107,7 @@ async def _deezer(_, message):
     await hike.delete()
 
 @bot.on(dev_cmd(filters.command('play') & self_or_contact_filter)
-async def _play_track(client, message):
+async def play_track(client, message):
     if not message.reply_to_message or not message.reply_to_message.audio:
         return
     input_filename = os.path.join(
@@ -138,7 +138,7 @@ async def _play_track(client, message):
 
 
 @bot.on(dev_cmd(filters.command('stopvc') & self_or_contact_filter)
-async def _stop_playing(_, message):
+async def stop_playing(_, message):
     group_call = VOICE_CHATS[message.chat.id]
     group_call.stop_playout()
     os.remove('downloads/vcbot/input.raw')
@@ -146,7 +146,7 @@ async def _stop_playing(_, message):
 
 
 @bot.on(dev_cmd(filters.command('joinvc') & self_or_contact_filter)
-async def _join_voice_chat(client, message):
+async def join_voice_chat(client, message):
     input_filename = os.path.join(
         client.workdir, DEFAULT_DOWNLOAD_DIR,
         'input.raw',
@@ -166,7 +166,7 @@ async def _join_voice_chat(client, message):
 
 
 @bot.on(dev_cmd(filters.command('leavevc') & self_or_contact_filter)
-async def _leave_voice_chat(client, message):
+async def leave_voice_chat(client, message):
     chat_id = message.chat.id
     group_call = VOICE_CHATS[chat_id]
     await group_call.stop()
