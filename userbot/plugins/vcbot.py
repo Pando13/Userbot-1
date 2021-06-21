@@ -4,7 +4,7 @@ import ffmpeg
 from datetime import datetime
 from pyrogram import filters, Client, idle
 import requests
-from userbot.uniborgConfig import Config
+from var import Var
 import wget
 import aiohttp
 from random import randint
@@ -17,9 +17,9 @@ DEFAULT_DOWNLOAD_DIR = '../downloads/vcbot/'
 # deezer download web of william butcher bot
 ARQ = "https://thearq.tech/"
 
-app_id=Config.APP_ID
-api_hash=Config.API_HASH
-session_name=Config.STRING_SESSION
+api_id=Var.APP_ID,
+api_hash=Var.API_HASH
+session_name=Var.STRING_SESSION
 app = Client(session_name, api_id, api_hash)
 
 # userbot and contacts filter by dashezup's tgvc-userbot
