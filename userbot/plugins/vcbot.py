@@ -166,7 +166,7 @@ async def join_voice_chat(client, message):
     await message.reply('Partecipo alla chiamata ✅')
 
 
-@bot.on_message(filters.command('leavevc')
+@bot.on_message(filters.command('leavevc'))
 async def leave_voice_chat(client, message):
     chat_id = message.chat.id
     group_call = VOICE_CHATS[chat_id]
