@@ -57,8 +57,8 @@ async def _(event):
     try:
         translated = await getTranslate(text, dest=lan)
         after_tr_text = translated.text
-        output_str = """**Tradotto** da **{}** a **{}**:
-__{}__""".format(
+        output_str = """📚 **Tradotto** da **__{}__** a **__{}__**:
+`⁣⁣{}`⁣⁣""".format(
             translated.src,
             lan,
             after_tr_text
