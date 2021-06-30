@@ -100,7 +100,7 @@ print("AtomicUserbot in esecuzione, test con .alive")
 async def set_clock():
     DMY = time.strftime("%d/%m/%Y")
     HM = time.strftime("%H:%M")
-    bio = f"⌚️ {HM} | {DEFAULTUSERBIO} | {DMY} 🗓"
+    bio = f"⌚️ {HM} ¦ {DEFAULTUSERBIO} ¦ {DMY} ⏳"
     try:
         await bot(functions.account.UpdateProfileRequest(  # pylint:disable=E0602
                 about=bio
