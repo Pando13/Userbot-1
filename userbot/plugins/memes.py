@@ -131,8 +131,21 @@ async def _(event):
     if event.fwd_from:
         return
     await event.edit(f"[𝙇𝙚𝙤⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣](t.me/leoatomic) è il 🤴🏻 **Creatore** (fiko [😎](t.me/AtomicUserbot)) di questo Userbot!")			  
-		
 
+@bot.on(dev_cmd(pattern="quando", outgoing=True))
+async def _(event):
+    "To get date and time of message when it posted."
+    reply = await event.get_reply_message()
+    if reply:
+        try:
+            result = reply.fwd_from.date
+        except Exception:
+            result = reply.date
+    else:
+        result = event.date
+    await event.edit(
+        event, f"**⏳ Questo messaggio è stato inviato:** `{yaml_format(result)}`"
+    )
 
 @register(outgoing=True, pattern="^.dado$")
 async def dado(e):
