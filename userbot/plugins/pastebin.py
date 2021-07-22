@@ -43,13 +43,13 @@ async def _(event):
             message = previous_message.message
     else:
         message = "SYNTAX: .paste <long text to include>"
-    url = "https://nekobin/documents"
+    url = "https://nekobin.com/"
     r = requests.post(url, data=message.encode("UTF-8")).json()
-    url = f"https://nekobin/{r['key']}"
+    url = f"https://nekobin.com/{r['key']}"
     end = datetime.now()
     ms = (end - start).seconds
     if r["isUrl"]:
-        nurl = f"https://nekobin/v/{r['key']}"
+        nurl = f"https://nekobin.com/v/{r['key']}"
         await event.edit("**Code copiato da {} in {} seconds. URL Originale: {}**".format(url, ms, nurl))
     else:
         await event.edit("**Code copiato da {} in {} sec**".format(url, ms))
