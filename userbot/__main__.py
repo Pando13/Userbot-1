@@ -110,7 +110,15 @@ async def set_clock():
         await asyncio.sleep(ex.seconds)        
         asyncio.get_event_loop().run_forever()
         
-        
+                            
+#     .-  -. 
+#    /(    )\  
+#   |  -^^-  | 
+#    \_ `' _/
+#      \  )    
+#       )/     
+#      ('   
+    
 if len(argv) not in (1, 3, 4):
     bot.disconnect()
 else:
