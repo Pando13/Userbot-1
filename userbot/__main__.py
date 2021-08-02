@@ -43,7 +43,7 @@ from userbot.system import dev_cmd, command
 # ================= CONSTANT =================
 DEFAULTUSERBIO = str(DEFAULT_BIO) if DEFAULT_BIO else "@AtomicUserbot"
 DEL_TIME_OUT = 60
-DEFAULTUSERBIO1 = str(DEFAULT_BIO1) if DEFAULT_BIO1 esle ""
+DEFAULTUSERBIO1 = str(DEFAULT_BIO1) if DEFAULT_BIO1 else ""
 
 async def add_bot(bot_token):
     await bot.start(bot_token)
