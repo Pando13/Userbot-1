@@ -37,13 +37,13 @@ from pySmartDL import SmartDL
 from telethon import events
 from telethon.tl import functions
 from telethon.errors import FloodWaitError
-from userbot import bot, AUTONAME, DEFAULT_BIO, CMD_HELP
+from userbot import bot, AUTONAME, DEFAULT_BIO, CMD_HELP, DEFAULT_BIO1
 from userbot.system import dev_cmd, command
 
 # ================= CONSTANT =================
 DEFAULTUSERBIO = str(DEFAULT_BIO) if DEFAULT_BIO else "@AtomicUserbot"
 DEL_TIME_OUT = 60
-
+DEFAULTUSERBIO1 = str(DEFAULT_BIO1) if DEFAULT_BIO1 esle ""
 
 async def add_bot(bot_token):
     await bot.start(bot_token)
@@ -100,7 +100,7 @@ print("AtomicUserbot in esecuzione, test con .alive")
 async def set_clock():
     DMY = time.strftime("%d/%m/%Y")
     HM = time.strftime("%H:%M")
-    bio = f"⌚️ {HM} ϟ {DEFAULTUSERBIO} ϟ {DMY} ⏳"
+    bio = f"{DEFAULTUSERBIO} ¦{HM} ⏳ {DMY}¦ {DEFAULTUSERBIO1}"
     try:
         await bot(functions.account.UpdateProfileRequest(  # pylint:disable=E0602
                 about=bio
