@@ -27,13 +27,13 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             )
         await event.answer([result] if result else None)
         
-    @bot.on(events.NewMessage(pattern='/start'))
+    @tgbot.on(events.NewMessage(pattern='/start'))
     async def start(event):
         sender = await event.get_sender()
         name = utils.get_display_name(sender)
         #print("start. Sender",name,"say",event.text)
         #await event.respond('Hi!')
-        await event.reply(f'{START_BOT}⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣/n**👨‍💻 Creato con [@AtomicUserbot](https://t.me/AtomicUserbot/4)**')
+        await event.reply(f'{START_BOT}⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣/n/n**👨‍💻 Creato con [@AtomicUserbot](https://t.me/AtomicUserbot/4)**')
         raise events.StopPropagation
         
     @tgbot.on(events.callbackquery.CallbackQuery(  # pylint:disable=E0602
