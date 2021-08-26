@@ -34,7 +34,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         #print("start. Sender",name,"say",event.text)
         #await event.respond('Hi!')
         await event.reply(f'{START_BOT} ⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣/n/n **👨‍💻 Creato con [@AtomicUserbot](https://t.me/AtomicUserbot/4)**',
-                          parse_mode='markdownv2', link_preview=False)
+                          parse_mode='MarkdownV2', link_preview=False)
         raise events.StopPropagation
         
     @tgbot.on(events.callbackquery.CallbackQuery(  # pylint:disable=E0602
