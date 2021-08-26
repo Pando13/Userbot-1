@@ -4,7 +4,7 @@ import random
 import re
 import io
 from math import ceil
-from telethon import events, errors, custom
+from telethon import events, errors, custom, utils
 from userbot import bot, CMD_LIST, STARTBOT
 
 START_BOT = str(STARTBOT)
