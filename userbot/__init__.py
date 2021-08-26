@@ -88,7 +88,7 @@ if bool(ENV):
         TELEGRAM_ID = int(TELEGRAM_ID)
     except:
         pass
-
+    STARTBOT = os.environ.get("STARTBOT", None)
     # Custom (forked) repo URL and BRANCH for updater.
     UPSTREAM_REPO_URL = os.environ.get("UPSTREAM_REPO_URL","https://github.com/Leoatomic/ubotpack.git")
 
