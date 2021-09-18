@@ -44,7 +44,7 @@ async def startmute(event):
         except Exception as e:
             await event.edit("Error occured!\nError is " + str(e))
         else:
-            await event.edit("Ok bro mute eseguito**")
+            await event.edit("**Mute eseguito**")
 
 
 @command(outgoing=True, pattern=r"^.unmute ?(\d+)?")
@@ -76,7 +76,7 @@ async def endmute(event):
         except Exception as e:
             await event.edit("Error occured!\nError is " + str(e))
         else:
-            await event.edit("**Ok bro unmute eseguito**")
+            await event.edit("**Unmute eseguito**")
             
 
 @command(outgoing=True, pattern=r"^.mute ?(\d+)?", allow_sudo=True)
@@ -112,7 +112,7 @@ async def startmute(event):
         elif private == True:
             pass
         else:
-            return await event.edit("**Non sei admin bro!⚠️**")
+            return await event.edit("**Non sei admin!⚠️**")
         if is_muted(userid, chat_id):
             return await event.edit("**User già mutato in questa chat.**")
         try:
@@ -120,7 +120,7 @@ async def startmute(event):
         except Exception as e:
             await event.edit("Error occured!\nError is " + str(e))
         else:
-            await event.edit("Ok bro mute eseguito**")
+            await event.edit("**Mute eseguito**")
 
 
 @command(outgoing=True, pattern=r"^.unmute ?(\d+)?", allow_sudo=True)
