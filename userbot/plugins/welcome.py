@@ -12,11 +12,11 @@ async def _(event):
     cws = get_current_welcome_settings(event.chat_id)
     if cws:
         # logger.info(event.stringify())
-        """user_added=False,
+        """user_added=True,
         user_joined=True,
         user_left=False,
         user_kicked=False,"""
-        if event.user_joined:
+        if event.user_joined or event.user_added:
             if cws.should_clean_welcome:
                 try:
                     await bot.delete_messages(  # pylint:disable=E0602
