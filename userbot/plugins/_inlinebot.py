@@ -5,9 +5,7 @@ import re
 import io
 from math import ceil
 from telethon import events, errors, custom, utils
-from userbot import bot, CMD_LIST, STARTBOT
-
-START_BOT = str(STARTBOT)
+from userbot import bot, CMD_LIST
 
 if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
     @tgbot.on(events.InlineQuery)  # pylint:disable=E0602
@@ -33,7 +31,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         name = utils.get_display_name(sender)
         #print("start. Sender",name,"say",event.text)
         #await event.respond('Hi!')
-        await event.reply(f'{START_BOT}⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣\n\n<b>👨‍💻 Creato con </b><a href=''https://t.me/AtomicUserbot/4''><b>@AtomicUserbot</b></a>',
+        await event.reply('Questo è il bot privato di <a href=''http://t.me/leoatomic''>Leo</a> 😡',
                           parse_mode='html', link_preview=False)
         raise events.StopPropagation
         
@@ -49,7 +47,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             # https://t.me/TelethonChat/115200
             await event.edit(buttons=buttons)
         else:
-            reply_pop_up_alert = "Questo non è il tuo userbot, usa il tuo!"
+            reply_pop_up_alert = "Questo è il bot privato di Leo 😡"
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
 
@@ -68,7 +66,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             # https://t.me/TelethonChat/115200
             await event.edit(buttons=buttons)
         else:
-            reply_pop_up_alert = "Questo non è il tuo userbot, usa il tuo!"
+            reply_pop_up_alert = "Questo è il bot privato di Leo 😡"
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
     @tgbot.on(events.callbackquery.CallbackQuery(  # pylint:disable=E0602
         data=re.compile(b"us_plugin_(.*)")
