@@ -1,4 +1,1 @@
-# Atomic-Userbot
-
-* Non mi assumo responsabilità per eventuali ban da parte di telegram.
-* Non mi assumo responsabilità per il vostro utilizzo del bot su Telegram.
+[![CodeFactor](https://www.codefactor.io/repository/github/leoatomic/userbot/badge)](https://www.codefactor.io/repository/github/leoatomic/userbot)
