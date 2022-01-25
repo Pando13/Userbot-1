@@ -33,7 +33,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         #await event.respond('Hi!')
         await event.reply('Questo è il bot privato di <a href=''http://t.me/leoatomic''>Leo</a> 😡',
                           parse_mode='html', link_preview=False)
-        raise events.StopPropagation
+
         
     @tgbot.on(events.callbackquery.CallbackQuery(  # pylint:disable=E0602
         data=re.compile(b"helpme_next\((.+?)\)")
